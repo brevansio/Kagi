@@ -123,7 +123,7 @@
             break;
         }
         case TextFieldCellStyleUrl:
-            self.textField.textColor = [UIColor blueColor];
+            self.textField.textColor = [UIColor systemBlueColor];
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.keyboardType = UIKeyboardTypeURL;

@@ -79,7 +79,7 @@ class FilesViewController: UITableViewController, NewDatabaseDelegate {
             let emptyStateLabel = UILabel()
             emptyStateLabel.text = NSLocalizedString("Tap the + button to add a new KeePass file.", comment: "")
             emptyStateLabel.textAlignment = .center
-            emptyStateLabel.textColor = UIColor.gray
+            emptyStateLabel.textColor = UIColor.systemGray
             emptyStateLabel.numberOfLines = 0
             emptyStateLabel.lineBreakMode = .byWordWrapping
 
