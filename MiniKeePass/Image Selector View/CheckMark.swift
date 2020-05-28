@@ -28,11 +28,11 @@ class CheckMark: UIView {
     }
     
     // Color Declarations
-    fileprivate let fillColor = UIColor(red: 0.078, green: 0.435, blue: 0.875, alpha: 1)
-    fileprivate let whiteColor = UIColor.white
+    fileprivate let fillColor = UIColor.systemBlue
+    fileprivate let whiteColor = UIColor.systemBackground
     
     // Shadow Declarations
-    fileprivate let shadowColor = UIColor.black
+    fileprivate let shadowColor = UIColor.secondarySystemBackground
     fileprivate let shadowOffset = CGSize(width: 0.1, height: -0.1)
     fileprivate let shadowBlurRadius: CGFloat = 2.5
     

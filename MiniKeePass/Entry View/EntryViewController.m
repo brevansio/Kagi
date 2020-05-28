@@ -564,8 +564,8 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
     copiedLabel.font = [UIFont boldSystemFontOfSize:18];
     copiedLabel.textAlignment = NSTextAlignmentCenter;
 
-    copiedLabel.textColor = [UIColor whiteColor];
-    copiedLabel.backgroundColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1];
+    copiedLabel.textColor = [UIColor systemBackgroundColor];
+    copiedLabel.backgroundColor = [UIColor systemGrayColor];
 
     // Put cell into "Copied" state
     [cell addSubview:copiedLabel];

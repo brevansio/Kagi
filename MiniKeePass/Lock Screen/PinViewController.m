@@ -43,7 +43,7 @@
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.text = NSLocalizedString(@"Enter your PIN to unlock", nil);
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.titleLabel.textColor = [UIColor systemGrayColor];
         self.titleLabel.font = [self.titleLabel.font fontWithSize:18];
         [self.titleLabel sizeToFit];
         [self.pinView addSubview:self.titleLabel];
@@ -57,7 +57,7 @@
         self.pinLabel = [[UILabel alloc] init];
         self.pinLabel.text = @"\u25CB";
         self.pinLabel.textAlignment = NSTextAlignmentCenter;
-        self.pinLabel.textColor = [UIColor darkGrayColor];
+        self.pinLabel.textColor = [UIColor systemGrayColor];
         self.pinLabel.font = [UIFont fontWithName:@"ArialMT" size:36];
         [self.pinLabel sizeToFit];
         [self.pinView addSubview:self.pinLabel];

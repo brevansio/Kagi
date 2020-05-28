@@ -232,7 +232,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             pinViewController.delegate = self
             
             // Background is clear for lock screen blur, set to white to set the pin.
-            pinViewController.view.backgroundColor = UIColor.white
+            pinViewController.view.backgroundColor = UIColor.systemBackground
             
             present(pinViewController, animated: true, completion: nil)
         } else {
