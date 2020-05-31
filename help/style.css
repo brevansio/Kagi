@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark;
+}
+
 body {
     font: 13px arial,helvetica,clean,sans-serif;
 }
