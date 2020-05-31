@@ -123,13 +123,13 @@ static LockScreenManager *sharedInstance = nil;
 
     [UIView animateWithDuration:0.25
                      animations:^{
-                         lockWindow.alpha = 0.0;
+                        self->lockWindow.alpha = 0.0;
                      }
                      completion:^(BOOL finished){
                          [self.pinViewController clearPin];
-                         touchIDFailed = NO;
-                         lockWindow.hidden = YES;
-                         lockWindow.alpha = 1.0;
+                            self->touchIDFailed = NO;
+                            self->lockWindow.hidden = YES;
+                            self->lockWindow.alpha = 1.0;
                      }];
 }
 
@@ -163,7 +163,7 @@ static LockScreenManager *sharedInstance = nil;
                               });
                           } else {
                               // Failed, show the PIN screen
-                              touchIDFailed = YES;
+                              self->touchIDFailed = YES;
                           }
                       }];
 }

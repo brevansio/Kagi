@@ -654,7 +654,7 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
     
     PasswordGeneratorViewController *passwordGeneratorViewController = (PasswordGeneratorViewController *)navigationController.topViewController;
     passwordGeneratorViewController.donePressed = ^(PasswordGeneratorViewController *passwordGeneratorViewController, NSString *password) {
-        passwordCell.textField.text = password;
+        self->passwordCell.textField.text = password;
         [passwordGeneratorViewController dismissViewControllerAnimated:YES completion:nil];
     };
     passwordGeneratorViewController.cancelPressed = ^(PasswordGeneratorViewController *passwordGeneratorViewController) {
