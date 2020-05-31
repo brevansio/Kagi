@@ -94,7 +94,7 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         return UIInterfaceOrientationMaskAll;
     } else {
         return UIInterfaceOrientationMaskPortrait;
@@ -123,27 +123,36 @@
 }
 
 - (void)keypadViewAlphaPressed:(KeypadView *)keypadView {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Enter your PIN to unlock", nil)
-                                                        message:nil
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                              otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
-    alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
-    [alertView show];
-}
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Enter your PIN to unlock", nil)
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.secureTextEntry = YES;
+    }];
 
-#pragma mark - UIAlertViewDelegate
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *textField = alertController.textFields.firstObject;
+        if (textField.text.length > 0) {
+            [self clearPin];
+            self->_pin = textField.text;
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    UITextField *textField = [alertView textFieldAtIndex:0];
-    if (textField.text.length > 0) {
-        [self clearPin];
-        _pin = textField.text;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3f * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
+                [self.delegate pinViewController:self pinEntered:self.pin];
+            });
+        }
+    }];
+    [alertController addAction:confirmAction];
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3f * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
-            [self.delegate pinViewController:self pinEntered:self.pin];
-        });
-    }
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:cancelAction];
+
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark - PIN related methods

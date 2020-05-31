@@ -90,7 +90,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         definesPresentationContext = true // Ensure searchBar stays with tableView
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchResultsUpdater = self
-        searchController?.dimsBackgroundDuringPresentation = false
+        searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.hidesNavigationBarDuringPresentation = false
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
@@ -295,15 +295,16 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
 
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Delete", comment: "")) { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
-            self.deleteItems(indexPaths: [indexPath])
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive,
+                                              title: NSLocalizedString("Delete", comment: "")) { (_, _, completion) in
+                                                self.deleteItems(indexPaths: [indexPath])
+                                                completion(true)
         }
-
-        return [deleteAction]
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle != .delete) {
             return
         }

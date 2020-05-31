@@ -170,21 +170,24 @@ class FilesViewController: UITableViewController, NewDatabaseDelegate {
         let databaseManager = DatabaseManager.sharedInstance()
         databaseManager?.openDatabaseDocument(databaseFiles[indexPath.row], animated: true)
     }
-    
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Delete", comment: "")) { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
-            self.deleteRowAtIndexPath(indexPath)
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive,
+                                              title: NSLocalizedString("Delete", comment: "")) { (_, _, completion) in
+                                                self.deleteRowAtIndexPath(indexPath)
+                                                completion(true)
         }
-        
-        let renameAction = UITableViewRowAction(style: .normal, title: NSLocalizedString("Rename", comment: "")) { (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
-            self.renameRowAtIndexPath(indexPath)
+
+        let renameAction = UIContextualAction(style: .normal,
+                                              title: NSLocalizedString("Rename", comment: "")) { (_, _, completion) in
+                                                self.renameRowAtIndexPath(indexPath)
+                                                completion(true)
         }
-        
         switch Section.AllValues[indexPath.section] {
         case .databases:
-            return [deleteAction, renameAction]
+            return UISwipeActionsConfiguration(actions: [deleteAction, renameAction])
         case .keyFiles:
-            return [deleteAction]
+            return UISwipeActionsConfiguration(actions: [deleteAction])
         }
     }
     

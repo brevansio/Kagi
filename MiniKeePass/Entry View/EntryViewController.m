@@ -689,7 +689,7 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
         
         [self presentViewController:navigationController animated:YES completion:nil];
     } else {
-        [[UIApplication sharedApplication] openURL:url];
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
     }
 }
 
