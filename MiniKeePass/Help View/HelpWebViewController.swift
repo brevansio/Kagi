@@ -16,9 +16,10 @@
  */
 
 import UIKit
+import WebKit
 
 class HelpWebViewController: UIViewController {
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     
     var url: URL?
     
@@ -27,6 +28,6 @@ class HelpWebViewController: UIViewController {
         
         // Load the help page
         let urlRequest = URLRequest(url: url!)
-        webView.loadRequest(urlRequest)
+        webView.load(urlRequest)
     }
 }

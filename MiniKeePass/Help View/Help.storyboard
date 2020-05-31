@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2wS-1V-QIi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2wS-1V-QIi">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -65,21 +64,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-Ih-RUP">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ1-gy-Gux">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gCS-Ih-RUP" secondAttribute="trailing" id="Gqv-ng-r6y"/>
-                            <constraint firstItem="NUh-e0-9Bu" firstAttribute="top" secondItem="gCS-Ih-RUP" secondAttribute="bottom" id="Rvf-2r-mH3"/>
-                            <constraint firstItem="gCS-Ih-RUP" firstAttribute="top" secondItem="dHU-9n-rhh" secondAttribute="bottom" id="Tum-I3-pXr"/>
-                            <constraint firstItem="gCS-Ih-RUP" firstAttribute="leading" secondItem="i6E-Ba-dpu" secondAttribute="leading" id="tir-N0-bWx"/>
+                            <constraint firstItem="tZ1-gy-Gux" firstAttribute="leading" secondItem="i6E-Ba-dpu" secondAttribute="leading" id="EUe-bg-Wz8"/>
+                            <constraint firstItem="NUh-e0-9Bu" firstAttribute="top" secondItem="tZ1-gy-Gux" secondAttribute="bottom" id="VHB-FZ-pqX"/>
+                            <constraint firstItem="tZ1-gy-Gux" firstAttribute="top" secondItem="dHU-9n-rhh" secondAttribute="bottom" id="cPh-19-gck"/>
+                            <constraint firstAttribute="trailing" secondItem="tZ1-gy-Gux" secondAttribute="trailing" id="ej5-gj-xZE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="gCS-Ih-RUP" id="bbd-qq-n5h"/>
+                        <outlet property="webView" destination="tZ1-gy-Gux" id="RMC-mf-9SU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYg-74-Qfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
