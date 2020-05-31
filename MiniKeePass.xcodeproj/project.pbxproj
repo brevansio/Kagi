@@ -136,6 +136,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		308C96FB248365DA0017F48B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D104D7A1ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
+		308C96FD248365DA0017F48B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1777D3DF1D757AF50037C7F1;
+			remoteInfo = "MBProgressHUD Framework tvOS";
+		};
 		526D9FAA167CDC010097213E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
@@ -418,6 +432,8 @@
 			isa = PBXGroup;
 			children = (
 				526D9FAB167CDC010097213E /* libMBProgressHUD.a */,
+				308C96FC248365DA0017F48B /* MBProgressHUD.framework */,
+				308C96FE248365DA0017F48B /* MBProgressHUD.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -939,6 +955,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		308C96FC248365DA0017F48B /* MBProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBProgressHUD.framework;
+			remoteRef = 308C96FB248365DA0017F48B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		308C96FE248365DA0017F48B /* MBProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBProgressHUD.framework;
+			remoteRef = 308C96FD248365DA0017F48B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		526D9FAB167CDC010097213E /* libMBProgressHUD.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
