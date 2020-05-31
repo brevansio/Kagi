@@ -38,7 +38,7 @@ class ImageSelectorViewController: UICollectionViewController {
         super.viewDidAppear(animated)
         
         if (selectedImage != -1) {
-            collectionView?.selectItem(at: IndexPath(row: selectedImage, section: 0), animated: animated, scrollPosition: UICollectionViewScrollPosition())
+            collectionView?.selectItem(at: IndexPath(row: selectedImage, section: 0), animated: animated, scrollPosition: UICollectionView.ScrollPosition())
         }
     }
 

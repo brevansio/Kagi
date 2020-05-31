@@ -55,7 +55,7 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
         
         if (keyFileLabel.text == "") {
             let keyFile = ((filename as NSString).deletingPathExtension as NSString).appendingPathExtension("key")
-            let idx = keyFiles.index(of: keyFile!)
+            let idx = keyFiles.firstIndex(of: keyFile!)
             selectedKeyFileIndex = idx
         }
         

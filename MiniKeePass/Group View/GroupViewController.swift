@@ -113,10 +113,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
             switch selectedItem! {
             case .entry(let entry):
                 section = Section.entries.rawValue
-                row = entries.index(of: entry)
+                row = entries.firstIndex(of: entry)
             case .group(let group):
                 section = Section.groups.rawValue
-                row = groups.index(of: group)
+                row = groups.firstIndex(of: group)
             }
             selectedItem = nil
             
@@ -226,7 +226,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
             }
         }
 
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

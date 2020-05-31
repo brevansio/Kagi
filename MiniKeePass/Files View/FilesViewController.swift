@@ -119,7 +119,7 @@ class FilesViewController: UITableViewController, NewDatabaseDelegate {
             }
         }
 
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
