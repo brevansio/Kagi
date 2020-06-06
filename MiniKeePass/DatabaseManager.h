@@ -20,22 +20,16 @@
 @interface DatabaseManager : NSObject
 
 /// A string containing the name of the KeePass DatabaseDocument to be managed
-@property (nonatomic, copy) NSString *selectedFilename;
+@property (nonatomic, copy) NSURL *selectedURL;
 
 /// Create a DatabaseManager instance
 + (DatabaseManager*)sharedInstance;
 
-- (NSArray *)getDatabases;
-- (NSArray *)getKeyFiles;
-- (NSURL *)getFileUrl:(NSString *)filename;
-- (NSDate *)getFileLastModificationDate:(NSURL *)url;
-- (void)deleteFile:(NSString *)filename;
 - (void)newDatabase:(NSURL *)url password:(NSString *)password version:(NSInteger)version;
-- (void)renameDatabase:(NSURL *)originalUrl newUrl:(NSURL *)newUrl;
 
 /// Open the specified KeePass DatabaseDocument
 /// @param path Path to the chosen KeePass DatabaseDocument
 /// @param animated Animate the ViewController transition
-- (void)openDatabaseDocument:(NSString*)path animated:(BOOL)newAnimated;
+- (void)openDatabaseDocument:(NSURL *)documentURL animated:(BOOL)newAnimated;
 
 @end
