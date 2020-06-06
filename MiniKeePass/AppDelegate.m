@@ -23,21 +23,10 @@
 #import "LockScreenManager.h"
 #import "MiniKeePass-Swift.h"
 
-@interface AppDelegate ()
-
-@property (nonatomic, strong) FilesViewController *filesViewController;;
-@property (nonatomic, strong) UINavigationController *navigationController;
-
-@end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _databaseDocument = nil;
-    
-    // Store references to base view controllers
-    self.navigationController = (UINavigationController *) self.window.rootViewController;
-    self.filesViewController = (FilesViewController *) self.navigationController.topViewController;
     
     // Add a pasteboard notification listener to support clearing the clipboard
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
@@ -111,9 +100,6 @@
 
     // Delete the Inbox folder if it exists
     [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:@"Inbox"] error:nil];
-
-    [self.filesViewController updateFiles];
-    [self.filesViewController.tableView reloadData];
 }
 
 - (void)setDatabaseDocument:(DatabaseDocument *)newDatabaseDocument {
@@ -122,17 +108,21 @@
     }
     
     _databaseDocument = newDatabaseDocument;
-    
-    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
-    FilesViewController * filesViewController = navController.viewControllers.firstObject;
-    
-    [filesViewController performSegueWithIdentifier:@"fileOpened" sender:self];
+
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"OpenDatabase"];
+    GroupViewController *groupViewController = (GroupViewController *)navController.viewControllers.firstObject;
+
+    groupViewController.parentGroup = _databaseDocument.kdbTree.root;
+    groupViewController.title = [[NSURL fileURLWithPath:_databaseDocument.filename] lastPathComponent];
+
+    [self.window.rootViewController presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)closeDatabase {
     // Close any open database views
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+
     _databaseDocument = nil;
 }
 
