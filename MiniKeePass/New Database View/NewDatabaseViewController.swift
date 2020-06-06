@@ -16,7 +16,7 @@
  */
 
 protocol NewDatabaseDelegate {
-    func newDatabaseCreated(filename: String)
+    func newDatabaseCreated(url: URL?)
 }
 
 class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
@@ -100,12 +100,13 @@ class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
         let databaseManager = DatabaseManager.sharedInstance()
         databaseManager?.newDatabase(url, password: password1, version: version)
         
-        delegate?.newDatabaseCreated(filename: url!.lastPathComponent)
+        delegate?.newDatabaseCreated(url: url)
         
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        delegate?.newDatabaseCreated(url: nil)
         dismiss(animated: true, completion: nil)
     }
 }

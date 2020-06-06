@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sHd-VR-6rV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sHd-VR-6rV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -152,6 +152,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xoJ-sG-eF5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9d-69-uT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="sHd-VR-6rV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hw-9i-uGE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -161,7 +162,6 @@
                         <segue destination="F1U-jU-Mc4" kind="relationship" relationship="rootViewController" id="ysd-gH-N2f"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9d-69-uT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-739" y="264"/>
         </scene>
