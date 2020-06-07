@@ -313,7 +313,7 @@
 		689D042B13A42C81005EBD36 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
 		689D043213A42C81005EBD36 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		689D043313A42C81005EBD36 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		689DFFD513A4273F005EBD36 /* MiniKeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniKeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		689DFFD513A4273F005EBD36 /* Kagi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kagi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689DFFD913A4273F005EBD36 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		689DFFDB13A4273F005EBD36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		689DFFDD13A4273F005EBD36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -687,7 +687,7 @@
 		689DFFD613A4273F005EBD36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				689DFFD513A4273F005EBD36 /* MiniKeePass.app */,
+				689DFFD513A4273F005EBD36 /* Kagi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -896,7 +896,7 @@
 			);
 			name = MiniKeePass;
 			productName = MiniKeePass;
-			productReference = 689DFFD513A4273F005EBD36 /* MiniKeePass.app */;
+			productReference = 689DFFD513A4273F005EBD36 /* Kagi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1311,10 +1311,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.minikeepass;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
+				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/MiniKeePass-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MiniKeePass-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
@@ -1337,11 +1338,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.minikeepass;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
+				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/MiniKeePass-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MiniKeePass-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
