@@ -24,7 +24,7 @@
 
 @implementation DatabaseDocument
 
-- (id)initWithURL:(NSURL *)url password:(NSString *)password keyFile:(NSString *)keyFile {
+- (id)initWithURL:(NSURL *)url password:(NSString *)password keyFile:(NSURL *)keyFile {
     self = [super initWithFileURL:url];
     if (self) {
         if (password == nil && keyFile == nil) {

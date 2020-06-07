@@ -121,7 +121,7 @@ static DatabaseManager *sharedInstance;
     // Load the database
     @try {
         // Open the database
-        DatabaseDocument *dd = [[DatabaseDocument alloc] initWithURL:self.selectedURL password:password keyFile:keyFilePath];
+        DatabaseDocument *dd = [[DatabaseDocument alloc] initWithURL:self.selectedURL password:password keyFile:passwordEntryViewController.keyFile];
 
         // Store the password in the keychain
         if ([[AppSettings sharedInstance] rememberPasswordsEnabled]) {
