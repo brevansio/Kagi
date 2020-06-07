@@ -24,24 +24,7 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
 
     @objc var filename: String!
     
-    @objc var keyFiles: [String]!
-    fileprivate var selectedKeyFileIndex: Int? = nil {
-        didSet {
-            if let selectedKeyFileIndex = selectedKeyFileIndex {
-                keyFileLabel.text = keyFiles[selectedKeyFileIndex]
-            } else {
-                keyFileLabel.text = NSLocalizedString("None", comment: "")
-            }
-        }
-    }
-    
-    @objc var keyFile: String? {
-        guard let selectedKeyFileIndex = selectedKeyFileIndex else {
-            return nil
-        }
-        
-        return keyFiles[selectedKeyFileIndex]
-    }
+    @objc private(set) var keyFile: URL?
 
     @objc var password: String! {
         return passwordTextField.text
@@ -53,13 +36,8 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (keyFileLabel.text == "") {
-            let keyFile = ((filename as NSString).deletingPathExtension as NSString).appendingPathExtension("key")
-            let idx = keyFiles.firstIndex(of: keyFile!)
-            selectedKeyFileIndex = idx
-        }
-        
         passwordTextField.becomeFirstResponder()
+        keyFileLabel.text = NSLocalizedString("None", comment: "")
     }
     
     // MARK: - UITextFieldDelegate
@@ -78,17 +56,17 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
         return nil
     }
 
-    // MARK: - Navigation
+    // MARK: UITableViewDelegate
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let keyFileViewController = segue.destination as! KeyFileViewController
-        keyFileViewController.keyFiles = keyFiles
-        keyFileViewController.selectedKeyIndex = selectedKeyFileIndex
-        keyFileViewController.keyFileSelected = { (selectedIndex) in
-            self.selectedKeyFileIndex = selectedIndex
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
-            keyFileViewController.navigationController?.popViewController(animated: true)
-        }
+        guard indexPath.section == 1 else { return }
+
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.item", "public.content"], in: .open)
+        documentPicker.delegate = self
+        documentPicker.shouldShowFileExtensions = true
+        present(documentPicker, animated: true, completion: nil)
     }
     
     // MARK: - Actions
@@ -115,5 +93,13 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
             // Change the image
             showImageView.image = UIImage(named: "eye-slash")
         }
+    }
+}
+
+extension PasswordEntryViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let documentURL = urls.first else { return }
+        keyFile = documentURL
+        keyFileLabel.text = documentURL.lastPathComponent
     }
 }

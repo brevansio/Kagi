@@ -55,7 +55,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     private var searchController: UISearchController?
     private var searchResults: [KdbEntry] = []
 
-    var parentGroup: KdbGroup! {
+    @objc var parentGroup: KdbGroup! {
         didSet {
             updateViewModel()
         }
@@ -66,6 +66,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         // Add the edit button
         navigationItem.rightBarButtonItems = [self.editButtonItem]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: AppDelegate.getDelegate(), action: #selector(AppDelegate.closeDatabase))
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }

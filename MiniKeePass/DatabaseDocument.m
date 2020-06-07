@@ -24,8 +24,8 @@
 
 @implementation DatabaseDocument
 
-- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile {
-    self = [super init];
+- (id)initWithURL:(NSURL *)url password:(NSString *)password keyFile:(NSURL *)keyFile {
+    self = [super initWithFileURL:url];
     if (self) {
         if (password == nil && keyFile == nil) {
             @throw [NSException exceptionWithName:@"IllegalArgument"
@@ -33,14 +33,14 @@
                                          userInfo:nil];
         }
 
-        self.filename = filename;
+        self.filename = url.lastPathComponent;
 
         NSStringEncoding passwordEncoding = [[AppSettings sharedInstance] passwordEncoding];
         self.kdbPassword = [[KdbPassword alloc] initWithPassword:password
                                                 passwordEncoding:passwordEncoding
                                                          keyFile:keyFile];
 
-        self.kdbTree = [KdbReaderFactory load:self.filename withPassword:self.kdbPassword];
+        self.kdbTree = [KdbReaderFactory load:url.path withPassword:self.kdbPassword];
     }
     return self;
 }

@@ -15,10 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
+@import UIKit;
 #import "KdbLib.h"
 
-@interface DatabaseDocument : NSObject
+@interface DatabaseDocument : UIDocument
 
 @property (nonatomic, strong) KdbTree *kdbTree;
 @property (nonatomic, copy) NSString *filename;
@@ -28,7 +28,7 @@
 /// @param password Database password
 /// @param keyFile Path to KeyFile
 /// @return A KeePass DatabaseDocument
-- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile;
+- (id)initWithURL:(NSURL *)url password:(NSString *)password keyFile:(NSURL *)keyFile;
 
 /// Save the current KeePass DatabaseDocument
 - (void)save;

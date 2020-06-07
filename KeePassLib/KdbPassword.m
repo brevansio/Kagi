@@ -17,16 +17,16 @@
 @interface KdbPassword () {
     NSString *password;
     NSStringEncoding passswordEncoding;
-    NSString *keyFile;
+    NSURL *keyFile;
 }
 
 - (void)createMasterKeyV3:(uint8_t *)masterKey;
 - (void)createMasterKeyV4:(uint8_t *)masterKey;
 
-- (NSData*)loadKeyFileV3:(NSString*)filename;
-- (NSData*)loadKeyFileV4:(NSString*)filename;
+- (NSData*)loadKeyFileV3:(NSURL*)filename;
+- (NSData*)loadKeyFileV4:(NSURL*)filename;
 
-- (NSData*)loadXmlKeyFile:(NSString*)filename;
+- (NSData*)loadXmlKeyFile:(NSURL*)filename;
 - (NSData*)loadBinKeyFile32:(NSFileHandle*)fh;
 - (NSData*)loadHexKeyFile64:(NSFileHandle*)fh;
 - (NSData*)loadHashKeyFile:(NSFileHandle*)fh;
@@ -38,7 +38,7 @@ int hex2dec(char c);
 
 - (id)initWithPassword:(NSString*)inPassword
       passwordEncoding:(NSStringEncoding)inPasswordEncoding
-               keyFile:(NSString*)inKeyFile {
+               keyFile:(NSURL*)inKeyFile {
     self = [super init];
     if (self) {
         password = [inPassword copy];
@@ -153,9 +153,10 @@ int hex2dec(char c);
     CC_SHA256_Final(masterKey, &ctx);
 }
 
-- (NSData*)loadKeyFileV3:(NSString*)filename {
+- (NSData*)loadKeyFileV3:(NSURL*)filename {
     // Open the keyfile
-    NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:filename];
+    [filename startAccessingSecurityScopedResource];
+    NSFileHandle *fh = [NSFileHandle fileHandleForReadingFromURL:filename error:nil];
     if (fh == nil) {
         return nil;
     }
@@ -186,11 +187,12 @@ int hex2dec(char c);
     }
 
     [fh closeFile];
+    [filename stopAccessingSecurityScopedResource];
 
     return data;
 }
 
-- (NSData*)loadKeyFileV4:(NSString*)filename {
+- (NSData*)loadKeyFileV4:(NSURL*)filename {
     // Try and load a 2.x XML keyfile first
     @try {
         return [self loadXmlKeyFile:filename];
@@ -201,8 +203,11 @@ int hex2dec(char c);
     return [self loadKeyFileV3:filename];
 }
 
-- (NSData*)loadXmlKeyFile:(NSString*)filename {
-    NSString *xmlString = [NSString stringWithContentsOfFile:filename encoding:NSUTF8StringEncoding error:nil];
+- (NSData*)loadXmlKeyFile:(NSURL*)filename {
+    NSError *error;
+    [filename startAccessingSecurityScopedResource];
+    NSString *xmlString = [NSString stringWithContentsOfURL:filename encoding:NSUTF8StringEncoding error:&error];
+    [filename stopAccessingSecurityScopedResource];
     if (xmlString == nil) {
         @throw [NSException exceptionWithName:@"IOException" reason:@"Failed to open keyfile" userInfo:nil];
     }

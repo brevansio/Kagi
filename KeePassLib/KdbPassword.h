@@ -12,7 +12,7 @@
 
 - (id)initWithPassword:(NSString*)inPassword
       passwordEncoding:(NSStringEncoding)inPasswordEncoding
-               keyFile:(NSString*)inKeyFile;
+               keyFile:(NSURL*)inKeyFile;
 
 - (NSData*)createFinalKeyForVersion:(uint8_t)version
                          masterSeed:(NSData*)masterSeed
