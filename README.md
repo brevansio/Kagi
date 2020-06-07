@@ -48,8 +48,6 @@ French Translation - Patrice Lachance<br />
 Brazilian Portuguese Translation - BR Lingo<br />
 Turkish Translation - Durul Dalkanat<br />
 
-MiniKeePass Icon - Gabriele Cirulli
-
 Nuvola Icons
 Copyright (c) 2003-2004  David Vignoni. All rights reserved.
 Released under GNU Lesser General Public License (LGPL)

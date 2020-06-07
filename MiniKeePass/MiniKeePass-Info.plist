@@ -81,7 +81,7 @@
 			<string>None</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>minikeepass</string>
+				<string>kagi</string>
 			</array>
 		</dict>
 	</array>

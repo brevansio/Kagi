@@ -33,8 +33,6 @@ class FilesViewController: UIDocumentBrowserViewController, UIDocumentBrowserVie
     // MARK: UIDocumentBrowserViewControllerDelegate
 
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        let newDocumentURL: URL? = nil
-
         let storyboard = UIStoryboard(name: "NewDatabase", bundle: nil)
         guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController,
             let newDatabaseViewController = navController.viewControllers.first as? NewDatabaseViewController else {

@@ -204,9 +204,8 @@ int hex2dec(char c);
 }
 
 - (NSData*)loadXmlKeyFile:(NSURL*)filename {
-    NSError *error;
     [filename startAccessingSecurityScopedResource];
-    NSString *xmlString = [NSString stringWithContentsOfURL:filename encoding:NSUTF8StringEncoding error:&error];
+    NSString *xmlString = [NSString stringWithContentsOfURL:filename encoding:NSUTF8StringEncoding error:nil];
     [filename stopAccessingSecurityScopedResource];
     if (xmlString == nil) {
         @throw [NSException exceptionWithName:@"IOException" reason:@"Failed to open keyfile" userInfo:nil];
