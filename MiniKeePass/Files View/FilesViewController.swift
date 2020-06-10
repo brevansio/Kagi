@@ -28,6 +28,8 @@ class FilesViewController: UIDocumentBrowserViewController, UIDocumentBrowserVie
 
         allowsDocumentCreation = true
         allowsPickingMultipleItems = false
+        view.tintColor = UIColor.init(named: "tintColor")
+
     }
 
     // MARK: UIDocumentBrowserViewControllerDelegate

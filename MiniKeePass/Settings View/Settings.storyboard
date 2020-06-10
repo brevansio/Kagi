@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DTi-df-Pz8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DTi-df-Pz8">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Selection View Controller-->
         <scene sceneID="PCT-np-FdE">
             <objects>
-                <tableViewController id="oV7-qB-Seq" userLabel="Selection View Controller" customClass="SelectionViewController" customModule="MiniKeePass" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oV7-qB-Seq" userLabel="Selection View Controller" customClass="SelectionViewController" customModule="Kagi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mv7-W3-Cc9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +47,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Esn-7c-Yyk">
             <objects>
-                <tableViewController id="mlm-01-Slc" userLabel="Settings View Controller" customClass="SettingsViewController" customModule="MiniKeePass" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mlm-01-Slc" userLabel="Settings View Controller" customClass="SettingsViewController" customModule="Kagi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="AAA-kL-k3u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -621,6 +622,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FSx-s4-KMu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="tintColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="mlm-01-Slc" kind="relationship" relationship="rootViewController" id="EHH-BS-qUl"/>
@@ -634,4 +636,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="LOY-kv-rGe"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <namedColor name="tintColor">
+            <color red="0.70980392156862748" green="0.43529411764705883" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

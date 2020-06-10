@@ -3,13 +3,14 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--New Database-->
         <scene sceneID="GgE-7z-MNB">
             <objects>
-                <tableViewController id="F1U-jU-Mc4" customClass="NewDatabaseViewController" customModule="MiniKeePass" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="F1U-jU-Mc4" customClass="NewDatabaseViewController" customModule="Kagi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="GCh-3N-OeM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,18 +153,24 @@
         <!--Navigation Controller-->
         <scene sceneID="xoJ-sG-eF5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9d-69-uT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="sHd-VR-6rV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hw-9i-uGE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="tintColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="F1U-jU-Mc4" kind="relationship" relationship="rootViewController" id="ysd-gH-N2f"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9d-69-uT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-739" y="264"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="tintColor">
+            <color red="0.70980392156862748" green="0.43529411764705883" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

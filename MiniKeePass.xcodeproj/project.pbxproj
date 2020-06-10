@@ -95,7 +95,6 @@
 		689DFFDC13A4273F005EBD36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689DFFDB13A4273F005EBD36 /* Foundation.framework */; };
 		689DFFDE13A4273F005EBD36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689DFFDD13A4273F005EBD36 /* CoreGraphics.framework */; };
 		689DFFE713A4273F005EBD36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 689DFFE613A4273F005EBD36 /* main.m */; };
-		689EA6701D67F88500CF445E /* KeyFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA66D1D67F88500CF445E /* KeyFileViewController.swift */; };
 		689EA6711D67F88500CF445E /* PasswordEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689EA66E1D67F88500CF445E /* PasswordEntry.storyboard */; };
 		689EA6721D67F88500CF445E /* PasswordEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA66F1D67F88500CF445E /* PasswordEntryViewController.swift */; };
 		689EA6781D67F8B500CF445E /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA6741D67F8B500CF445E /* CheckMark.swift */; };
@@ -320,7 +319,6 @@
 		689DFFE113A4273F005EBD36 /* MiniKeePass-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MiniKeePass-Info.plist"; path = "../MiniKeePass-Info.plist"; sourceTree = "<group>"; };
 		689DFFE513A4273F005EBD36 /* MiniKeePass-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniKeePass-Prefix.pch"; sourceTree = "<group>"; };
 		689DFFE613A4273F005EBD36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		689EA66D1D67F88500CF445E /* KeyFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyFileViewController.swift; sourceTree = "<group>"; };
 		689EA66E1D67F88500CF445E /* PasswordEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PasswordEntry.storyboard; sourceTree = "<group>"; };
 		689EA66F1D67F88500CF445E /* PasswordEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordEntryViewController.swift; sourceTree = "<group>"; };
 		689EA6741D67F8B500CF445E /* CheckMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
@@ -760,7 +758,6 @@
 		689EA66C1D67F88500CF445E /* Password Entry View */ = {
 			isa = PBXGroup;
 			children = (
-				689EA66D1D67F88500CF445E /* KeyFileViewController.swift */,
 				689EA66E1D67F88500CF445E /* PasswordEntry.storyboard */,
 				689EA66F1D67F88500CF445E /* PasswordEntryViewController.swift */,
 			);
@@ -1098,7 +1095,6 @@
 				680C9D771D69E2A70040FB43 /* HelpViewController.swift in Sources */,
 				689D045513A42C82005EBD36 /* AppDelegate.m in Sources */,
 				689FBE791AB27228005CB6BD /* PasswordUtils.m in Sources */,
-				689EA6701D67F88500CF445E /* KeyFileViewController.swift in Sources */,
 				689FBE641AB271C6005CB6BD /* KeypadButton.m in Sources */,
 				689A4D1314046B8200AA897D /* RandomStream.m in Sources */,
 				682D450D1603883900156830 /* AesInputStream.m in Sources */,

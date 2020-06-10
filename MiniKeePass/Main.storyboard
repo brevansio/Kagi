@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,28 +13,12 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="otg-5C-dk1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwQ-ja-bl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1702" y="815"/>
-        </scene>
-        <!--Help-->
-        <scene sceneID="OfU-n4-Jiq">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Help" id="ddi-ko-qjw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FdI-Yc-9ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1814" y="769"/>
-        </scene>
-        <!--NewDatabase-->
-        <scene sceneID="cSf-QN-19q">
-            <objects>
-                <viewControllerPlaceholder storyboardName="NewDatabase" id="oBO-SS-Gd5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vCb-Iy-Uev" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1950" y="816"/>
+            <point key="canvasLocation" x="1862" y="816"/>
         </scene>
         <!--Group-->
         <scene sceneID="5Ug-dB-CLJ">
             <objects>
-                <tableViewController title="Group" id="I0k-i1-GRC" customClass="GroupViewController" customModule="MiniKeePass" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Group" id="I0k-i1-GRC" customClass="GroupViewController" customModule="Kagi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oOL-bX-l5a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +117,7 @@
         <!--Files View Controller-->
         <scene sceneID="KL3-rw-eaR">
             <objects>
-                <viewController id="TtK-ae-EWl" customClass="FilesViewController" customModule="MiniKeePass" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TtK-ae-EWl" customClass="FilesViewController" customModule="Kagi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QWF-sv-Eth"/>
                         <viewControllerLayoutGuide type="bottom" id="ex8-uP-oQ9"/>
@@ -155,6 +140,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="waS-9H-vbV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="tintColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Eoa-O5-e5L">
@@ -172,5 +158,8 @@
     </scenes>
     <resources>
         <image name="gear" width="24" height="24"/>
+        <namedColor name="tintColor">
+            <color red="0.70980392156862748" green="0.43529411764705883" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

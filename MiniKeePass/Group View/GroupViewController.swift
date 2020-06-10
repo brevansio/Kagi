@@ -66,7 +66,6 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         // Add the edit button
         navigationItem.rightBarButtonItems = [self.editButtonItem]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: AppDelegate.getDelegate(), action: #selector(AppDelegate.closeDatabase))
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
@@ -201,6 +200,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
             editingToolbarItems[EditButton.Move.rawValue].isEnabled = numSelectedRows > 0
             editingToolbarItems[EditButton.Rename.rawValue].isEnabled = numSelectedRows == 1
         }
+    }
+
+    @IBAction func closeDB(_ sender: UIBarButtonItem) {
+        AppDelegate.getDelegate()?.closeDatabase()
     }
 
     // MARK: - UITableView data source

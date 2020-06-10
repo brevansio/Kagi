@@ -40,6 +40,9 @@
     // Initialize the lock screen manager
     [LockScreenManager sharedInstance];
 
+    // This is for the UIDocumentPickerVCs, but they use UIDocumentBrowserVC under the hood
+    [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UIDocumentBrowserViewController class]]] setTintColor:[UIColor colorNamed:@"tintColor"]];
+
     return YES;
 }
 
