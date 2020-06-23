@@ -159,6 +159,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300E6FAB249F4172001365D6 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
 		4E8C168E16B3E871004195A1 /* fr-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-createdb.html"; sourceTree = "<group>"; };
 		4E8C168F16B3E871004195A1 /* fr-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-dropbox.html"; sourceTree = "<group>"; };
 		4E8C169016B3E871004195A1 /* fr-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-itunes.html"; sourceTree = "<group>"; };
@@ -706,6 +707,7 @@
 		689DFFDF13A4273F005EBD36 /* MiniKeePass */ = {
 			isa = PBXGroup;
 			children = (
+				300E6FAB249F4172001365D6 /* Kagi.entitlements */,
 				689D043213A42C81005EBD36 /* AppDelegate.h */,
 				689D043313A42C81005EBD36 /* AppDelegate.m */,
 				68767B661D6F241F0039EFE0 /* Main.storyboard */,
@@ -1291,6 +1293,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MiniKeePass/Kagi.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1304,6 +1307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1318,6 +1322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MiniKeePass/Kagi.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1332,6 +1337,7 @@
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";

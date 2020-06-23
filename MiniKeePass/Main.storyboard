@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="otg-5C-dk1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwQ-ja-bl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="816"/>
+            <point key="canvasLocation" x="1870" y="816"/>
         </scene>
         <!--Group-->
         <scene sceneID="5Ug-dB-CLJ">
@@ -22,7 +22,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oOL-bX-l5a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" id="7Ya-3i-ifE">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -159,7 +159,7 @@
     <resources>
         <image name="gear" width="24" height="24"/>
         <namedColor name="tintColor">
-            <color red="0.70980392156862748" green="0.43529411764705883" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.70999997854232788" green="0.43500000238418579" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
