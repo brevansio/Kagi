@@ -44,7 +44,7 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.donePressedAction(nil)
-        return true
+        return false
     }
     
     // MARK: - UITableViewDataSource

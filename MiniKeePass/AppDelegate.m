@@ -66,9 +66,9 @@
     return [paths objectAtIndex:0];
 }
 
-+ (NSURL *)documentsDirectoryUrl {
++ (NSURL *)cacheDirectoryUrl {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *urls = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSArray *urls = [fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask];
     return [urls firstObject];
 }
 

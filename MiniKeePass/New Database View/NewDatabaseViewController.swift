@@ -79,7 +79,7 @@ class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
         }
         
         // Create a URL to the file
-        var url = AppDelegate.documentsDirectoryUrl()
+        var url = AppDelegate.cacheDirectoryUrl()
         url = url?.appendingPathComponent("\(name).\(extention)")
         
         if url == nil {
@@ -99,7 +99,6 @@ class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
         // Create the new database
         let databaseManager = DatabaseManager.sharedInstance()
         databaseManager?.newDatabase(url, password: password1, version: version)
-        
         delegate?.newDatabaseCreated(url: url)
         
         dismiss(animated: true, completion: nil)

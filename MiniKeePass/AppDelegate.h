@@ -25,7 +25,7 @@
 
 + (AppDelegate *)getDelegate;
 + (NSString *)documentsDirectory;
-+ (NSURL *)documentsDirectoryUrl;
++ (NSURL *)cacheDirectoryUrl;
 
 - (void)closeDatabase;
 - (void)deleteAllData;
