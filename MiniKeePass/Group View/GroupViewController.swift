@@ -66,8 +66,11 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         // Add the edit button
         navigationItem.rightBarButtonItems = [self.editButtonItem]
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = .never
+
+        if navigationController?.viewControllers.first == self {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                               target: self,
+                                                               action: #selector(closeDB(_:)))
         }
 
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -92,13 +95,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         searchController?.searchResultsUpdater = self
         searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.hidesNavigationBarDuringPresentation = false
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-            navigationItem.hidesSearchBarWhenScrolling = false
-        } else {
-            searchController?.searchBar.sizeToFit()
-            tableView.tableHeaderView = searchController?.searchBar
-        }
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -202,7 +200,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
 
-    @IBAction func closeDB(_ sender: UIBarButtonItem) {
+    @objc func closeDB(_ sender: UIBarButtonItem) {
         AppDelegate.getDelegate()?.closeDatabase()
     }
 
