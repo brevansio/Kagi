@@ -69,8 +69,9 @@
 /**
  * Persist a tree into a file, using the specified password
  */
-- (void)persist:(Kdb3Tree *)tree file:(NSString *)filename withPassword:(KdbPassword *)kdbPassword {
-    FileOutputStream *fileOutputStream = [[FileOutputStream alloc] initWithFilename:filename flags:(O_WRONLY | O_CREAT | O_TRUNC) mode:0644];
+- (void)persist:(Kdb3Tree *)tree url:(NSURL *)url withPassword:(KdbPassword *)kdbPassword {
+    [url startAccessingSecurityScopedResource];
+    FileOutputStream *fileOutputStream = [[FileOutputStream alloc] initWithFilename:url.path flags:(O_WRONLY | O_CREAT | O_TRUNC) mode:0644];
     
     // Write the header
     [self writeHeader:fileOutputStream withTree:tree];
@@ -99,20 +100,21 @@
         [shaOutputStream close];
 
         // Release and reopen the file back up and write the content hash
-        fileOutputStream = [[FileOutputStream alloc] initWithFilename:filename flags:O_WRONLY mode:0644];
+        fileOutputStream = [[FileOutputStream alloc] initWithFilename:url.path flags:O_WRONLY mode:0644];
         [fileOutputStream seek:56];
         [fileOutputStream write:[shaOutputStream getHash] length:32];
         [fileOutputStream close];
 
         // Turn on file protection
         [[NSFileManager defaultManager] setAttributes:@{NSFileProtectionKey: NSFileProtectionComplete}
-                                         ofItemAtPath:filename
+                                         ofItemAtPath:url.path
                                                 error:nil];
     } @finally {
         shaOutputStream = nil;
         aesOutputStream = nil;
         fileOutputStream = nil;
     }
+    [url stopAccessingSecurityScopedResource];
 }
 
 /**
@@ -324,7 +326,7 @@
     }
 }
 
-- (void)newFile:(NSString*)fileName withPassword:(KdbPassword *)kdbPassword {
+- (void)newFile:(NSURL*)url withPassword:(KdbPassword *)kdbPassword {
     Kdb3Tree *tree = [[Kdb3Tree alloc] init];
     
     Kdb3Group *rootGroup = [[Kdb3Group alloc] init];
@@ -361,7 +363,7 @@
     group.image = 37;
     [parentGroup addGroup:group];
     
-    [self persist:tree file:fileName withPassword:kdbPassword];
+    [self persist:tree url:url withPassword:kdbPassword];
     
 }
 

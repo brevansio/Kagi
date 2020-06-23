@@ -23,6 +23,6 @@
     
 }
 
-+ (void)persist:(KdbTree*)tree file:(NSString*)filename withPassword:(KdbPassword*)kdbPassword;
++ (void)persist:(KdbTree*)tree file:(NSURL*)url withPassword:(KdbPassword*)kdbPassword;
 
 @end

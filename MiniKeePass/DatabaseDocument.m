@@ -46,7 +46,7 @@
 }
 
 - (void)save {
-    [KdbWriterFactory persist:self.kdbTree file:self.filename withPassword:self.kdbPassword];
+    [KdbWriterFactory persist:self.kdbTree file:self.fileURL withPassword:self.kdbPassword];
 }
 
 + (void)searchGroup:(KdbGroup *)group searchText:(NSString *)searchText results:(NSMutableArray *)results {

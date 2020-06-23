@@ -49,7 +49,7 @@
     return self;
 }
 
-- (void)persist:(Kdb4Tree*)tree file:(NSString*)filename withPassword:(KdbPassword*)kdbPassword {
+- (void)persist:(Kdb4Tree*)tree url:(NSURL*)url withPassword:(KdbPassword*)kdbPassword {
     // Update the generator
     tree.generator = @"MiniKeePass";
 
@@ -88,9 +88,12 @@
     [stream close];
 
     // Write to the file
-    if (![outputStream.data writeToFile:filename options:NSDataWritingFileProtectionComplete error:nil]) {
+    [url startAccessingSecurityScopedResource];
+    if (![outputStream.data writeToURL:url options:NSDataWritingFileProtectionComplete error:nil]) {
+        [url stopAccessingSecurityScopedResource];
         @throw [NSException exceptionWithName:@"IOError" reason:@"Failed to write file" userInfo:nil];
     }
+    [url stopAccessingSecurityScopedResource];
 }
 
 - (void)writeHeaderField:(OutputStream*)outputStream headerId:(uint8_t)headerId data:(const void*)data length:(uint16_t)length {
@@ -149,7 +152,7 @@
     return [NSData dataWithBytes:hash length:sizeof(hash)];
 }
 
-- (void)newFile:(NSString*)fileName withPassword:(KdbPassword*)kdbPassword {
+- (void)newFile:(NSURL*)url withPassword:(KdbPassword*)kdbPassword {
     NSDate *currentTime = [NSDate date];
 
     Kdb4Tree *tree = [[Kdb4Tree alloc] init];
@@ -210,7 +213,7 @@
     group.image = 37;
     [parentGroup addGroup:group];
 
-    [self persist:tree file:fileName withPassword:kdbPassword];
+    [self persist:tree url:url withPassword:kdbPassword];
     
 }
 
