@@ -77,9 +77,13 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         // Create the standard toolbar
         let settingsButton = UIBarButtonItem(image: UIImage(named: "gear"), style: .plain, target: self, action: #selector(settingsPressed))
-        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionPressed))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
+#if targetEnvironment(macCatalyst)
+        standardToolbarItems = [settingsButton, spacer, spacer, addButton]
+#else
+        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionPressed))
         standardToolbarItems = [settingsButton, spacer, actionButton, spacer, addButton]
+#endif
 
         // Create the editing toolbar
         let deleteButton = UIBarButtonItem(title: NSLocalizedString("Delete", comment: ""), style: .plain, target: self, action: #selector(deletePressed))
