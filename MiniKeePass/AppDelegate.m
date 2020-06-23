@@ -21,7 +21,7 @@
 #import "DatabaseManager.h"
 #import "KeychainUtils.h"
 #import "LockScreenManager.h"
-#import "MiniKeePass-Swift.h"
+#import "Kagi-Swift.h"
 
 @implementation AppDelegate
 

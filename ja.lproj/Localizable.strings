@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2011 Jason Rush and John Flanagan. All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,7 @@
 
 // General Messages
 "Enter your PIN to unlock" = "Enter your PIN to unlock";
-"Unlock MiniKeePass" = "Unlock MiniKeePass";
+"Unlock Kagi" = "Unlock Kagi";
 "Enter the password and/or select the keyfile for the %@ database." = "Enter the password and/or select the keyfile for the %@ database.";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "Enter a new name for the password database. The correct file extension will automatically be appended.";
 "Do not forget your database password, it cannot be recovered." = "Do not forget your database password, it cannot be recovered.";
@@ -118,7 +118,7 @@
 "Password Encoding" = "Password Encoding";
 "Clear Clipboard on Timeout" = "Clear Clipboard on Timeout";
 "Clear Timeout" = "Clear Timeout";
-"Prevent unauthorized access to MiniKeePass with a PIN." = "Prevent unauthorized access to MiniKeePass with a PIN.";
+"Prevent unauthorized access to Kagi with a PIN." = "Prevent unauthorized access to Kagi with a PIN.";
 "Delete all files and passwords after too many failed attempts." = "Delete all files and passwords after too many failed attempts.";
 "Automatically close an open database after the selected timeout." = "Automatically close an open database after the selected timeout.";
 "Stores remembered database passwords in the devices's secure keychain." = "Stores remembered database passwords in the devices's secure keychain.";
@@ -136,7 +136,7 @@
 "Set PIN" = "Set PIN";
 "Confirm PIN" = "Confirm PIN";
 "PINs did not match. Try again" = "PINs did not match. Try again";
-"MiniKeePass version %@" = "MiniKeePass version %@";
+"Kagi version %@" = "Kagi version %@";
 
 // Help Titles
 "iTunes Import/Export" = "iTunes Import/Export";

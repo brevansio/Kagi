@@ -8,8 +8,8 @@ Kagi provides secure password storage on your phone that's compatible with KeePa
 - Key File Support
 - Import/Export files to Dropbox using the Dropbox iPhone app
 - Copy password entries to the clipboard for easy entry
-- Open websites in Safari while MiniKeePass runs in the background
-- Prevent unauthorized access to MiniKeePass with a PIN
+- Open websites in Safari while Kagi runs in the background
+- Prevent unauthorized access to Kagi with a PIN
 - Remember database passwords in the device's secure keychain
 - Optionally clear the clipboard after set time on devices that support background tasks
 - Generate new passwords

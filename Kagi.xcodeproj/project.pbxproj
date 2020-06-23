@@ -231,10 +231,7 @@
 		687AAA981889F8B400AB8AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/AppStore.txt; sourceTree = "<group>"; };
 		687AAAA11889FB4000AB8AC5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text; name = ru; path = ru.lproj/AppStore.txt; sourceTree = "<group>"; };
 		687AAAA21889FB4B00AB8AC5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text; name = ja; path = ja.lproj/AppStore.txt; sourceTree = "<group>"; };
-		687AAAA31889FB4C00AB8AC5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text; name = de; path = de.lproj/AppStore.txt; sourceTree = "<group>"; };
-		687AAAA41889FB4D00AB8AC5 /* it */ = {isa = PBXFileReference; lastKnownFileType = text; name = it; path = it.lproj/AppStore.txt; sourceTree = "<group>"; };
 		687AAAA51889FB4D00AB8AC5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text; name = "zh-Hans"; path = "zh-Hans.lproj/AppStore.txt"; sourceTree = "<group>"; };
-		687AAAA71889FB4F00AB8AC5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = fr; path = fr.lproj/AppStore.txt; sourceTree = "<group>"; };
 		688038951D6BB33A001424CA /* WebBrowser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebBrowser.storyboard; sourceTree = "<group>"; };
 		688038961D6BB33A001424CA /* WebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		6891C07419263611000EFC70 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text; name = pt; path = pt.lproj/AppStore.txt; sourceTree = "<group>"; };
@@ -316,8 +313,8 @@
 		689DFFD913A4273F005EBD36 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		689DFFDB13A4273F005EBD36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		689DFFDD13A4273F005EBD36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		689DFFE113A4273F005EBD36 /* MiniKeePass-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MiniKeePass-Info.plist"; path = "../MiniKeePass-Info.plist"; sourceTree = "<group>"; };
-		689DFFE513A4273F005EBD36 /* MiniKeePass-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniKeePass-Prefix.pch"; sourceTree = "<group>"; };
+		689DFFE113A4273F005EBD36 /* Kagi-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Kagi-Info.plist"; path = "../Kagi-Info.plist"; sourceTree = "<group>"; };
+		689DFFE513A4273F005EBD36 /* Kagi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kagi-Prefix.pch"; sourceTree = "<group>"; };
 		689DFFE613A4273F005EBD36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		689EA66E1D67F88500CF445E /* PasswordEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PasswordEntry.storyboard; sourceTree = "<group>"; };
 		689EA66F1D67F88500CF445E /* PasswordEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordEntryViewController.swift; sourceTree = "<group>"; };
@@ -358,11 +355,11 @@
 		689FBE971AB272BD005CB6BD /* ImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFactory.h; sourceTree = "<group>"; };
 		689FBE981AB272BD005CB6BD /* ImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFactory.m; sourceTree = "<group>"; };
 		68A7F3941D76708000467354 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		68AB0F4D1CCA82B300CFE78D /* MiniKeePass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MiniKeePass-Bridging-Header.h"; path = "../MiniKeePass-Bridging-Header.h"; sourceTree = "<group>"; };
+		68AB0F4D1CCA82B300CFE78D /* Kagi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Kagi-Bridging-Header.h"; path = "../Kagi-Bridging-Header.h"; sourceTree = "<group>"; };
 		68BFDBE21D7646B400EFACB3 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		68BFDBE31D7646B400EFACB3 /* MoveItems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoveItems.storyboard; sourceTree = "<group>"; };
 		68BFDBE41D7646B400EFACB3 /* MoveItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveItemsViewController.swift; sourceTree = "<group>"; };
-		68CBC1461A4A0F0E004A3553 /* MiniKeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiniKeePass.entitlements; sourceTree = "<group>"; };
+		68CBC1461A4A0F0E004A3553 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
 		68CE37F41404A86600E4A5E1 /* safariemail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = safariemail.html; sourceTree = "<group>"; };
 		68DDC3721405160300FC8BD8 /* keyfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = keyfiles.html; sourceTree = "<group>"; };
 		68E0830F146F24E3001C4EDF /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -730,7 +727,7 @@
 				689D042713A42C81005EBD36 /* DatabaseDocument.m */,
 				689D042813A42C81005EBD36 /* DatabaseManager.h */,
 				689D042913A42C81005EBD36 /* DatabaseManager.m */,
-				68CBC1461A4A0F0E004A3553 /* MiniKeePass.entitlements */,
+				68CBC1461A4A0F0E004A3553 /* Kagi.entitlements */,
 				689FBE7B1AB27283005CB6BD /* Cells */,
 				689FBE591AB271C6005CB6BD /* Lock Screen */,
 				68496E701AB34F8800370876 /* Settings */,
@@ -747,9 +744,9 @@
 				68E08314146F2749001C4EDF /* InfoPlist.strings */,
 				68EA62DA1CC972F300B33E42 /* LaunchScreen.storyboard */,
 				68E0830E146F24E3001C4EDF /* Localizable.strings */,
-				68AB0F4D1CCA82B300CFE78D /* MiniKeePass-Bridging-Header.h */,
-				689DFFE113A4273F005EBD36 /* MiniKeePass-Info.plist */,
-				689DFFE513A4273F005EBD36 /* MiniKeePass-Prefix.pch */,
+				68AB0F4D1CCA82B300CFE78D /* Kagi-Bridging-Header.h */,
+				689DFFE113A4273F005EBD36 /* Kagi-Info.plist */,
+				689DFFE513A4273F005EBD36 /* Kagi-Prefix.pch */,
 				689DFFE613A4273F005EBD36 /* main.m */,
 			);
 			path = "Supporting Files";
@@ -878,9 +875,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		689DFFD413A4273F005EBD36 /* MiniKeePass */ = {
+		689DFFD413A4273F005EBD36 /* Kagi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "MiniKeePass" */;
+			buildConfigurationList = 689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */;
 			buildPhases = (
 				689DFFD113A4273F005EBD36 /* Sources */,
 				689DFFD213A4273F005EBD36 /* Frameworks */,
@@ -891,7 +888,7 @@
 			);
 			dependencies = (
 			);
-			name = MiniKeePass;
+			name = Kagi;
 			productName = MiniKeePass;
 			productReference = 689DFFD513A4273F005EBD36 /* Kagi.app */;
 			productType = "com.apple.product-type.application";
@@ -917,7 +914,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 689DFFCF13A4273F005EBD36 /* Build configuration list for PBXProject "MiniKeePass" */;
+			buildConfigurationList = 689DFFCF13A4273F005EBD36 /* Build configuration list for PBXProject "Kagi" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -946,7 +943,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				689DFFD413A4273F005EBD36 /* MiniKeePass */,
+				689DFFD413A4273F005EBD36 /* Kagi */,
 			);
 		};
 /* End PBXProject section */
@@ -1134,10 +1131,7 @@
 				687AAA981889F8B400AB8AC5 /* en */,
 				687AAAA11889FB4000AB8AC5 /* ru */,
 				687AAAA21889FB4B00AB8AC5 /* ja */,
-				687AAAA31889FB4C00AB8AC5 /* de */,
-				687AAAA41889FB4D00AB8AC5 /* it */,
 				687AAAA51889FB4D00AB8AC5 /* zh-Hans */,
-				687AAAA71889FB4F00AB8AC5 /* fr */,
 				6891C07419263611000EFC70 /* pt */,
 				BDB0FF5D194C7C6F00C44DEF /* nl */,
 				C9CE4DEF1F2C47970028266A /* tr */,
@@ -1303,15 +1297,15 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BP6TU6N5BS;
-				INFOPLIST_FILE = "MiniKeePass/MiniKeePass-Info.plist";
+				INFOPLIST_FILE = "MiniKeePass/Kagi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/MiniKeePass-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MiniKeePass-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
@@ -1330,7 +1324,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BP6TU6N5BS;
-				INFOPLIST_FILE = "MiniKeePass/MiniKeePass-Info.plist";
+				INFOPLIST_FILE = "MiniKeePass/Kagi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.9.0;
@@ -1338,8 +1332,8 @@
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/MiniKeePass-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MiniKeePass-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
@@ -1350,7 +1344,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "MiniKeePass" */ = {
+		689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				689D000713A42740005EBD36 /* Debug */,
@@ -1359,7 +1353,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		689DFFCF13A4273F005EBD36 /* Build configuration list for PBXProject "MiniKeePass" */ = {
+		689DFFCF13A4273F005EBD36 /* Build configuration list for PBXProject "Kagi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				689D000413A42740005EBD36 /* Debug */,

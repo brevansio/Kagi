@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2011 Jason Rush and John Flanagan. All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -64,7 +64,7 @@
 
 // General Messages
 "Enter your PIN to unlock" = "Saisir votre code PIN pour déverrouiller";
-"Unlock MiniKeePass" = "Unlock MiniKeePass"; // FIXME
+"Unlock Kagi" = "Unlock Kagi"; // FIXME
 "Enter the password and/or select the keyfile for the %@ database." = "Saisir le mot de passe et/ou choisir le fichier de clé pour la base de données %@.";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "Saisir un nouveau nom pour la 'base de donnée password'. L'extension de fichier appropriée sera automatiquement concaténée.";
 "Do not forget your database password, it cannot be recovered." = "Do not forget your database password, it cannot be recovered."; // FIXME
@@ -121,7 +121,7 @@
 "Password Encoding" = "Encodage du MdP";
 "Clear Clipboard on Timeout" = "Effacer le presse-papiers après Timeout";
 "Clear Timeout" = "Supprimer Timeout";
-"Prevent unauthorized access to MiniKeePass with a PIN." = "Prévient des accès non autorisés à MiniKeePass à l'aide d'un code PIN.";
+"Prevent unauthorized access to Kagi with a PIN." = "Prévient des accès non autorisés à Kagi à l'aide d'un code PIN.";
 "Delete all files and passwords after too many failed attempts." = "Supprimer tous les fichiers et mots de passe après trop de tentatives infructueuses.";
 "Automatically close an open database after the selected timeout." = "Clore automatiquement les bases de données ouvertes après expiration du délai.";
 "Stores remembered database passwords in the devices's secure keychain." = "Enregistre les mots de passe mémorisés dans le porte-clés sécurisé du périphérique.";
@@ -139,7 +139,7 @@
 "Set PIN" = "Définir le code PIN";
 "Confirm PIN" = "Confirmer le code PIN";
 "PINs did not match. Try again" = "Les codes PINs sont différents. Recommencez";
-"MiniKeePass version %@" = "MiniKeePass version %@";
+"Kagi version %@" = "Kagi version %@";
 
 // Help Titles
 "iTunes Import/Export" = "Import/Export iTunes";

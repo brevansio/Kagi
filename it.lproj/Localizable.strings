@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2011 Jason Rush and John Flanagan. All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,7 @@
 
 // General Messages
 "Enter your PIN to unlock" = "Inserisci il tuo PIN per sbloccare";
-"Unlock MiniKeePass" = "Unlock MiniKeePass"; // FIXME
+"Unlock Kagi" = "Unlock Kagi"; // FIXME
 "Enter the password and/or select the keyfile for the %@ database." = "Inserisci la password e/o seleziona il file chiave per il database %@.";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "Inserisci un nuovo nome per il database delle password. L'estensione corretta del file sar aggiunta automaticamente.";
 "Do not forget your database password, it cannot be recovered." = "Do not forget your database password, it cannot be recovered."; // FIXME
@@ -118,7 +118,7 @@
 "Password Encoding" = "Codifica password";
 "Clear Clipboard on Timeout" = "Svuota la clipboard allo scadere di un intervallo";
 "Clear Timeout" = "Intervallo svuotamento";
-"Prevent unauthorized access to MiniKeePass with a PIN." = "Previeni accessi non autorizzati a MiniKeePass con un PIN.";
+"Prevent unauthorized access to Kagi with a PIN." = "Previeni accessi non autorizzati a Kagi con un PIN.";
 "Delete all files and passwords after too many failed attempts." = "Elimina tutti i file e password dopo troppi tentativi errati.";
 "Automatically close an open database after the selected timeout." = "Chiudi automaticamente un database aperto allo scadere dell'intervallo selezionato.";
 "Stores remembered database passwords in the devices's secure keychain." = "Memorizza le password del database nel portachiavi sicuro del dispositivo.";
@@ -136,7 +136,7 @@
 "Set PIN" = "Imposta PIN";
 "Confirm PIN" = "Conferma PIN";
 "PINs did not match. Try again" = "I PIN non corrispondono. Prova di nuovo";
-"MiniKeePass version %@" = "MiniKeePass versione %@";
+"Kagi version %@" = "Kagi versione %@";
 
 // Help Titles
 "iTunes Import/Export" = "Importa/Esporta da iTunes";

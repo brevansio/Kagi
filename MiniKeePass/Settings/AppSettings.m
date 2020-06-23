@@ -19,7 +19,7 @@
 #import "KeychainUtils.h"
 #import "PasswordUtils.h"
 #import "AppDelegate.h"
-#import "MiniKeePass-Swift.h"
+#import "Kagi-Swift.h"
 
 #define VERSION                    @"version"
 #define EXIT_TIME                  @"exitTime"

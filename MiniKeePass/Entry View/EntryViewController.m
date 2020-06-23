@@ -19,7 +19,7 @@
 #import "Kdb4Node.h"
 #import "AppSettings.h"
 #import "ImageFactory.h"
-#import "MiniKeePass-Swift.h"
+#import "Kagi-Swift.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
 

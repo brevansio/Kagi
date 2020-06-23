@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2011 Jason Rush and John Flanagan. All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,7 @@
 
 // General Messages
 "Enter your PIN to unlock" = "请输入 PIN 码以解锁应用";
-"Unlock MiniKeePass" = "解锁MiniKeePass应用";
+"Unlock Kagi" = "解锁Kagi应用";
 "Enter the password and/or select the keyfile for the %@ database." = "请输入密码和（或）选定密钥文件以访问“%@”数据库";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "请为密码数据库输入新的名称，文件扩展名将会自动添加";
 "Do not forget your database password, it cannot be recovered." = "请牢记您的数据库密码，密码丢失后无法重新找回";
@@ -118,7 +118,7 @@
 "Password Encoding" = "密码编码方式";
 "Clear Clipboard on Timeout" = "在指定时间后清空剪贴板";
 "Clear Timeout" = "多长时间后清空剪切板？";
-"Prevent unauthorized access to MiniKeePass with a PIN." = "使用PIN码阻止对MiniKeePass应用的非法访问";
+"Prevent unauthorized access to Kagi with a PIN." = "使用PIN码阻止对Kagi应用的非法访问";
 "Delete all files and passwords after too many failed attempts." = "尝试失败次数过多后删除所有文件和密码";
 "Automatically close an open database after the selected timeout." = "在设定的时长后自动关闭数据库";
 "Stores remembered database passwords in the devices's secure keychain." = "使用iCloud 钥匙串保存数据库密码";
@@ -136,7 +136,7 @@
 "Set PIN" = "设定 PIN 码";
 "Confirm PIN" = "确认 PIN 码";
 "PINs did not match. Try again" = "两次输入的 PIN 码不一致，请重试";
-"MiniKeePass version %@" = "MiniKeePass %@ 版本";
+"Kagi version %@" = "Kagi %@ 版本";
 
 // Help Titles
 "iTunes Import/Export" = "使用iTunes导入/导出文件";

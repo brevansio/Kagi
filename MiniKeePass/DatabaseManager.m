@@ -19,7 +19,7 @@
 #import "AppDelegate.h"
 #import "KeychainUtils.h"
 #import "AppSettings.h"
-#import "MiniKeePass-Swift.h"
+#import "Kagi-Swift.h"
 
 @implementation DatabaseManager
 
@@ -52,7 +52,7 @@ static DatabaseManager *sharedInstance;
                                                              keyFile:nil];
     
     // Create the new database
-    [writer newFile:url.path withPassword:kdbPassword];
+    [writer newFile:url withPassword:kdbPassword];
     
     // Store the password in the keychain
     if ([[AppSettings sharedInstance] rememberPasswordsEnabled]) {

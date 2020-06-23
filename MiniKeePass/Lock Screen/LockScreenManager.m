@@ -154,7 +154,7 @@ static LockScreenManager *sharedInstance = nil;
     
     // Authenticate User
     [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-            localizedReason:NSLocalizedString(@"Unlock MiniKeePass", nil)
+            localizedReason:NSLocalizedString(@"Unlock Kagi", nil)
                       reply:^(BOOL success, NSError *error) {
                           if (success) {
                               // Dismiss the lock screen

@@ -51,7 +51,7 @@
 
 - (void)persist:(Kdb4Tree*)tree url:(NSURL*)url withPassword:(KdbPassword*)kdbPassword {
     // Update the generator
-    tree.generator = @"MiniKeePass";
+    tree.generator = @"Kagi";
 
     // Configure the output stream
     DataOutputStream *outputStream = [[DataOutputStream alloc] init];
@@ -156,7 +156,7 @@
     NSDate *currentTime = [NSDate date];
 
     Kdb4Tree *tree = [[Kdb4Tree alloc] init];
-    tree.generator = @"MiniKeePass";
+    tree.generator = @"Kagi";
     tree.databaseName = @"";
     tree.databaseNameChanged = currentTime;
     tree.databaseDescription = @"";

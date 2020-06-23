@@ -29,9 +29,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define KEYCHAIN_PIN_SERVICE       @"com.jflan.MiniKeePass.pin"
-#define KEYCHAIN_PASSWORDS_SERVICE @"com.jflan.MiniKeePass.passwords"
-#define KEYCHAIN_KEYFILES_SERVICE  @"com.jflan.MiniKeePass.keyfiles"
+#define KEYCHAIN_PIN_SERVICE       @"io.brevans.Kagi.pin"
+#define KEYCHAIN_PASSWORDS_SERVICE @"io.brevans.Kagi.passwords"
+#define KEYCHAIN_KEYFILES_SERVICE  @"io.brevans.Kagi.keyfiles"
 
 @interface KeychainUtils : NSObject
 

@@ -63,7 +63,7 @@
 
 // General Messages
 "Enter your PIN to unlock" = "Voer uw PIN in om te ontgrendelen";
-"Unlock MiniKeePass" = "Unlock MiniKeePass"; // FIXME
+"Unlock Kagi" = "Unlock Kagi"; // FIXME
 "Enter the password and/or select the keyfile for the %@ database." = "Voer uw wachtwoord in en/of selecteer het sleutelbestand voor de %@ database.";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "Voer een nieuwe naam in voor de wachtwoorddatabase. De correcte bestandextensie zal automatisch worden toegevoegd.";
 "Do not forget your database password, it cannot be recovered." = "Vergeet uw databasewachtwoord niet, het kan niet hersteld worden.";
@@ -120,7 +120,7 @@
 "Password Encoding" = "Wachtwoord Encodering";
 "Clear Clipboard on Timeout" = "Leeg Klembord bij Timeout";
 "Clear Timeout" = "Leegmaken Timeout";
-"Prevent unauthorized access to MiniKeePass with a PIN." = "Voorkom ongeauthoriseerde toegang tot MiniKeePass met een PIN.";
+"Prevent unauthorized access to Kagi with a PIN." = "Voorkom ongeauthoriseerde toegang tot Kagi met een PIN.";
 "Delete all files and passwords after too many failed attempts." = "Verwijder alle bestanden en wachtwoorden na te veel mislukte pogingen.";
 "Automatically close an open database after the selected timeout." = "Sluit een geopende database automatisch na de geselecteerde timeout.";
 "Stores remembered database passwords in the devices's secure keychain." = "Slaat de herinnerde databasewachtwoorden op in de sleutelhanger van het apparaat.";
@@ -138,7 +138,7 @@
 "Set PIN" = "Stel PIN in";
 "Confirm PIN" = "Bevestig PIN";
 "PINs did not match. Try again" = "PINs komen niet overeen. Probeer opnieuw";
-"MiniKeePass version %@" = "MiniKeePass versie %@";
+"Kagi version %@" = "Kagi versie %@";
 
 // Help Titles
 "iTunes Import/Export" = "iTunes Import/Export";
