@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface DatabaseManager : NSObject
 
@@ -30,6 +30,6 @@
 /// Open the specified KeePass DatabaseDocument
 /// @param path Path to the chosen KeePass DatabaseDocument
 /// @param animated Animate the ViewController transition
-- (void)openDatabaseDocument:(NSURL *)documentURL animated:(BOOL)newAnimated;
+- (void)openDatabaseDocument:(NSURL *)documentURL inWindow:(UIWindow *)window animated:(BOOL)newAnimated;
 
 @end

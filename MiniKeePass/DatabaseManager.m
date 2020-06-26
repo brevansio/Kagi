@@ -61,12 +61,12 @@ static DatabaseManager *sharedInstance;
     }
 }
 
-- (void)openDatabaseDocument:(NSURL *)documentURL animated:(BOOL)animated {
+- (void)openDatabaseDocument:(NSURL *)documentURL inWindow:(UIWindow *)window animated:(BOOL)animated {
     BOOL databaseLoaded = NO;
     self.selectedURL = documentURL;
 
     // Get the application delegate
-    AppDelegate *appDelegate = [AppDelegate getDelegate];
+    SceneDelegate *sceneDelegate = (SceneDelegate *)window.windowScene.delegate;
     
     // Load the password and keyfile from the keychain
     NSString *password = [KeychainUtils stringForKey:self.selectedURL.lastPathComponent
@@ -81,7 +81,7 @@ static DatabaseManager *sharedInstance;
             databaseLoaded = YES;
 
             // Set the database document in the application delegate
-            appDelegate.databaseDocument = dd;
+            sceneDelegate.databaseDocument = dd;
         } @catch (NSException *exception) {
             // Ignore
         }
@@ -95,7 +95,7 @@ static DatabaseManager *sharedInstance;
 
         PasswordEntryViewController *passwordEntryViewController = (PasswordEntryViewController *)navigationController.topViewController;
         passwordEntryViewController.donePressed = ^(PasswordEntryViewController *passwordEntryViewController) {
-            [self openDatabaseWithPasswordEntryViewController:passwordEntryViewController];
+            [self openDatabaseWithPasswordEntryViewController:passwordEntryViewController inWindow: window];
         };
         passwordEntryViewController.cancelPressed = ^(PasswordEntryViewController *passwordEntryViewController) {
             [passwordEntryViewController dismissViewControllerAnimated:YES completion:nil];
@@ -104,11 +104,11 @@ static DatabaseManager *sharedInstance;
         // Initialize the filename
         passwordEntryViewController.filename = documentURL.lastPathComponent;
 
-        [appDelegate.window.rootViewController presentViewController:navigationController animated:animated completion:nil];
+        [window.rootViewController presentViewController:navigationController animated:animated completion:nil];
     }
 }
 
-- (void)openDatabaseWithPasswordEntryViewController:(PasswordEntryViewController *)passwordEntryViewController {
+- (void)openDatabaseWithPasswordEntryViewController:(PasswordEntryViewController *)passwordEntryViewController inWindow:(UIWindow *) window {
     // Get the password
     NSString *password = passwordEntryViewController.password;
     if ([password isEqualToString:@""]) {
@@ -134,8 +134,8 @@ static DatabaseManager *sharedInstance;
         // Dismiss the view controller, and after animation set the database document
         [passwordEntryViewController dismissViewControllerAnimated:YES completion:^{
             // Set the database document in the application delegate
-            AppDelegate *appDelegate = [AppDelegate getDelegate];
-            appDelegate.databaseDocument = dd;
+            SceneDelegate *sceneDelegate = (SceneDelegate *)window.windowScene.delegate;
+            sceneDelegate.databaseDocument = dd;
         }];
     } @catch (NSException *exception) {
         NSLog(@"%@", exception);

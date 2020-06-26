@@ -205,7 +205,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     @objc func closeDB(_ sender: UIBarButtonItem) {
-        AppDelegate.getDelegate()?.closeDatabase()
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.closeDatabase()
     }
 
     // MARK: - UITableView data source
@@ -344,8 +345,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
 
         // Save the database
-        let appDelegate = AppDelegate.getDelegate()
-        appDelegate?.databaseDocument.save()
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.databaseDocument?.save()
 
         // Update the table
         tableView.deleteRows(at: indexPaths as [IndexPath], with: .automatic)
@@ -372,10 +373,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
     @objc func actionPressed(sender: UIBarButtonItem) {
         // Get the URL of the database
-        guard let appDelegate = AppDelegate.getDelegate() else {
+        guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate else {
             return
         }
-        let url = URL(fileURLWithPath: appDelegate.databaseDocument.filename)
+        let url = URL(fileURLWithPath: sceneDelegate.databaseDocument!.filename)
 
         // Present the options to handle the database
         documentInteractionController = UIDocumentInteractionController(url: url)
@@ -412,8 +413,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     func addNewGroup() {
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
 
         // Create and add a group
         guard let group = databaseDocument?.kdbTree.createGroup(parentGroup) else {
@@ -457,8 +458,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     func addNewEntry() {
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
 
         // Create and add a entry
         guard let entry = databaseDocument?.kdbTree.createEntry(parentGroup) else {

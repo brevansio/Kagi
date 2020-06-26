@@ -20,14 +20,9 @@
 
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) DatabaseDocument *databaseDocument;
-
-+ (AppDelegate *)getDelegate;
 + (NSString *)documentsDirectory;
 + (NSURL *)cacheDirectoryUrl;
 
-- (void)closeDatabase;
-- (void)deleteAllData;
++ (void)deleteAllData;
 
 @end

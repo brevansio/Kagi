@@ -68,7 +68,7 @@ class FilesViewController: UIDocumentBrowserViewController, UIDocumentBrowserVie
 
     func presentDocument(at documentURL: URL) {
         let databaseManager = DatabaseManager.sharedInstance()
-        databaseManager?.openDatabaseDocument(documentURL, animated: true)
+        databaseManager?.openDatabaseDocument(documentURL, in:view.window, animated: true)
     }
 }
 

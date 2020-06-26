@@ -247,7 +247,8 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
             }
 
             // Save the database document
-            [[AppDelegate getDelegate].databaseDocument save];
+            SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            [sceneDelegate.databaseDocument save];
         }
     }
 

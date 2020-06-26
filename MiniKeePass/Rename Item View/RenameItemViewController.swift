@@ -85,8 +85,8 @@ class RenameItemViewController: UITableViewController {
         }
 
         // Save the database
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
         databaseDocument?.save()
 
         donePressed?(self)
