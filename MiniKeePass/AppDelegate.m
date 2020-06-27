@@ -161,45 +161,53 @@
 }
 
 - (void)handlePasteboardNotification:(NSNotification *)notification {
-    // Check if the clipboard has any contents
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    if (pasteboard.string == nil || [pasteboard.string isEqualToString:@""]) {
-        return;
-    }
-    
-    AppSettings *appSettings = [AppSettings sharedInstance];
-
-    // Check if the clearing the clipboard is enabled
-    if ([appSettings clearClipboardEnabled]) {
-        // Get the "version" of the pasteboard contents
-        NSInteger pasteboardVersion = pasteboard.changeCount;
-
-        // Get the clear clipboard timeout (in seconds)
-        NSInteger clearClipboardTimeout = [appSettings clearClipboardTimeout];
-
-        UIApplication *application = [UIApplication sharedApplication];
-
-        // Initiate a background task
-        __block UIBackgroundTaskIdentifier bgTask;
-        bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
-            // End the background task
-            [application endBackgroundTask:bgTask];
-        }];
+    // Catalyst has a bug when accessing the generalPasteboard here. Probably due to it being accessed in app in
+    // quick succession. Adding the extra async fixes this issue.
+#if TARGET_OS_MACCATALYST
+    dispatch_async(dispatch_get_main_queue(), ^{
+#endif
+        // Check if the clipboard has any contents
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        if (pasteboard.string == nil || [pasteboard.string isEqualToString:@""]) {
+            return;
+        }
         
-        // Start the long-running task and return immediately.
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // Sleep until it's time to clean the clipboard
-            [NSThread sleepForTimeInterval:clearClipboardTimeout];
+        AppSettings *appSettings = [AppSettings sharedInstance];
+        
+        // Check if the clearing the clipboard is enabled
+        if ([appSettings clearClipboardEnabled]) {
+            // Get the "version" of the pasteboard contents
+            NSInteger pasteboardVersion = pasteboard.changeCount;
             
-            // Clear the clipboard if it hasn't changed
-            if (pasteboardVersion == pasteboard.changeCount) {
-                pasteboard.string = @"";
-            }
+            // Get the clear clipboard timeout (in seconds)
+            NSInteger clearClipboardTimeout = [appSettings clearClipboardTimeout];
             
-            // End the background task
-            [application endBackgroundTask:bgTask];
-        });
-    }
+            UIApplication *application = [UIApplication sharedApplication];
+            
+            // Initiate a background task
+            __block UIBackgroundTaskIdentifier bgTask;
+            bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+                // End the background task
+                [application endBackgroundTask:bgTask];
+            }];
+            
+            // Start the long-running task and return immediately.
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                // Sleep until it's time to clean the clipboard
+                [NSThread sleepForTimeInterval:clearClipboardTimeout];
+                
+                // Clear the clipboard if it hasn't changed
+                if (pasteboardVersion == pasteboard.changeCount) {
+                    pasteboard.string = @"";
+                }
+
+                // End the background task
+                [application endBackgroundTask:bgTask];
+            });
+        }
+#if TARGET_OS_MACCATALYST
+    });
+#endif
 }
 
 @end
