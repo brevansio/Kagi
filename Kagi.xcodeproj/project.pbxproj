@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C85024A6254000AF06AB /* SceneDelegate.swift */; };
+		3083142F24A89A0000E8A983 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3083142E24A89A0000E8A983 /* Settings.bundle */; };
 		4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168E16B3E871004195A1 /* fr-createdb.html */; };
 		4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168F16B3E871004195A1 /* fr-dropbox.html */; };
 		4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169016B3E871004195A1 /* fr-itunes.html */; };
@@ -162,6 +163,7 @@
 /* Begin PBXFileReference section */
 		300E6FAB249F4172001365D6 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
 		3037C85024A6254000AF06AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3083142E24A89A0000E8A983 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4E8C168E16B3E871004195A1 /* fr-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-createdb.html"; sourceTree = "<group>"; };
 		4E8C168F16B3E871004195A1 /* fr-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-dropbox.html"; sourceTree = "<group>"; };
 		4E8C169016B3E871004195A1 /* fr-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-itunes.html"; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 		689DFFCA13A4273F005EBD36 = {
 			isa = PBXGroup;
 			children = (
+				3083142E24A89A0000E8A983 /* Settings.bundle */,
 				689D030313A42B63005EBD36 /* LICENSE.txt */,
 				689D030413A42B63005EBD36 /* README.md */,
 				689DFFDF13A4273F005EBD36 /* MiniKeePass */,
@@ -1014,6 +1017,7 @@
 				52E43F4F15B59C890029F979 /* ru-keyfiles.html in Resources */,
 				52E43F5015B59C890029F979 /* ru-safariemail.html in Resources */,
 				4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */,
+				3083142F24A89A0000E8A983 /* Settings.bundle in Resources */,
 				689EA6941D67F94600CF445E /* Settings.storyboard in Resources */,
 				4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */,
 				4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */,

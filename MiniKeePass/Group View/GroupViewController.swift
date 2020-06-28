@@ -68,7 +68,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         navigationItem.rightBarButtonItems = [self.editButtonItem]
 
         if navigationController?.viewControllers.first == self {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
                                                                target: self,
                                                                action: #selector(closeDB(_:)))
         }

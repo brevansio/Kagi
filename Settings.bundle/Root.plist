@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Remember Database Passwords</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enabled</string>
+			<key>Key</key>
+			<string>rememberPasswordsEnabled</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Hide Passwords</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enabled</string>
+			<key>Key</key>
+			<string>hidePasswords</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Sorting</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Alphabetically</string>
+			<key>Key</key>
+			<string>sortAlphabetically</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Searching</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Search Title Only</string>
+			<key>Key</key>
+			<string>searchTitleOnly</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Password Encoding</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Encoding</string>
+			<key>Key</key>
+			<string>passwordEncoding</string>
+			<key>DefaultValue</key>
+			<string>4</string>
+			<key>Values</key>
+			<array>
+				<integer>4</integer>
+				<integer>2415919360</integer>
+				<integer>2483028224</integer>
+				<integer>5</integer>
+				<integer>9</integer>
+				<integer>1</integer>
+				<integer>3</integer>
+				<integer>21</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>UTF-8</string>
+				<string>UTF-16 Big Endian</string>
+				<string>UTF-16 Little Endian</string>
+				<string>Latin 1 (ISO/IEC 8859-1)</string>
+				<string>Latin 2 (ISO/IEC 8859-2)</string>
+				<string>7-bit ASCII</string>
+				<string>Japanese EUC</string>
+				<string>ISO-2022-JP</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Clear Clipboard on Timeout</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enabled</string>
+			<key>Key</key>
+			<string>clearClipboardEnabled</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Clear Timeout</string>
+			<key>Key</key>
+			<string>clearClipboardTimeout</string>
+			<key>DefaultValue</key>
+			<string>30</string>
+			<key>Titles</key>
+			<array>
+				<string>30 Seconds</string>
+				<string>1 Minute</string>
+				<string>2 Minutes</string>
+				<string>3 Minutes</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>30</integer>
+				<integer>60</integer>
+				<integer>120</integer>
+				<integer>180</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Web Browser</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Integrated</string>
+			<key>Key</key>
+			<string>webBrowserIntegrated</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>
