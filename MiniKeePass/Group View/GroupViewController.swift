@@ -78,12 +78,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         // Create the standard toolbar
         let settingsButton = UIBarButtonItem(image: UIImage(named: "gear"), style: .plain, target: self, action: #selector(settingsPressed))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
-#if targetEnvironment(macCatalyst)
-        standardToolbarItems = [settingsButton, spacer, spacer, addButton]
-#else
         let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionPressed))
         standardToolbarItems = [settingsButton, spacer, actionButton, spacer, addButton]
-#endif
 
         // Create the editing toolbar
         let deleteButton = UIBarButtonItem(title: NSLocalizedString("Delete", comment: ""), style: .plain, target: self, action: #selector(deletePressed))
@@ -187,8 +183,14 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         navigationItem.setHidesBackButton(editing, animated: true)
 
         // Update the toolbar
+#if targetEnvironment(macCatalyst)
+        navigationController?.isToolbarHidden = !editing
+        toolbarItems = editingToolbarItems
+        updateEditingToolbar()
+#else
         toolbarItems = editing ? editingToolbarItems : standardToolbarItems
         updateEditingToolbar()
+#endif
 
         // Enable/Disable the search bar
         searchController?.searchBar.isUserInteractionEnabled = !editing
