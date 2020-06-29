@@ -75,6 +75,10 @@ class FilesViewController: UIDocumentBrowserViewController, UIDocumentBrowserVie
 // MARK: NewDatabaseDelegate
 
 extension FilesViewController: NewDatabaseDelegate {
+    func shouldUseTemporaryLocation() -> Bool {
+        importHandler != nil
+    }
+
     func newDatabaseCreated(url: URL?) {
         guard let successfulURL = url else {
             importHandler?(nil, .none)

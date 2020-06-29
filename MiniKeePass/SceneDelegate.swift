@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             guard let newDocument = newValue else { return }
 
-            _databaseDocument = databaseDocument
+            _databaseDocument = newDocument
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let navController = storyboard.instantiateViewController(identifier: "OpenDatabase") as? UINavigationController,
