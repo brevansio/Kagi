@@ -414,7 +414,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         present(alertController, animated: true, completion: nil)
     }
 
-    func addNewGroup() {
+    @objc func addNewGroup() {
         let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
         let databaseDocument = sceneDelegate?.databaseDocument
 
@@ -459,7 +459,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func addNewEntry() {
+    @objc func addNewEntry() {
         let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
         let databaseDocument = sceneDelegate?.databaseDocument
 

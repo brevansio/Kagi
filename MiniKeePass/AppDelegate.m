@@ -210,4 +210,66 @@
 #endif
 }
 
+- (void)buildMenuWithBuilder:(id<UIMenuBuilder>)builder {
+    if ([builder system] != [UIMenuSystem mainSystem]) {
+        return;
+    }
+
+    [builder removeMenuForIdentifier:UIMenuFormat];
+    [builder removeMenuForIdentifier:UIMenuView];
+    [builder removeMenuForIdentifier:UIMenuClose];
+    [builder removeMenuForIdentifier:UIMenuNewScene];
+    [builder removeMenuForIdentifier:UIMenuSpelling];
+    [builder removeMenuForIdentifier:UIMenuSubstitutions];
+
+    UIKeyCommand *newCommand = [UIKeyCommand commandWithTitle:@"New Database"
+                                                        image:nil
+                                                       action:@selector(newDatabase:)
+                                                        input:@"n"
+                                                modifierFlags:UIKeyModifierCommand
+                                                 propertyList:nil];
+
+    UIKeyCommand *newEntryCommand = [UIKeyCommand commandWithTitle:@"New Entry"
+                                                             image:nil
+                                                            action:@selector(addNewEntry)
+                                                             input:@"e"
+                                                     modifierFlags:UIKeyModifierCommand
+                                                      propertyList:nil];
+
+    UIKeyCommand *newGroupCommand = [UIKeyCommand commandWithTitle:@"New Group"
+                                                             image:nil
+                                                            action:@selector(addNewGroup)
+                                                             input:@"g"
+                                                     modifierFlags:UIKeyModifierCommand
+                                                      propertyList:nil];
+    UIKeyCommand *closeDBCommand = [UIKeyCommand commandWithTitle:@"Close"
+                                                            image:nil
+                                                           action:@selector(closeDB:)
+                                                            input:@"w"
+                                                    modifierFlags:UIKeyModifierCommand
+                                                     propertyList:nil];
+
+    UIMenu *newFileMenu = [UIMenu menuWithTitle:@""
+                                          image:nil
+                                     identifier:@""
+                                        options:UIMenuOptionsDisplayInline
+                                       children:@[newCommand, newEntryCommand, newGroupCommand, closeDBCommand]];
+    [builder insertChildMenu:newFileMenu atEndOfMenuForIdentifier:UIMenuFile];
+}
+
+- (IBAction)newDatabase:(id)sender {
+    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:@"newDatabase"];
+    [[UIApplication sharedApplication] requestSceneSessionActivation:nil
+                                                        userActivity:activity
+                                                             options:nil
+                                                        errorHandler:nil];
+}
+
+- (IBAction)openDatabase:(id)sender {
+    [[UIApplication sharedApplication] requestSceneSessionActivation:nil
+                                                        userActivity:nil
+                                                             options:nil
+                                                        errorHandler:nil];
+}
+
 @end

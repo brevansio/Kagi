@@ -18,7 +18,7 @@
 #import <UIKit/UIKit.h>
 #import "DatabaseDocument.h"
 
-@interface AppDelegate : NSObject <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 + (NSString *)documentsDirectory;
 + (NSURL *)cacheDirectoryUrl;

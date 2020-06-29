@@ -47,8 +47,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
+    var onActivationAction: (()->())?
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         _databaseDocument = nil
+
+        if !connectionOptions.userActivities.filter({ $0.activityType == "newDatabase" }).isEmpty {
+            onActivationAction = {
+                let storyboard = UIStoryboard(name: "NewDatabase", bundle: nil)
+                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController,
+                    let newDatabaseViewController = navController.viewControllers.first as? NewDatabaseViewController,
+                    let filesController = self.window?.rootViewController as? FilesViewController else {
+                        return
+                }
+
+                newDatabaseViewController.delegate = filesController
+                filesController.present(navController, animated: true, completion: nil)
+            }
+        }
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        onActivationAction?()
     }
 
     @objc func closeDatabase() {
