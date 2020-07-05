@@ -396,7 +396,7 @@
                             <tableViewSection headerTitle="Password Encoding" footerTitle="The string encoding used for passwords when converting them to database keys." id="WTf-Ma-R7l">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wyv-5A-xwb" detailTextLabel="CyH-DG-T4g" style="IBUITableViewCellStyleValue1" id="p70-RW-3e7">
-                                        <rect key="frame" x="0.0" y="1207.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="p70-RW-3e7" id="3yE-Cr-tz7">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
@@ -427,7 +427,7 @@
                             <tableViewSection headerTitle="Clear Clipboard on Timeout" footerTitle="Clear the contents of the clipboard after a given timeout upon performing a copy." id="6aD-nd-BAe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="tSp-rx-woH">
-                                        <rect key="frame" x="0.0" y="1343" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1302.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="tSp-rx-woH" id="Khv-Xe-yIv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -456,7 +456,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="WPB-ze-mX6" detailTextLabel="Tmt-kW-PTp" style="IBUITableViewCellStyleValue1" id="2F7-jl-P33">
-                                        <rect key="frame" x="0.0" y="1387" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1346.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="2F7-jl-P33" id="ThK-8c-OEp">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
@@ -486,7 +486,7 @@
                             <tableViewSection headerTitle="iCloud/iTunes Backup" footerTitle="Exclude databases and key files from iTunes/iCloud backups." id="Zs3-9b-0kG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="VQf-14-2bS">
-                                        <rect key="frame" x="0.0" y="1522.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1482" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="VQf-14-2bS" id="pUq-6Q-f3T">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -519,7 +519,7 @@
                             <tableViewSection headerTitle="Web Browser" footerTitle="Switch between an integrated web browser and Safari." id="ZbJ-mR-6o9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="tZZ-6T-nMy">
-                                        <rect key="frame" x="0.0" y="1658" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1617.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="tZZ-6T-nMy" id="1Eo-Md-mqX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -549,10 +549,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Tips" footerTitle="If you're enjoying Kagi, consider leaving a tip." id="hCb-I2-uSs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ck7-pA-nrZ" style="IBUITableViewCellStyleDefault" id="qZy-l6-VaH">
+                                        <rect key="frame" x="0.0" y="1737" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="qZy-l6-VaH" id="uF6-k4-COY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Pay for a Cup of Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ck7-pA-nrZ">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="UBE-uq-gz4" style="IBUITableViewCellStyleDefault" id="YXC-gG-hrb">
+                                        <rect key="frame" x="0.0" y="1781" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="YXC-gG-hrb" id="ksO-wG-Yeb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Pay for Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UBE-uq-gz4">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="O4c-S2-bxk" userLabel="Version">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="Sdb-s9-D0G" detailTextLabel="fc3-tI-Hn4" style="IBUITableViewCellStyleValue1" id="OBf-R4-5vk">
-                                        <rect key="frame" x="0.0" y="1750" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1913.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="OBf-R4-5vk" id="AaX-EY-CkO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -594,12 +632,14 @@
                         <outlet property="clearClipboardTimeoutCell" destination="2F7-jl-P33" id="2Ue-Ht-Q2L"/>
                         <outlet property="closeDatabaseEnabledSwitch" destination="H69-KF-yqe" id="fS2-aO-7cl"/>
                         <outlet property="closeDatabaseTimeoutCell" destination="0y2-e2-8ow" id="bdB-IZ-RGX"/>
+                        <outlet property="coffeeIAPCell" destination="qZy-l6-VaH" id="MSP-Vi-Vdp"/>
                         <outlet property="deleteAllDataAttemptsCell" destination="0Rc-eI-Pdn" id="lw9-Xt-MpI"/>
                         <outlet property="deleteAllDataEnabledCell" destination="68h-n2-JDk" id="WTn-i6-KWM"/>
                         <outlet property="deleteAllDataEnabledSwitch" destination="Vkp-4b-3XR" id="sDh-tf-ACx"/>
                         <outlet property="excludeFromBackupsEnabledSwitch" destination="7Ku-Wa-CXa" id="Rx2-qK-Omz"/>
                         <outlet property="hidePasswordsEnabledSwitch" destination="ofT-Wg-xcq" id="fV3-ZJ-xPx"/>
                         <outlet property="integratedWebBrowserEnabledSwitch" destination="KiU-1e-0G5" id="pbF-ds-nZJ"/>
+                        <outlet property="lunchIAPCell" destination="YXC-gG-hrb" id="J18-c5-7hv"/>
                         <outlet property="passwordEncodingCell" destination="p70-RW-3e7" id="kfr-qv-qmZ"/>
                         <outlet property="pinEnabledSwitch" destination="i82-ao-eaE" id="EnM-DA-stl"/>
                         <outlet property="pinLockTimeoutCell" destination="2QL-yf-Q2s" id="7Dh-Fl-MMH"/>

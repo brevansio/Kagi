@@ -17,3 +17,4 @@
 #import "DatabaseManager.h"
 #import "EntryViewController.h"
 #import "LockScreenManager.h"
+#import <MBProgressHUD/MBProgressHUD.h>

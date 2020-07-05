@@ -49,6 +49,9 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     @IBOutlet weak var excludeFromBackupsEnabledSwitch: UISwitch!
     
     @IBOutlet weak var integratedWebBrowserEnabledSwitch: UISwitch!
+
+    @IBOutlet weak var coffeeIAPCell: UITableViewCell!
+    @IBOutlet weak var lunchIAPCell: UITableViewCell!
     
     @IBOutlet weak var versionLabel: UILabel!
     
@@ -93,6 +96,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         // Check if TouchID is supported
         let laContext = LAContext()
         touchIdSupported = laContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,6 +138,13 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         
         // Update which controls are enabled
         updateEnabledControls()
+
+        IAPManager.shared.transactionCallback = transactionCallback
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        IAPManager.shared.transactionCallback = nil
     }
     
     fileprivate func updateEnabledControls() {
@@ -154,9 +165,15 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         setCellEnabled(deleteAllDataAttemptsCell, enabled: pinEnabled && deleteOnFailureEnabled)
         setCellEnabled(closeDatabaseTimeoutCell, enabled: closeEnabled)
         setCellEnabled(clearClipboardTimeoutCell, enabled: clearClipboardEnabled)
+
+        let iapEnabled = IAPManager.shared.enableIAP()
+        let productIds = IAPManager.shared.products.map { $0.productIdentifier }
+        setCellEnabled(coffeeIAPCell, enabled: iapEnabled && productIds.contains(PurchaseID.coffee.rawValue))
+        setCellEnabled(lunchIAPCell, enabled: iapEnabled && productIds.contains(PurchaseID.lunch.rawValue))
     }
     
     fileprivate func setCellEnabled(_ cell: UITableViewCell, enabled: Bool) {
+        cell.isUserInteractionEnabled = enabled
         cell.selectionStyle = enabled ? .blue : .none
         cell.textLabel!.isEnabled = enabled
         cell.detailTextLabel?.isEnabled = enabled
@@ -334,5 +351,54 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             // Clear the PIN entry to let them try again
             pinViewController.clearPin()
         }
+    }
+}
+
+extension SettingsViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell == coffeeIAPCell {
+            guard let coffeeProduct = IAPManager.shared.products.first(where: { $0.productIdentifier == PurchaseID.coffee.rawValue }) else {
+                return
+            }
+            MBProgressHUD.showAdded(to: view.superview!, animated: true)
+            IAPManager.shared.buy(product: coffeeProduct)
+        } else if cell == lunchIAPCell {
+            guard let lunchProduct = IAPManager.shared.products.first(where: { $0.productIdentifier == PurchaseID.lunch.rawValue }) else {
+                return
+            }
+            MBProgressHUD.showAdded(to: view.superview!, animated: true)
+            IAPManager.shared.buy(product: lunchProduct)
+        }
+    }
+
+    func transactionCallback(purchaseId: PurchaseID?, success: Bool) {
+        MBProgressHUD.hide(for: view.superview!, animated: true)
+        guard success else {
+            let errorAlert = UIAlertController(title: NSLocalizedString("Unable to complete purchase", comment: ""),
+                                               message: nil,
+                                               preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+                                               style: .cancel,
+                                               handler: nil))
+            present(errorAlert, animated: true, completion: nil)
+            return
+        }
+
+        let thankYouMessage: String
+        switch purchaseId {
+        case .some(let purchaseId):
+            thankYouMessage = purchaseId.thankYouString
+        case .none:
+            thankYouMessage = "Thank you very much!"
+        }
+        let thankYouAlert = UIAlertController(title: thankYouMessage,
+                                              message: nil,
+                                              preferredStyle: .alert)
+        thankYouAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+                                              style: .default,
+                                              handler: nil))
+        present(thankYouAlert, animated: true, completion: nil)
     }
 }

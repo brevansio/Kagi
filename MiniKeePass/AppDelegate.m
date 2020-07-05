@@ -35,6 +35,7 @@
                              object:nil];
 
     [self checkFileProtection];
+    [[IAPManager shared] requestProducts];
 
     // This is for the UIDocumentPickerVCs, but they use UIDocumentBrowserVC under the hood
     [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UIDocumentBrowserViewController class]]] setTintColor:[UIColor colorNamed:@"tintColor"]];

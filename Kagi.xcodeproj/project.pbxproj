@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C85024A6254000AF06AB /* SceneDelegate.swift */; };
 		3083142F24A89A0000E8A983 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3083142E24A89A0000E8A983 /* Settings.bundle */; };
+		30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC7F4224B1AC93005D0EEB /* IAPManager.swift */; };
 		4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168E16B3E871004195A1 /* fr-createdb.html */; };
 		4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168F16B3E871004195A1 /* fr-dropbox.html */; };
 		4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169016B3E871004195A1 /* fr-itunes.html */; };
@@ -164,6 +165,7 @@
 		300E6FAB249F4172001365D6 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
 		3037C85024A6254000AF06AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3083142E24A89A0000E8A983 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		30FC7F4224B1AC93005D0EEB /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		4E8C168E16B3E871004195A1 /* fr-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-createdb.html"; sourceTree = "<group>"; };
 		4E8C168F16B3E871004195A1 /* fr-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-dropbox.html"; sourceTree = "<group>"; };
 		4E8C169016B3E871004195A1 /* fr-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-itunes.html"; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				689EA6901D67F94600CF445E /* SelectionViewController.swift */,
 				689EA6911D67F94600CF445E /* Settings.storyboard */,
 				689EA6921D67F94600CF445E /* SettingsViewController.swift */,
+				30FC7F4224B1AC93005D0EEB /* IAPManager.swift */,
 			);
 			path = "Settings View";
 			sourceTree = "<group>";
@@ -1124,6 +1127,7 @@
 				689FBE931AB27283005CB6BD /* TextFieldCell.m in Sources */,
 				689EA6871D67F90800CF445E /* CharacterSetsViewController.swift in Sources */,
 				680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */,
+				30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */,
 				689FBE8F1AB27283005CB6BD /* ImageButtonCell.m in Sources */,
 				689FBE651AB271C6005CB6BD /* KeypadView.m in Sources */,
 				689EA6891D67F90800CF445E /* PasswordGeneratorViewController.swift in Sources */,
