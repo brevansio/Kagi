@@ -48,7 +48,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Alphabetically</string>
+			<string>Sort Groups and Entries Alphabetically</string>
 			<key>Key</key>
 			<string>sortAlphabetically</string>
 			<key>DefaultValue</key>
@@ -58,7 +58,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Searching</string>
+			<string>Search</string>
 		</dict>
 		<dict>
 			<key>Type</key>

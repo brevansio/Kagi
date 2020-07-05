@@ -58,6 +58,7 @@
 "Add new…" = "添加新项";
 "Choose Group" = "选择群组";
 "Backup" = "备份";
+"Close" = "Close";  // FIXME
 
 // General Messages
 "Enter your PIN to unlock" = "请输入 PIN 码以解锁应用";

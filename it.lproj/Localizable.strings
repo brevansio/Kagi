@@ -58,6 +58,7 @@
 "Add new…" = "Aggiungi nuovo…";
 "Choose Group" = "Seleziona gruppo";
 "Backup" = "Backup"; // FIXME
+"Close" = "Close"; // FIXME
 
 // General Messages
 "Enter your PIN to unlock" = "Inserisci il tuo PIN per sbloccare";

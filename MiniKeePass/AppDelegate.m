@@ -222,27 +222,27 @@
     [builder removeMenuForIdentifier:UIMenuSpelling];
     [builder removeMenuForIdentifier:UIMenuSubstitutions];
 
-    UIKeyCommand *newCommand = [UIKeyCommand commandWithTitle:@"New Database"
+    UIKeyCommand *newCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Database", nil)
                                                         image:nil
                                                        action:@selector(newDatabase:)
                                                         input:@"n"
                                                 modifierFlags:UIKeyModifierCommand
                                                  propertyList:nil];
 
-    UIKeyCommand *newEntryCommand = [UIKeyCommand commandWithTitle:@"New Entry"
+    UIKeyCommand *newEntryCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Entry", nil)
                                                              image:nil
                                                             action:@selector(addNewEntry)
                                                              input:@"e"
                                                      modifierFlags:UIKeyModifierCommand
                                                       propertyList:nil];
 
-    UIKeyCommand *newGroupCommand = [UIKeyCommand commandWithTitle:@"New Group"
+    UIKeyCommand *newGroupCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Group", nil)
                                                              image:nil
                                                             action:@selector(addNewGroup)
                                                              input:@"g"
                                                      modifierFlags:UIKeyModifierCommand
                                                       propertyList:nil];
-    UIKeyCommand *closeDBCommand = [UIKeyCommand commandWithTitle:@"Close"
+    UIKeyCommand *closeDBCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"Close", nil)
                                                             image:nil
                                                            action:@selector(closeDB:)
                                                             input:@"w"
