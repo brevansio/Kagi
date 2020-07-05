@@ -17,6 +17,7 @@
 
 protocol NewDatabaseDelegate {
     func newDatabaseCreated(url: URL?)
+    func shouldUseTemporaryLocation() -> Bool
 }
 
 class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
@@ -79,7 +80,17 @@ class NewDatabaseViewController: UITableViewController, UITextFieldDelegate {
         }
         
         // Create a URL to the file
-        var url = AppDelegate.cacheDirectoryUrl()
+        var url: URL?
+
+        if delegate?.shouldUseTemporaryLocation() == true {
+            url = AppDelegate.cacheDirectoryUrl()
+        } else {
+#if targetEnvironment(macCatalyst)
+            url = URL(fileURLWithPath: NSHomeDirectory(), isDirectory: true)
+#else
+            url = URL(fileURLWithPath: AppDelegate.documentsDirectory(), isDirectory: true)
+#endif
+        }
         url = url?.appendingPathComponent("\(name).\(extention)")
         
         if url == nil {

@@ -26,7 +26,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    _databaseDocument = nil;
     
     // Add a pasteboard notification listener to support clearing the clipboard
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
@@ -36,9 +35,6 @@
                              object:nil];
 
     [self checkFileProtection];
-
-    // Initialize the lock screen manager
-    [LockScreenManager sharedInstance];
 
     // This is for the UIDocumentPickerVCs, but they use UIDocumentBrowserVC under the hood
     [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UIDocumentBrowserViewController class]]] setTintColor:[UIColor colorNamed:@"tintColor"]];
@@ -55,10 +51,6 @@
     [self importUrl:url];
 
     return YES;
-}
-
-+ (AppDelegate *)getDelegate {
-    return [[UIApplication sharedApplication] delegate];
 }
 
 + (NSString *)documentsDirectory {
@@ -105,31 +97,7 @@
     [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:@"Inbox"] error:nil];
 }
 
-- (void)setDatabaseDocument:(DatabaseDocument *)newDatabaseDocument {
-    if (_databaseDocument != nil) {
-        [self closeDatabase];
-    }
-    
-    _databaseDocument = newDatabaseDocument;
-
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *navController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"OpenDatabase"];
-    GroupViewController *groupViewController = (GroupViewController *)navController.viewControllers.firstObject;
-
-    groupViewController.parentGroup = _databaseDocument.kdbTree.root;
-    groupViewController.title = [[NSURL fileURLWithPath:_databaseDocument.filename] lastPathComponent];
-
-    [self.window.rootViewController presentViewController:navController animated:YES completion:nil];
-}
-
-- (void)closeDatabase {
-    // Close any open database views
-    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-
-    _databaseDocument = nil;
-}
-
-- (void)deleteKeychainData {
++ (void)deleteKeychainData {
     // Reset some settings
     AppSettings *appSettings = [AppSettings sharedInstance];
     [appSettings setPinFailedAttempts:0];
@@ -144,9 +112,12 @@
     [KeychainUtils deleteAllForServiceName:KEYCHAIN_KEYFILES_SERVICE];
 }
 
-- (void)deleteAllData {
++ (void)deleteAllData {
     // Close the current database
-    [self closeDatabase];
+    NSSet<UIScene *> *scenes = [[UIApplication sharedApplication] connectedScenes];
+    for (UIScene *scene in scenes) {
+        [(SceneDelegate *)scene.delegate closeDatabase];
+    }
 
     // Delete data stored in system keychain
     [self deleteKeychainData];
@@ -190,45 +161,115 @@
 }
 
 - (void)handlePasteboardNotification:(NSNotification *)notification {
-    // Check if the clipboard has any contents
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    if (pasteboard.string == nil || [pasteboard.string isEqualToString:@""]) {
+    // Catalyst has a bug when accessing the generalPasteboard here. Probably due to it being accessed in app in
+    // quick succession. Adding the extra async fixes this issue.
+#if TARGET_OS_MACCATALYST
+    dispatch_async(dispatch_get_main_queue(), ^{
+#endif
+        // Check if the clipboard has any contents
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        if (pasteboard.string == nil || [pasteboard.string isEqualToString:@""]) {
+            return;
+        }
+        
+        AppSettings *appSettings = [AppSettings sharedInstance];
+        
+        // Check if the clearing the clipboard is enabled
+        if ([appSettings clearClipboardEnabled]) {
+            // Get the "version" of the pasteboard contents
+            NSInteger pasteboardVersion = pasteboard.changeCount;
+            
+            // Get the clear clipboard timeout (in seconds)
+            NSInteger clearClipboardTimeout = [appSettings clearClipboardTimeout];
+            
+            UIApplication *application = [UIApplication sharedApplication];
+            
+            // Initiate a background task
+            __block UIBackgroundTaskIdentifier bgTask;
+            bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+                // End the background task
+                [application endBackgroundTask:bgTask];
+            }];
+            
+            // Start the long-running task and return immediately.
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                // Sleep until it's time to clean the clipboard
+                [NSThread sleepForTimeInterval:clearClipboardTimeout];
+                
+                // Clear the clipboard if it hasn't changed
+                if (pasteboardVersion == pasteboard.changeCount) {
+                    pasteboard.string = @"";
+                }
+
+                // End the background task
+                [application endBackgroundTask:bgTask];
+            });
+        }
+#if TARGET_OS_MACCATALYST
+    });
+#endif
+}
+
+- (void)buildMenuWithBuilder:(id<UIMenuBuilder>)builder {
+    if ([builder system] != [UIMenuSystem mainSystem]) {
         return;
     }
-    
-    AppSettings *appSettings = [AppSettings sharedInstance];
 
-    // Check if the clearing the clipboard is enabled
-    if ([appSettings clearClipboardEnabled]) {
-        // Get the "version" of the pasteboard contents
-        NSInteger pasteboardVersion = pasteboard.changeCount;
+    [builder removeMenuForIdentifier:UIMenuFormat];
+    [builder removeMenuForIdentifier:UIMenuView];
+    [builder removeMenuForIdentifier:UIMenuClose];
+    [builder removeMenuForIdentifier:UIMenuNewScene];
+    [builder removeMenuForIdentifier:UIMenuSpelling];
+    [builder removeMenuForIdentifier:UIMenuSubstitutions];
 
-        // Get the clear clipboard timeout (in seconds)
-        NSInteger clearClipboardTimeout = [appSettings clearClipboardTimeout];
+    UIKeyCommand *newCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Database", nil)
+                                                        image:nil
+                                                       action:@selector(newDatabase:)
+                                                        input:@"n"
+                                                modifierFlags:UIKeyModifierCommand
+                                                 propertyList:nil];
 
-        UIApplication *application = [UIApplication sharedApplication];
+    UIKeyCommand *newEntryCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Entry", nil)
+                                                             image:nil
+                                                            action:@selector(addNewEntry)
+                                                             input:@"e"
+                                                     modifierFlags:UIKeyModifierCommand
+                                                      propertyList:nil];
 
-        // Initiate a background task
-        __block UIBackgroundTaskIdentifier bgTask;
-        bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
-            // End the background task
-            [application endBackgroundTask:bgTask];
-        }];
-        
-        // Start the long-running task and return immediately.
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // Sleep until it's time to clean the clipboard
-            [NSThread sleepForTimeInterval:clearClipboardTimeout];
-            
-            // Clear the clipboard if it hasn't changed
-            if (pasteboardVersion == pasteboard.changeCount) {
-                pasteboard.string = @"";
-            }
-            
-            // End the background task
-            [application endBackgroundTask:bgTask];
-        });
-    }
+    UIKeyCommand *newGroupCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Group", nil)
+                                                             image:nil
+                                                            action:@selector(addNewGroup)
+                                                             input:@"g"
+                                                     modifierFlags:UIKeyModifierCommand
+                                                      propertyList:nil];
+    UIKeyCommand *closeDBCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"Close", nil)
+                                                            image:nil
+                                                           action:@selector(closeDB:)
+                                                            input:@"w"
+                                                    modifierFlags:UIKeyModifierCommand
+                                                     propertyList:nil];
+
+    UIMenu *newFileMenu = [UIMenu menuWithTitle:@""
+                                          image:nil
+                                     identifier:@""
+                                        options:UIMenuOptionsDisplayInline
+                                       children:@[newCommand, newEntryCommand, newGroupCommand, closeDBCommand]];
+    [builder insertChildMenu:newFileMenu atEndOfMenuForIdentifier:UIMenuFile];
+}
+
+- (IBAction)newDatabase:(id)sender {
+    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:@"newDatabase"];
+    [[UIApplication sharedApplication] requestSceneSessionActivation:nil
+                                                        userActivity:activity
+                                                             options:nil
+                                                        errorHandler:nil];
+}
+
+- (IBAction)openDatabase:(id)sender {
+    [[UIApplication sharedApplication] requestSceneSessionActivation:nil
+                                                        userActivity:nil
+                                                             options:nil
+                                                        errorHandler:nil];
 }
 
 @end

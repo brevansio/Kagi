@@ -25,6 +25,7 @@
 #import "KeychainUtils.h"
 #import "PinViewController.h"
 #import "PasswordUtils.h"
+#import "Kagi-Swift.h"
 
 @interface LockScreenManager () <PinViewControllerDelegate>
 @property (nonatomic, strong) PinViewController *pinViewController;
@@ -35,24 +36,14 @@
     BOOL touchIDFailed;
 }
 
-static LockScreenManager *sharedInstance = nil;
-
-+ (instancetype)sharedInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[[self class] alloc] init];
-    });
-    return sharedInstance;
-}
-
-- (instancetype)init {
+- (instancetype)initWithWindow:(UIWindow *)window {
     self = [super init];
     if (self) {
         touchIDFailed = NO;
         
         lockWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         lockWindow.windowLevel = UIWindowLevelAlert;
-        lockWindow.screen = [UIScreen mainScreen];
+        lockWindow.windowScene = window.windowScene;
         
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
         UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
@@ -66,17 +57,17 @@ static LockScreenManager *sharedInstance = nil;
 
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self
-                               selector:@selector(applicationDidFinishLaunching:)
-                                   name:UIApplicationDidFinishLaunchingNotification
-                                 object:nil];
+                               selector:@selector(sceneWillConnect:)
+                                   name:UISceneWillConnectNotification
+                                 object:window.windowScene];
         [notificationCenter addObserver:self
-                               selector:@selector(applicationWillEnterForeground:)
-                                   name:UIApplicationWillEnterForegroundNotification
-                                 object:nil];
+                               selector:@selector(sceneWillEnterForeground:)
+                                   name:UISceneWillEnterForegroundNotification
+                                 object:window.windowScene];
         [notificationCenter addObserver:self
-                               selector:@selector(applicationDidEnterBackground:)
-                                   name:UIApplicationDidEnterBackgroundNotification
-                                 object:nil];
+                               selector:@selector(sceneDidEnterBackground:)
+                                   name:UISceneDidEnterBackgroundNotification
+                                 object:window.windowScene];
     }
     return self;
 }
@@ -214,8 +205,7 @@ static LockScreenManager *sharedInstance = nil;
                 // Check if they have failed too many times
                 if (pinFailedAttempts >= deleteOnFailureAttempts) {
                     // Delete all data
-                    AppDelegate *appDelegate = [AppDelegate getDelegate];
-                    [appDelegate deleteAllData];
+                    [AppDelegate deleteAllData];
 
                     // Dismiss the PIN screen
                     [self hideLockScreen];
@@ -247,7 +237,7 @@ static LockScreenManager *sharedInstance = nil;
 
 #pragma mark - Application Notification Handlers
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+- (void)sceneWillConnect:(NSNotification *)notification {
     // Lock if the PIN is enabled
     AppSettings *appSettings = [AppSettings sharedInstance];
     if ([appSettings pinEnabled]) {
@@ -256,10 +246,10 @@ static LockScreenManager *sharedInstance = nil;
     }
 }
 
-- (void)applicationWillEnterForeground:(NSNotification *)notification {
+- (void)sceneWillEnterForeground:(NSNotification *)notification {
     if ([self shouldCloseDatabase]) {
-        AppDelegate *appDelegate = [AppDelegate getDelegate];
-        [appDelegate closeDatabase];
+        SceneDelegate *sceneDelegate = (SceneDelegate *)lockWindow.windowScene.delegate;
+        [sceneDelegate closeDatabase];
     }
     
     if ([self shouldCheckPin]) {
@@ -269,7 +259,7 @@ static LockScreenManager *sharedInstance = nil;
     }
 }
 
-- (void)applicationDidEnterBackground:(NSNotification *)notification {
+- (void)sceneDidEnterBackground:(NSNotification *)notification {
     AppSettings *appSettings = [AppSettings sharedInstance];
     // Only set the exit time if the application is currently unlocked
     if (lockWindow.isHidden) {

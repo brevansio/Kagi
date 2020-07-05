@@ -18,16 +18,11 @@
 #import <UIKit/UIKit.h>
 #import "DatabaseDocument.h"
 
-@interface AppDelegate : NSObject <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) DatabaseDocument *databaseDocument;
-
-+ (AppDelegate *)getDelegate;
 + (NSString *)documentsDirectory;
 + (NSURL *)cacheDirectoryUrl;
 
-- (void)closeDatabase;
-- (void)deleteAllData;
++ (void)deleteAllData;
 
 @end

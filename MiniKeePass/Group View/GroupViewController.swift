@@ -66,16 +66,19 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         // Add the edit button
         navigationItem.rightBarButtonItems = [self.editButtonItem]
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = .never
+
+        if navigationController?.viewControllers.first == self {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
+                                                               target: self,
+                                                               action: #selector(closeDB(_:)))
         }
 
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
         // Create the standard toolbar
         let settingsButton = UIBarButtonItem(image: UIImage(named: "gear"), style: .plain, target: self, action: #selector(settingsPressed))
-        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionPressed))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
+        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionPressed))
         standardToolbarItems = [settingsButton, spacer, actionButton, spacer, addButton]
 
         // Create the editing toolbar
@@ -92,13 +95,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         searchController?.searchResultsUpdater = self
         searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.hidesNavigationBarDuringPresentation = false
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-            navigationItem.hidesSearchBarWhenScrolling = false
-        } else {
-            searchController?.searchBar.sizeToFit()
-            tableView.tableHeaderView = searchController?.searchBar
-        }
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -185,8 +183,14 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         navigationItem.setHidesBackButton(editing, animated: true)
 
         // Update the toolbar
+#if targetEnvironment(macCatalyst)
+        navigationController?.isToolbarHidden = !editing
+        toolbarItems = editingToolbarItems
+        updateEditingToolbar()
+#else
         toolbarItems = editing ? editingToolbarItems : standardToolbarItems
         updateEditingToolbar()
+#endif
 
         // Enable/Disable the search bar
         searchController?.searchBar.isUserInteractionEnabled = !editing
@@ -202,8 +206,9 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
 
-    @IBAction func closeDB(_ sender: UIBarButtonItem) {
-        AppDelegate.getDelegate()?.closeDatabase()
+    @objc func closeDB(_ sender: UIBarButtonItem) {
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.closeDatabase()
     }
 
     // MARK: - UITableView data source
@@ -342,8 +347,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
 
         // Save the database
-        let appDelegate = AppDelegate.getDelegate()
-        appDelegate?.databaseDocument.save()
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.databaseDocument?.save()
 
         // Update the table
         tableView.deleteRows(at: indexPaths as [IndexPath], with: .automatic)
@@ -370,10 +375,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
     @objc func actionPressed(sender: UIBarButtonItem) {
         // Get the URL of the database
-        guard let appDelegate = AppDelegate.getDelegate() else {
+        guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate else {
             return
         }
-        let url = URL(fileURLWithPath: appDelegate.databaseDocument.filename)
+        let url = URL(fileURLWithPath: sceneDelegate.databaseDocument!.filename)
 
         // Present the options to handle the database
         documentInteractionController = UIDocumentInteractionController(url: url)
@@ -409,9 +414,9 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         present(alertController, animated: true, completion: nil)
     }
 
-    func addNewGroup() {
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+    @objc func addNewGroup() {
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
 
         // Create and add a group
         guard let group = databaseDocument?.kdbTree.createGroup(parentGroup) else {
@@ -454,9 +459,9 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func addNewEntry() {
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+    @objc func addNewEntry() {
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
 
         // Create and add a entry
         guard let entry = databaseDocument?.kdbTree.createEntry(parentGroup) else {

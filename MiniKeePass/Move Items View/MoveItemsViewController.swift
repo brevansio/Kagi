@@ -40,10 +40,10 @@ class MoveItemsViewController: UITableViewController {
         groupModels = []
 
         // Get parameters for the root
-        let appDelegate = AppDelegate.getDelegate()
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
 
-        let rootGroup = appDelegate?.databaseDocument.kdbTree.root
-        let filename = appDelegate?.databaseDocument.filename
+        let rootGroup = sceneDelegate?.databaseDocument?.kdbTree.root
+        let filename = sceneDelegate?.databaseDocument?.filename
         
         let url = URL(fileURLWithPath: (filename)!)
 
@@ -73,8 +73,8 @@ class MoveItemsViewController: UITableViewController {
         }
 
         // Check if trying to move entries to top level in 1.x database
-        let appDelegate = AppDelegate.getDelegate()
-        let tree = appDelegate?.databaseDocument.kdbTree
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let tree = sceneDelegate?.databaseDocument?.kdbTree
         if (containsEntry && group == tree?.root && tree is Kdb3Tree) {
             return false
         }
@@ -146,8 +146,8 @@ class MoveItemsViewController: UITableViewController {
         }
 
         // Save the database
-        let appDelegate = AppDelegate.getDelegate()
-        let databaseDocument = appDelegate?.databaseDocument
+        let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
+        let databaseDocument = sceneDelegate?.databaseDocument
         databaseDocument?.save()
 
         groupSelected?(self, groupModel.group)

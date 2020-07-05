@@ -61,6 +61,7 @@
 "Add new…" = "Ajouter nouveau…";
 "Choose Group" = "Choisir le Groupe";
 "Backup" = "Sauvegarde";
+"Close" = "Close";  // FIXME
 
 // General Messages
 "Enter your PIN to unlock" = "Saisir votre code PIN pour déverrouiller";

@@ -68,13 +68,17 @@ class FilesViewController: UIDocumentBrowserViewController, UIDocumentBrowserVie
 
     func presentDocument(at documentURL: URL) {
         let databaseManager = DatabaseManager.sharedInstance()
-        databaseManager?.openDatabaseDocument(documentURL, animated: true)
+        databaseManager?.openDatabaseDocument(documentURL, in:view.window, animated: true)
     }
 }
 
 // MARK: NewDatabaseDelegate
 
 extension FilesViewController: NewDatabaseDelegate {
+    func shouldUseTemporaryLocation() -> Bool {
+        importHandler != nil
+    }
+
     func newDatabaseCreated(url: URL?) {
         guard let successfulURL = url else {
             importHandler?(nil, .none)

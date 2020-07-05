@@ -15,10 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface LockScreenManager : NSObject
 
-+ (instancetype)sharedInstance;
+- (instancetype)initWithWindow:(UIWindow *)window;
 
 @end

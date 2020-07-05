@@ -109,6 +109,11 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
     _defaultCells = @[titleCell, usernameCell, passwordCell, urlCell];
     
     _editingStringFields = [NSMutableArray array];
+
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"hidePasswords"
+                                               options:NSKeyValueObservingOptionNew
+                                               context:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -147,6 +152,11 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 
     // Remove listeners from the keyboard
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)dealloc {
+    [[NSUserDefaults standardUserDefaults] removeObserver:self
+                                               forKeyPath:@"hidePasswords"];
 }
 
 - (void)applicationWillResignActive:(id)sender {
@@ -247,7 +257,8 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
             }
 
             // Save the database document
-            [[AppDelegate getDelegate].databaseDocument save];
+            SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            [sceneDelegate.databaseDocument save];
         }
     }
 
@@ -690,6 +701,12 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
         [self presentViewController:navigationController animated:YES completion:nil];
     } else {
         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"hidePasswords"] && object == [NSUserDefaults standardUserDefaults]) {
+        passwordCell.textField.secureTextEntry = [[AppSettings sharedInstance] hidePasswords];
     }
 }
 

@@ -60,6 +60,7 @@
 "Add new…" = "Добавить…";
 "Choose Group" = "Выбор группы";
 "Backup" = "Резервирование";
+"Close" = "Close";  // FIXME
 
 // General Messages
 "Enter your PIN to unlock" = "Введите PIN-код для разблокировки";
