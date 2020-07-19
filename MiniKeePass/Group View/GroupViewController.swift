@@ -321,6 +321,54 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         deleteItems(indexPaths: [indexPath])
     }
 
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            let moveAction = UIAction(title: NSLocalizedString("Move", comment: "")) { _ in
+                self.moveItems(at: [indexPath])
+            }
+
+            let renameAction = UIAction(title: NSLocalizedString("Rename", comment: "")) { _ in
+                self.renameItem(at: indexPath)
+            }
+
+            let deleteAction = UIAction(title: NSLocalizedString("Delete", comment: ""), attributes: [.destructive]) { _ in
+                self.deleteItems(indexPaths: [indexPath])
+            }
+
+            if Section.AllValues[indexPath.section] == .entries {
+                let entry = self.entries[indexPath.row]
+                let copyNameAction = UIAction(title: NSLocalizedString("Copy Username", comment: "")) { _ in
+                    UIPasteboard.general.string = entry.username()
+                }
+
+                let copyPasswordAction = UIAction(title: NSLocalizedString("Copy Password", comment: "")) { _ in
+                    UIPasteboard.general.string = entry.password()
+                }
+
+                let copyURLAction = UIAction(title: NSLocalizedString("Copy URL", comment: "")) { _ in
+                    UIPasteboard.general.string = entry.url()
+                }
+
+                let entryMenu = UIMenu(title: "",
+                                       image: nil,
+                                       identifier: nil,
+                                       options: .displayInline,
+                                       children: [copyNameAction, copyPasswordAction, copyURLAction])
+                return UIMenu(title: "",
+                              image: nil,
+                              identifier: nil,
+                              options: .displayInline,
+                              children: [entryMenu, moveAction, renameAction, deleteAction])
+            } else {
+                return UIMenu(title: "",
+                              image: nil,
+                              identifier: nil,
+                              options: .displayInline,
+                              children: [moveAction, renameAction, deleteAction])
+            }
+        }
+    }
+
     func deleteItems(indexPaths: [IndexPath]) -> Void {
         // Create a list of everything to delete
         var groupsToDelete: [KdbGroup] = []
@@ -513,7 +561,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
             // Nothing selected. Shouldn't have been possible to press "Move"
             return;
         }
+        moveItems(at: indexPaths)
+    }
 
+    func moveItems(at indexPaths: [IndexPath]) {
         // Create a list of all the items to move
         var itemsToMove: [AnyObject] = []
         for indexPath in indexPaths {
@@ -558,12 +609,17 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         present(navigationController, animated: true, completion: nil)
     }
 
+
+
     @objc func renamePressed(sender: UIBarButtonItem) {
         guard let indexPath = tableView.indexPathForSelectedRow else {
             // Nothing selected. This shoudn't have been called
             return
         }
+        renameItem(at: indexPath)
+    }
 
+    func renameItem(at indexPath: IndexPath) {
         // Load the RenameItem storyboard
         let storyboard = UIStoryboard(name: "RenameItem", bundle: nil)
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
