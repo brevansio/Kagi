@@ -38,6 +38,10 @@ class MoveItemsViewController: UITableViewController {
         super.viewWillAppear(animated)
 
         groupModels = []
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         // Get parameters for the root
         let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
@@ -98,6 +102,7 @@ class MoveItemsViewController: UITableViewController {
         for subGroup in subGroups {
             addGroup(subGroup, name: subGroup.name, indent: indent + 1)
         }
+        tableView.reloadData()
     }
 
     // MARK: - Actions
