@@ -45,9 +45,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     
     @IBOutlet weak var clearClipboardEnabledSwitch: UISwitch!
     @IBOutlet weak var clearClipboardTimeoutCell: UITableViewCell!
-    
-    @IBOutlet weak var excludeFromBackupsEnabledSwitch: UISwitch!
-    
+
     @IBOutlet weak var integratedWebBrowserEnabledSwitch: UISwitch!
 
     @IBOutlet weak var coffeeIAPCell: UITableViewCell!
@@ -130,9 +128,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             
             clearClipboardEnabledSwitch.isOn = appSettings.clearClipboardEnabled()
             clearClipboardTimeoutCell.detailTextLabel!.text = clearClipboardTimeouts[appSettings.clearClipboardTimeoutIndex()]
-            
-            excludeFromBackupsEnabledSwitch.isOn = appSettings.backupDisabled()
-            
+
             integratedWebBrowserEnabledSwitch.isOn = appSettings.webBrowserIntegrated()
         }
         
@@ -305,10 +301,6 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         
         // Update which controls are enabled
         updateEnabledControls()
-    }
-    
-    @IBAction func excludeFromBackupEnabledChanged(_ sender: UISwitch) {
-        self.appSettings?.setBackupDisabled(excludeFromBackupsEnabledSwitch.isOn)
     }
     
     @IBAction func integratedWebBrowserEnabledChanged(_ sender: UISwitch) {
