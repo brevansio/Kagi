@@ -22,6 +22,7 @@
 
 @property (nonatomic, strong) KdbTree *kdbTree;
 @property (nonatomic, copy) NSString *filename;
+@property (nonatomic, strong) NSURL *url;
 
 /// Create a KeePass Database
 /// @param filename Database filename

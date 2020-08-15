@@ -78,21 +78,14 @@
     // Close the current database
     NSSet<UIScene *> *scenes = [[UIApplication sharedApplication] connectedScenes];
     for (UIScene *scene in scenes) {
+        NSURL *url = [(SceneDelegate *)scene.delegate databaseDocument].url;
         [(SceneDelegate *)scene.delegate closeDatabase];
+        [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
+
     }
 
     // Delete data stored in system keychain
     [self deleteKeychainData];
-
-    // Get the files in the Documents directory
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *documentsDirectory = [AppDelegate documentsDirectory];
-    NSArray *files = [fileManager contentsOfDirectoryAtPath:documentsDirectory error:nil];
-    
-    // Delete all the files in the Documents directory
-    for (NSString *file in files) {
-        [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:file] error:nil];
-    }
 }
 
 - (void)checkFileProtection {
