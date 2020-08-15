@@ -621,7 +621,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ZmO-Ci-csI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="K19-og-TY5">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="K19-og-TY5">
                             <connections>
                                 <action selector="donePressedAction:" destination="mlm-01-Slc" id="lR6-ec-CzG"/>
                             </connections>
