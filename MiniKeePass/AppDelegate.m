@@ -48,12 +48,6 @@
     [self checkFileProtection];
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [self importUrl:url];
-
-    return YES;
-}
-
 + (NSString *)documentsDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     return [paths objectAtIndex:0];
@@ -63,39 +57,6 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *urls = [fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask];
     return [urls firstObject];
-}
-
-- (void)importUrl:(NSURL *)url {
-    // Get the filename
-    NSString *filename = [url lastPathComponent];
-
-    // Get the full path of where we're going to move the file
-    NSString *documentsDirectory = [AppDelegate documentsDirectory];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
-
-    // Move input file into documents directory
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isDirectory = NO;
-    if ([fileManager fileExistsAtPath:path isDirectory:&isDirectory]) {
-        if (isDirectory) {
-            // Should not have been passed a directory
-            return;
-        } else {
-            [fileManager removeItemAtPath:path error:nil];
-        }
-    }
-    [fileManager moveItemAtURL:url toURL:[NSURL fileURLWithPath:path] error:nil];
-
-    // Make sure the file is writable.
-    if (![fileManager isWritableFileAtPath:path]) {
-        [fileManager setAttributes:@{NSFilePosixPermissions:@0711} ofItemAtPath:path error:nil];
-    }
-    
-    // Set file protection on the new file
-    [fileManager setAttributes:@{NSFileProtectionKey:NSFileProtectionComplete} ofItemAtPath:path error:nil];
-
-    // Delete the Inbox folder if it exists
-    [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:@"Inbox"] error:nil];
 }
 
 + (void)deleteKeychainData {
