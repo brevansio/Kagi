@@ -183,6 +183,12 @@
                                                         input:@"n"
                                                 modifierFlags:UIKeyModifierCommand
                                                  propertyList:nil];
+    UIKeyCommand *openCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"Open Database", nil)
+                                                        image:nil
+                                                       action:@selector(openDatabase:)
+                                                        input:@"o"
+                                                modifierFlags:UIKeyModifierCommand
+                                                 propertyList:nil];
 
     UIKeyCommand *newEntryCommand = [UIKeyCommand commandWithTitle:NSLocalizedString(@"New Entry", nil)
                                                              image:nil
@@ -208,7 +214,7 @@
                                           image:nil
                                      identifier:@""
                                         options:UIMenuOptionsDisplayInline
-                                       children:@[newCommand, newEntryCommand, newGroupCommand, closeDBCommand]];
+                                       children:@[newCommand, openCommand, newEntryCommand, newGroupCommand, closeDBCommand]];
     [builder insertChildMenu:newFileMenu atEndOfMenuForIdentifier:UIMenuFile];
 }
 
