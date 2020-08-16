@@ -27,10 +27,10 @@
 "New Group" = "新しいグループ";
 "New Entry" = "新しいエントリー";
 "Edit Group" = "グループを編集";
-"Edit Entry" = "Edit Entry";
+"Edit Entry" = "エントリーを編集";
 "Title" = "題名";
 "Image" = "イメージ";
-"Images" = "Images";
+"Images" = "イメージ";
 "Username" = "ユーザー名";
 "Password" = "パスワード";
 "Confirm Password" = "（再入力）パスワード";
@@ -45,13 +45,13 @@
 "Version 2.x" = "バージョンの2.x";
 "None" = "ない";
 "Name" = "名前";
-"Value" = "Value";
-"Delete" = "Delete";
+"Value" = "値";
+"Delete" = "削除";
 "Move" = "Move";
 "Rename" = "リネーム";
 "Database Name" = "データベース名";
-"Last Modified" = "Last Modified";
-"Copied" = "Copied";
+"Last Modified" = "最後変更";
+"Copied" = "コピーした";
 "In Memory Protection" = "In Memory Protection";
 "Custom Field" = "Custom Field";
 "Custom Fields" = "Custom Fields";
@@ -86,8 +86,8 @@
 // Settings Page
 "Settings" = "設定";
 "PIN Enabled" = "PIN Enabled";
-"Touch ID" = "Touch ID"; // FIXME
-"Use your fingerprint as an alternative to entering a PIN if supported." = "Use your fingerprint as an alternative to entering a PIN if supported."; // FIXME
+"Touch ID / Face ID" = "Touch ID / Face ID"; // FIXME
+"Use your fingerprint or face as an alternative to entering a PIN if supported." = "Use your fingerprint or face as an alternative to entering a PIN if supported."; // FIXME
 "Lock Timeout" = "Lock Timeout";
 "Immediately" = "Immediately";
 "30 Seconds" = "30 秒";

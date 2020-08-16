@@ -32,9 +32,6 @@
 		52E43F5015B59C890029F979 /* ru-safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4B15B59C890029F979 /* ru-safariemail.html */; };
 		6802C36F1A425D7300595AC9 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6802C36E1A425D7300595AC9 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
-		680C9D771D69E2A70040FB43 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680C9D761D69E2A70040FB43 /* HelpViewController.swift */; };
-		680C9D7A1D69E36C0040FB43 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 680C9D791D69E36C0040FB43 /* Help.storyboard */; };
-		680C9D7C1D69EB540040FB43 /* HelpWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680C9D7B1D69EB540040FB43 /* HelpWebViewController.swift */; };
 		682D450D1603883900156830 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
 		682D450E1603883900156830 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
 		682D450F1603883900156830 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
@@ -110,8 +107,6 @@
 		689EA6871D67F90800CF445E /* CharacterSetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA6841D67F90800CF445E /* CharacterSetsViewController.swift */; };
 		689EA6881D67F90800CF445E /* PasswordGenerator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689EA6851D67F90800CF445E /* PasswordGenerator.storyboard */; };
 		689EA6891D67F90800CF445E /* PasswordGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA6861D67F90800CF445E /* PasswordGeneratorViewController.swift */; };
-		689EA68D1D67F93200CF445E /* RenameDatabase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689EA68B1D67F93200CF445E /* RenameDatabase.storyboard */; };
-		689EA68E1D67F93200CF445E /* RenameDatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA68C1D67F93200CF445E /* RenameDatabaseViewController.swift */; };
 		689EA6931D67F94600CF445E /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA6901D67F94600CF445E /* SelectionViewController.swift */; };
 		689EA6941D67F94600CF445E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689EA6911D67F94600CF445E /* Settings.storyboard */; };
 		689EA6951D67F94600CF445E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA6921D67F94600CF445E /* SettingsViewController.swift */; };
@@ -197,9 +192,6 @@
 		6802C36E1A425D7300595AC9 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		680C277416050C7A009403DE /* DDXMLDocument+MKPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLDocument+MKPAdditions.h"; sourceTree = "<group>"; };
 		680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLDocument+MKPAdditions.m"; sourceTree = "<group>"; };
-		680C9D761D69E2A70040FB43 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		680C9D791D69E36C0040FB43 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
-		680C9D7B1D69EB540040FB43 /* HelpWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpWebViewController.swift; sourceTree = "<group>"; };
 		682D44F11603883900156830 /* AesInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AesInputStream.h; sourceTree = "<group>"; };
 		682D44F21603883900156830 /* AesInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AesInputStream.m; sourceTree = "<group>"; };
 		682D44F31603883900156830 /* AesOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AesOutputStream.h; sourceTree = "<group>"; };
@@ -335,8 +327,6 @@
 		689EA6841D67F90800CF445E /* CharacterSetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetsViewController.swift; sourceTree = "<group>"; };
 		689EA6851D67F90800CF445E /* PasswordGenerator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PasswordGenerator.storyboard; sourceTree = "<group>"; };
 		689EA6861D67F90800CF445E /* PasswordGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorViewController.swift; sourceTree = "<group>"; };
-		689EA68B1D67F93200CF445E /* RenameDatabase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RenameDatabase.storyboard; sourceTree = "<group>"; };
-		689EA68C1D67F93200CF445E /* RenameDatabaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenameDatabaseViewController.swift; sourceTree = "<group>"; };
 		689EA6901D67F94600CF445E /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		689EA6911D67F94600CF445E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		689EA6921D67F94600CF445E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -459,16 +449,6 @@
 				52E43F4B15B59C890029F979 /* ru-safariemail.html */,
 			);
 			path = ru;
-			sourceTree = "<group>";
-		};
-		680C9D751D69E2A70040FB43 /* Help View */ = {
-			isa = PBXGroup;
-			children = (
-				680C9D791D69E36C0040FB43 /* Help.storyboard */,
-				680C9D761D69E2A70040FB43 /* HelpViewController.swift */,
-				680C9D7B1D69EB540040FB43 /* HelpWebViewController.swift */,
-			);
-			path = "Help View";
 			sourceTree = "<group>";
 		};
 		682D44F01603883900156830 /* IOStream */ = {
@@ -723,13 +703,11 @@
 				5271A98E1EDA16D200B9AF2C /* Entry View */,
 				68767B631D6F23350039EFE0 /* Files View */,
 				68A7F3931D76708000467354 /* Group View */,
-				680C9D751D69E2A70040FB43 /* Help View */,
 				689EA6731D67F8B500CF445E /* Image Selector View */,
 				68BFDBE11D7646B400EFACB3 /* Move Items View */,
 				689EA67C1D67F8D500CF445E /* New Database View */,
 				689EA66C1D67F88500CF445E /* Password Entry View */,
 				689EA6831D67F90800CF445E /* Password Generator View */,
-				689EA68A1D67F93200CF445E /* Rename Database View */,
 				6895D2E61D68F95D003D8C44 /* Rename Item View */,
 				689EA68F1D67F94600CF445E /* Settings View */,
 				688038941D6BB33A001424CA /* Web Browser View */,
@@ -800,15 +778,6 @@
 				689EA6861D67F90800CF445E /* PasswordGeneratorViewController.swift */,
 			);
 			path = "Password Generator View";
-			sourceTree = "<group>";
-		};
-		689EA68A1D67F93200CF445E /* Rename Database View */ = {
-			isa = PBXGroup;
-			children = (
-				689EA68B1D67F93200CF445E /* RenameDatabase.storyboard */,
-				689EA68C1D67F93200CF445E /* RenameDatabaseViewController.swift */,
-			);
-			path = "Rename Database View";
 			sourceTree = "<group>";
 		};
 		689EA68F1D67F94600CF445E /* Settings View */ = {
@@ -994,7 +963,6 @@
 				6895D2E91D68F95D003D8C44 /* RenameItem.storyboard in Resources */,
 				689D032F13A42B63005EBD36 /* dropbox.html in Resources */,
 				689D033013A42B63005EBD36 /* itunes.html in Resources */,
-				689EA68D1D67F93200CF445E /* RenameDatabase.storyboard in Resources */,
 				52A177BC13EB698E00CEEFCE /* createdb.html in Resources */,
 				68CE37F51404A86600E4A5E1 /* safariemail.html in Resources */,
 				68DDC3731405160300FC8BD8 /* keyfiles.html in Resources */,
@@ -1025,7 +993,6 @@
 				4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */,
 				4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */,
 				5271A98D1ED7CA3E00B9AF2C /* TextFieldCell.xib in Resources */,
-				680C9D7A1D69E36C0040FB43 /* Help.storyboard in Resources */,
 				4E8C169616B3E871004195A1 /* fr-keyfiles.html in Resources */,
 				4E8C169716B3E871004195A1 /* fr-safariemail.html in Resources */,
 			);
@@ -1070,7 +1037,6 @@
 				689D03DB13A42B63005EBD36 /* Kdb3Writer.m in Sources */,
 				689D03DC13A42B63005EBD36 /* Kdb4Node.m in Sources */,
 				689D03DD13A42B63005EBD36 /* Kdb4Parser.m in Sources */,
-				689EA68E1D67F93200CF445E /* RenameDatabaseViewController.swift in Sources */,
 				689D03DE13A42B63005EBD36 /* Kdb4Persist.m in Sources */,
 				689D03DF13A42B63005EBD36 /* Kdb4Reader.m in Sources */,
 				689D03E013A42B63005EBD36 /* Kdb4Writer.m in Sources */,
@@ -1100,9 +1066,7 @@
 				689D045013A42C82005EBD36 /* DatabaseManager.m in Sources */,
 				68767B651D6F23350039EFE0 /* FilesViewController.swift in Sources */,
 				689D045113A42C82005EBD36 /* EntryViewController.m in Sources */,
-				680C9D7C1D69EB540040FB43 /* HelpWebViewController.swift in Sources */,
 				68A7F3951D76708000467354 /* GroupViewController.swift in Sources */,
-				680C9D771D69E2A70040FB43 /* HelpViewController.swift in Sources */,
 				689D045513A42C82005EBD36 /* AppDelegate.m in Sources */,
 				689FBE791AB27228005CB6BD /* PasswordUtils.m in Sources */,
 				689FBE641AB271C6005CB6BD /* KeypadButton.m in Sources */,

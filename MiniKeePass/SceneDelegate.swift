@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private var lockScreenManager: LockScreenManager?
 
-
     private var _databaseDocument: DatabaseDocument?
     @objc var databaseDocument: DatabaseDocument? {
         get {
@@ -65,6 +64,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 filesController.present(navController, animated: true, completion: nil)
             }
         }
+    }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        // TODO: Handle multiple URLs
+        guard let url = URLContexts.randomElement()?.url else { return }
+
+        guard let filesController = window?.rootViewController as? FilesViewController else { return }
+
+        filesController.presentDocument(at: url)
+
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

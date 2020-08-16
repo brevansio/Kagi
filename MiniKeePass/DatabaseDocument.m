@@ -34,6 +34,7 @@
         }
 
         self.filename = url.lastPathComponent;
+        self.url = url;
 
         NSStringEncoding passwordEncoding = [[AppSettings sharedInstance] passwordEncoding];
         self.kdbPassword = [[KdbPassword alloc] initWithPassword:password

@@ -27,7 +27,7 @@
 #define PIN                        @"PIN"
 #define PIN_LOCK_TIMEOUT           @"pinLockTimeout"
 #define PIN_FAILED_ATTEMPTS        @"pinFailedAttempts"
-#define TOUCH_ID_ENABLED           @"touchIdEnabled"
+#define BIOMETRIC_AUTH_ENABLED     @"biometricAuthEnabled"
 #define DELETE_ON_FAILURE_ENABLED  @"deleteOnFailureEnabled"
 #define DELETE_ON_FAILURE_ATTEMPTS @"deleteOnFailureAttempts"
 #define CLOSE_ENABLED              @"closeEnabled"
@@ -254,12 +254,12 @@ static AppSettings *sharedInstance;
     return [userDefaults boolForKey:DELETE_ON_FAILURE_ENABLED];
 }
 
-- (BOOL)touchIdEnabled {
-    return [userDefaults boolForKey:TOUCH_ID_ENABLED];
+- (BOOL)biometricsEnabled {
+    return [userDefaults boolForKey:BIOMETRIC_AUTH_ENABLED];
 }
 
-- (void)setTouchIdEnabled:(BOOL)touchIdEnabled {
-    [userDefaults setBool:touchIdEnabled forKey:TOUCH_ID_ENABLED];
+- (void)setBiometricsEnabled:(BOOL)biometricsEnabled {
+    [userDefaults setBool:biometricsEnabled forKey:BIOMETRIC_AUTH_ENABLED];
 }
 
 - (void)setDeleteOnFailureEnabled:(BOOL)deleteOnFailureEnabled {

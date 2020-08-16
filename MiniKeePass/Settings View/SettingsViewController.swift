@@ -23,8 +23,8 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     @IBOutlet weak var pinEnabledSwitch: UISwitch!
     @IBOutlet weak var pinLockTimeoutCell: UITableViewCell!
     
-    @IBOutlet weak var touchIdEnabledCell: UITableViewCell!
-    @IBOutlet weak var touchIdEnabledSwitch: UISwitch!
+    @IBOutlet weak var biometricsEnabledCell: UITableViewCell!
+    @IBOutlet weak var biometricsEnabledSwitch: UISwitch!
     
     @IBOutlet weak var deleteAllDataEnabledCell: UITableViewCell!
     @IBOutlet weak var deleteAllDataEnabledSwitch: UISwitch!
@@ -45,9 +45,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     
     @IBOutlet weak var clearClipboardEnabledSwitch: UISwitch!
     @IBOutlet weak var clearClipboardTimeoutCell: UITableViewCell!
-    
-    @IBOutlet weak var excludeFromBackupsEnabledSwitch: UISwitch!
-    
+
     @IBOutlet weak var integratedWebBrowserEnabledSwitch: UISwitch!
 
     @IBOutlet weak var coffeeIAPCell: UITableViewCell!
@@ -84,7 +82,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
                                           NSLocalizedString("3 Minutes", comment: "")]
     
     fileprivate var appSettings = AppSettings.sharedInstance()
-    fileprivate var touchIdSupported = false
+    fileprivate var biometricsSupported = false
     fileprivate var tempPin: String? = nil
     
     override func viewDidLoad() {
@@ -93,9 +91,9 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         // Get the version number
         versionLabel.text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
-        // Check if TouchID is supported
+        // Check if TouchID/FaceID is supported
         let laContext = LAContext()
-        touchIdSupported = laContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        biometricsSupported = laContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)
         tableView.delegate = self
     }
     
@@ -110,7 +108,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             pinEnabledSwitch.isOn = appSettings.pinEnabled()
             pinLockTimeoutCell.detailTextLabel!.text = pinLockTimeouts[appSettings.pinLockTimeoutIndex()]
             
-            touchIdEnabledSwitch.isOn = touchIdSupported && appSettings.touchIdEnabled()
+            biometricsEnabledSwitch.isOn = biometricsSupported && appSettings.biometricsEnabled()
             
             deleteAllDataEnabledSwitch.isOn = appSettings.deleteOnFailureEnabled()
             deleteAllDataAttemptsCell.detailTextLabel!.text = deleteAllDataAttempts[appSettings.deleteOnFailureAttemptsIndex()]
@@ -130,9 +128,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             
             clearClipboardEnabledSwitch.isOn = appSettings.clearClipboardEnabled()
             clearClipboardTimeoutCell.detailTextLabel!.text = clearClipboardTimeouts[appSettings.clearClipboardTimeoutIndex()]
-            
-            excludeFromBackupsEnabledSwitch.isOn = appSettings.backupDisabled()
-            
+
             integratedWebBrowserEnabledSwitch.isOn = appSettings.webBrowserIntegrated()
         }
         
@@ -159,8 +155,8 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         
          // Enable/disable the components dependant on settings
         setCellEnabled(pinLockTimeoutCell, enabled: pinEnabled)
-        setCellEnabled(touchIdEnabledCell, enabled: pinEnabled && touchIdSupported)
-        touchIdEnabledSwitch.isEnabled = pinEnabled && touchIdSupported
+        setCellEnabled(biometricsEnabledCell, enabled: pinEnabled && biometricsSupported)
+        biometricsEnabledSwitch.isEnabled = pinEnabled && biometricsSupported
         setCellEnabled(deleteAllDataEnabledCell, enabled: pinEnabled)
         setCellEnabled(deleteAllDataAttemptsCell, enabled: pinEnabled && deleteOnFailureEnabled)
         setCellEnabled(closeDatabaseTimeoutCell, enabled: closeEnabled)
@@ -263,8 +259,8 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         }
     }
     
-    @IBAction func touchIdEnabledChanged(_ sender: UISwitch) {
-        self.appSettings?.setTouchIdEnabled(touchIdEnabledSwitch.isOn)
+    @IBAction func biometricsEnabledChanged(_ sender: UISwitch) {
+        self.appSettings?._(biometricsEnabledSwitch.isOn)
     }
     
     @IBAction func deleteAllDataEnabledChanged(_ sender: UISwitch) {
@@ -305,10 +301,6 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         
         // Update which controls are enabled
         updateEnabledControls()
-    }
-    
-    @IBAction func excludeFromBackupEnabledChanged(_ sender: UISwitch) {
-        self.appSettings?.setBackupDisabled(excludeFromBackupsEnabledSwitch.isOn)
     }
     
     @IBAction func integratedWebBrowserEnabledChanged(_ sender: UISwitch) {

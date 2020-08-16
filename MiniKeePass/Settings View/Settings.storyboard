@@ -111,7 +111,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Touch ID" footerTitle="Use your fingerprint as an alternative to entering a PIN if supported." id="vH4-cT-PCz">
+                            <tableViewSection headerTitle="Touch ID / Face ID" footerTitle="Use your fingerprint or face as an alternative to entering a PIN if supported." id="vH4-cT-PCz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="v5C-no-1Zp">
                                         <rect key="frame" x="0.0" y="219" width="375" height="44"/>
@@ -128,7 +128,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ye5-jl-2bY">
                                                     <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="touchIdEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="8yt-L0-sIs"/>
+                                                        <action selector="biometricsEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="8yt-L0-sIs"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -483,43 +483,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="iCloud/iTunes Backup" footerTitle="Exclude databases and key files from iTunes/iCloud backups." id="Zs3-9b-0kG">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="VQf-14-2bS">
-                                        <rect key="frame" x="0.0" y="1522.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="VQf-14-2bS" id="pUq-6Q-f3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exclude from backup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKY-md-m8c">
-                                                    <rect key="frame" x="8" y="12" width="302" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Ku-Wa-CXa">
-                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="excludeFromBackupEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="qYI-ow-kyT"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7Ku-Wa-CXa" firstAttribute="leading" secondItem="fKY-md-m8c" secondAttribute="trailing" constant="8" id="5EH-uH-ep5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="7Ku-Wa-CXa" secondAttribute="trailing" id="cEb-WA-dJO"/>
-                                                <constraint firstItem="fKY-md-m8c" firstAttribute="leading" secondItem="pUq-6Q-f3T" secondAttribute="leadingMargin" id="iFA-z0-Xg9"/>
-                                                <constraint firstItem="fKY-md-m8c" firstAttribute="centerY" secondItem="pUq-6Q-f3T" secondAttribute="centerY" id="nzt-7e-Pg6"/>
-                                                <constraint firstItem="7Ku-Wa-CXa" firstAttribute="centerY" secondItem="pUq-6Q-f3T" secondAttribute="centerY" id="uhl-yK-UUE"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Web Browser" footerTitle="Switch between an integrated web browser and Safari." id="ZbJ-mR-6o9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="tZZ-6T-nMy">
-                                        <rect key="frame" x="0.0" y="1658" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1522.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="tZZ-6T-nMy" id="1Eo-Md-mqX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -552,7 +519,7 @@
                             <tableViewSection headerTitle="Tips" footerTitle="If you're enjoying Kagi, consider leaving a tip." id="hCb-I2-uSs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ck7-pA-nrZ" style="IBUITableViewCellStyleDefault" id="qZy-l6-VaH">
-                                        <rect key="frame" x="0.0" y="1777.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1642" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="qZy-l6-VaH" id="uF6-k4-COY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -569,7 +536,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="UBE-uq-gz4" style="IBUITableViewCellStyleDefault" id="YXC-gG-hrb">
-                                        <rect key="frame" x="0.0" y="1821.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1686" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="YXC-gG-hrb" id="ksO-wG-Yeb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -590,7 +557,7 @@
                             <tableViewSection id="O4c-S2-bxk" userLabel="Version">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="Sdb-s9-D0G" detailTextLabel="fc3-tI-Hn4" style="IBUITableViewCellStyleValue1" id="OBf-R4-5vk">
-                                        <rect key="frame" x="0.0" y="1913.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1778" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="OBf-R4-5vk" id="AaX-EY-CkO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -621,13 +588,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ZmO-Ci-csI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="K19-og-TY5">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="K19-og-TY5">
                             <connections>
                                 <action selector="donePressedAction:" destination="mlm-01-Slc" id="lR6-ec-CzG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="biometricsEnabledCell" destination="v5C-no-1Zp" id="Oe8-6J-urU"/>
+                        <outlet property="biometricsEnabledSwitch" destination="Ye5-jl-2bY" id="cBy-Mo-Gym"/>
                         <outlet property="clearClipboardEnabledSwitch" destination="Amv-ka-cmc" id="7LU-aG-nxz"/>
                         <outlet property="clearClipboardTimeoutCell" destination="2F7-jl-P33" id="2Ue-Ht-Q2L"/>
                         <outlet property="closeDatabaseEnabledSwitch" destination="H69-KF-yqe" id="fS2-aO-7cl"/>
@@ -636,7 +605,6 @@
                         <outlet property="deleteAllDataAttemptsCell" destination="0Rc-eI-Pdn" id="lw9-Xt-MpI"/>
                         <outlet property="deleteAllDataEnabledCell" destination="68h-n2-JDk" id="WTn-i6-KWM"/>
                         <outlet property="deleteAllDataEnabledSwitch" destination="Vkp-4b-3XR" id="sDh-tf-ACx"/>
-                        <outlet property="excludeFromBackupsEnabledSwitch" destination="7Ku-Wa-CXa" id="Rx2-qK-Omz"/>
                         <outlet property="hidePasswordsEnabledSwitch" destination="ofT-Wg-xcq" id="fV3-ZJ-xPx"/>
                         <outlet property="integratedWebBrowserEnabledSwitch" destination="KiU-1e-0G5" id="pbF-ds-nZJ"/>
                         <outlet property="lunchIAPCell" destination="YXC-gG-hrb" id="J18-c5-7hv"/>
@@ -646,8 +614,6 @@
                         <outlet property="rememberDatabasePasswordsEnabledSwitch" destination="Ea4-fm-fzf" id="7cF-hL-41B"/>
                         <outlet property="searchTitleOnlySwitch" destination="PQv-PG-Wrn" id="5XL-4A-aem"/>
                         <outlet property="sortingEnabledSwitch" destination="3lc-8w-xI4" id="grb-Ay-BBQ"/>
-                        <outlet property="touchIdEnabledCell" destination="v5C-no-1Zp" id="Oe8-6J-urU"/>
-                        <outlet property="touchIdEnabledSwitch" destination="Ye5-jl-2bY" id="cBy-Mo-Gym"/>
                         <outlet property="versionLabel" destination="fc3-tI-Hn4" id="2Zn-w5-26K"/>
                     </connections>
                 </tableViewController>
