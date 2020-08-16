@@ -33,13 +33,13 @@
 
 @implementation LockScreenManager {
     UIWindow *lockWindow;
-    BOOL touchIDFailed;
+    BOOL biometricsAuthFailed;
 }
 
 - (instancetype)initWithWindow:(UIWindow *)window {
     self = [super init];
     if (self) {
-        touchIDFailed = NO;
+        biometricsAuthFailed = NO;
         
         lockWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         lockWindow.windowLevel = UIWindowLevelAlert;
@@ -86,8 +86,8 @@
         return NO;
     }
     
-    // Check if touchID check failed
-    if (touchIDFailed) {
+    // Check if biometrics check failed
+    if (biometricsAuthFailed) {
         return YES;
     }
 
@@ -103,10 +103,10 @@
 }
 
 - (void)checkPin {
-    // Perform Touch ID if enabled and not already failed.
+    // Perform Touch/Face ID if enabled and not already failed.
     AppSettings *appSettings = [AppSettings sharedInstance];
-    if ([appSettings touchIdEnabled] && !touchIDFailed) {
-        [self showTouchId];
+    if ([appSettings biometricsEnabled] && !biometricsAuthFailed) {
+        [self showBiometricAuth];
     }
 }
 
@@ -118,14 +118,14 @@
                      }
                      completion:^(BOOL finished){
                          [self.pinViewController clearPin];
-                            self->touchIDFailed = NO;
+                            self->biometricsAuthFailed = NO;
                             self->lockWindow.hidden = YES;
                             self->lockWindow.alpha = 1.0;
                      }];
 }
 
-- (void)showTouchId {
-    // Check if TouchID is supported
+- (void)showBiometricAuth {
+    // Check if TouchID/FaceID is supported
     if (![NSClassFromString(@"LAContext") class]) {
         // Fallback to the PIN screen
         return;
@@ -134,14 +134,14 @@
     LAContext *context = [[LAContext alloc] init];
     context.localizedFallbackTitle = @""; // Hide the fallback button
 
-    // Check if Touch ID is available
+    // Check if Touch/Face ID is available
     NSError *error = nil;
     if (![context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         // Fallback to the PIN screen
         return;
     }
     
-    touchIDFailed = NO;
+    biometricsAuthFailed = NO;
     
     // Authenticate User
     [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
@@ -154,7 +154,7 @@
                               });
                           } else {
                               // Failed, show the PIN screen
-                              self->touchIDFailed = YES;
+                              self->biometricsAuthFailed = YES;
                           }
                       }];
 }

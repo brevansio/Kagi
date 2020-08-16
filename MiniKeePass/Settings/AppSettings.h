@@ -37,8 +37,8 @@
 - (NSInteger)pinFailedAttempts;
 - (void)setPinFailedAttempts:(NSInteger)pinFailedAttempts;
 
-- (BOOL)touchIdEnabled;
-- (void)setTouchIdEnabled:(BOOL)touchIdEnabled;
+- (BOOL)biometricsEnabled;
+- (void)setBiometricsEnabled:(BOOL)biometricsEnabled;
 
 - (BOOL)deleteOnFailureEnabled;
 - (void)setDeleteOnFailureEnabled:(BOOL)deleteOnFailureEnabled;

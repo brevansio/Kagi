@@ -64,7 +64,7 @@
     AppSettings *appSettings = [AppSettings sharedInstance];
     [appSettings setPinFailedAttempts:0];
     [appSettings setPinEnabled:NO];
-    [appSettings setTouchIdEnabled:NO];
+    [appSettings setBiometricsEnabled:NO];
 
     // Delete the PIN from the keychain
     [KeychainUtils deleteStringForKey:@"PIN" andServiceName:KEYCHAIN_PIN_SERVICE];

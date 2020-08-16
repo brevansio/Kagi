@@ -111,7 +111,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Touch ID" footerTitle="Use your fingerprint as an alternative to entering a PIN if supported." id="vH4-cT-PCz">
+                            <tableViewSection headerTitle="Touch ID / Face ID" footerTitle="Use your fingerprint or face as an alternative to entering a PIN if supported." id="vH4-cT-PCz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="v5C-no-1Zp">
                                         <rect key="frame" x="0.0" y="219" width="375" height="44"/>
@@ -128,7 +128,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ye5-jl-2bY">
                                                     <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="touchIdEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="8yt-L0-sIs"/>
+                                                        <action selector="biometricsEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="8yt-L0-sIs"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -595,6 +595,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="biometricsEnabledCell" destination="v5C-no-1Zp" id="Oe8-6J-urU"/>
+                        <outlet property="biometricsEnabledSwitch" destination="Ye5-jl-2bY" id="cBy-Mo-Gym"/>
                         <outlet property="clearClipboardEnabledSwitch" destination="Amv-ka-cmc" id="7LU-aG-nxz"/>
                         <outlet property="clearClipboardTimeoutCell" destination="2F7-jl-P33" id="2Ue-Ht-Q2L"/>
                         <outlet property="closeDatabaseEnabledSwitch" destination="H69-KF-yqe" id="fS2-aO-7cl"/>
@@ -612,8 +614,6 @@
                         <outlet property="rememberDatabasePasswordsEnabledSwitch" destination="Ea4-fm-fzf" id="7cF-hL-41B"/>
                         <outlet property="searchTitleOnlySwitch" destination="PQv-PG-Wrn" id="5XL-4A-aem"/>
                         <outlet property="sortingEnabledSwitch" destination="3lc-8w-xI4" id="grb-Ay-BBQ"/>
-                        <outlet property="touchIdEnabledCell" destination="v5C-no-1Zp" id="Oe8-6J-urU"/>
-                        <outlet property="touchIdEnabledSwitch" destination="Ye5-jl-2bY" id="cBy-Mo-Gym"/>
                         <outlet property="versionLabel" destination="fc3-tI-Hn4" id="2Zn-w5-26K"/>
                     </connections>
                 </tableViewController>
