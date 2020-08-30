@@ -50,7 +50,7 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if (section == 1) {
+        if (section == 1 && filename != nil) {
             return String(format:NSLocalizedString("Enter the password and/or select the keyfile for the %@ database.", comment: ""), filename)
         }
         return nil
