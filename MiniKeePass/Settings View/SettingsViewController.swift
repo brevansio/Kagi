@@ -260,7 +260,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     }
     
     @IBAction func biometricsEnabledChanged(_ sender: UISwitch) {
-        self.appSettings?._(biometricsEnabledSwitch.isOn)
+        self.appSettings?.setBiometricsEnabled(sender.isOn)
     }
     
     @IBAction func deleteAllDataEnabledChanged(_ sender: UISwitch) {

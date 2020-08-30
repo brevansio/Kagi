@@ -113,7 +113,7 @@ static AppSettings *sharedInstance;
 
         // Register the default values
         NSMutableDictionary *defaultsDict = [NSMutableDictionary dictionary];
-        [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:TOUCH_ID_ENABLED];
+        [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:BIOMETRIC_AUTH_ENABLED];
         [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:DELETE_ON_FAILURE_ENABLED];
         [defaultsDict setValue:[NSNumber numberWithInt:1] forKey:DELETE_ON_FAILURE_ATTEMPTS];
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:CLOSE_ENABLED];
