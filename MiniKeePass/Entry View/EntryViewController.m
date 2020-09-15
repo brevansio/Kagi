@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import KeePassFramework;
 #import "EntryViewController.h"
-#import "Kdb4Node.h"
 #import "AppSettings.h"
 #import "ImageFactory.h"
 #import "Kagi-Swift.h"

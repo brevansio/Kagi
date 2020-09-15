@@ -16,7 +16,7 @@
  */
 
 @import UIKit;
-#import "KdbLib.h"
+@import KeePassFramework;
 
 @interface DatabaseDocument : UIDocument
 

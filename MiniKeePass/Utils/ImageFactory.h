@@ -16,7 +16,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "Kdb.h"
+@import KeePassFramework;
 
 @interface ImageFactory : NSObject
 

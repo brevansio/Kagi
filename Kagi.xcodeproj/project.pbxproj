@@ -7,6 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3021A4252510C71A004E15C5 /* KeePassFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 3021A4232510C71A004E15C5 /* KeePassFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4282510C71A004E15C5 /* KeePassFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */; };
+		3021A4292510C71A004E15C5 /* KeePassFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3021A4312510C773004E15C5 /* AesInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F11603883900156830 /* AesInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4322510C773004E15C5 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
+		3021A4332510C773004E15C5 /* AesOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F31603883900156830 /* AesOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4342510C773004E15C5 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
+		3021A4352510C773004E15C5 /* Arc4RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F51603883900156830 /* Arc4RandomStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4362510C773004E15C5 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
+		3021A4372510C773004E15C5 /* DataInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F71603883900156830 /* DataInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4382510C773004E15C5 /* DataInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F81603883900156830 /* DataInputStream.m */; };
+		3021A4392510C773004E15C5 /* DataOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F91603883900156830 /* DataOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43A2510C773004E15C5 /* DataOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FA1603883900156830 /* DataOutputStream.m */; };
+		3021A43B2510C773004E15C5 /* FileInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FB1603883900156830 /* FileInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43C2510C773004E15C5 /* FileInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FC1603883900156830 /* FileInputStream.m */; };
+		3021A43D2510C773004E15C5 /* FileOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FD1603883900156830 /* FileOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43E2510C773004E15C5 /* FileOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FE1603883900156830 /* FileOutputStream.m */; };
+		3021A43F2510C773004E15C5 /* GZipInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FF1603883900156830 /* GZipInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4402510C773004E15C5 /* GZipInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45001603883900156830 /* GZipInputStream.m */; };
+		3021A4412510C773004E15C5 /* GZipOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45011603883900156830 /* GZipOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4422510C773004E15C5 /* GZipOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45021603883900156830 /* GZipOutputStream.m */; };
+		3021A4432510C773004E15C5 /* HashedInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45031603883900156830 /* HashedInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4442510C773004E15C5 /* HashedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45041603883900156830 /* HashedInputStream.m */; };
+		3021A4452510C773004E15C5 /* HashedOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45051603883900156830 /* HashedOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4462510C773004E15C5 /* HashedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45061603883900156830 /* HashedOutputStream.m */; };
+		3021A4472510C773004E15C5 /* InputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45071603883900156830 /* InputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4482510C773004E15C5 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45081603883900156830 /* InputStream.m */; };
+		3021A4492510C773004E15C5 /* OutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45091603883900156830 /* OutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44A2510C773004E15C5 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450A1603883900156830 /* OutputStream.m */; };
+		3021A44B2510C773004E15C5 /* Sha256OutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D450B1603883900156830 /* Sha256OutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44C2510C773004E15C5 /* Sha256OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450C1603883900156830 /* Sha256OutputStream.m */; };
+		3021A44D2510C773004E15C5 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02B713A42B63005EBD36 /* Base64.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44E2510C773004E15C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B813A42B63005EBD36 /* Base64.m */; };
+		3021A44F2510C773004E15C5 /* DDXMLDocument+MKPAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 680C277416050C7A009403DE /* DDXMLDocument+MKPAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4502510C773004E15C5 /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
+		3021A4512510C773004E15C5 /* Kdb.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02C713A42B63005EBD36 /* Kdb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4522510C773004E15C5 /* Kdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C813A42B63005EBD36 /* Kdb.m */; };
+		3021A4532510C773004E15C5 /* Kdb3Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02C913A42B63005EBD36 /* Kdb3Date.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4542510C773004E15C5 /* Kdb3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CA13A42B63005EBD36 /* Kdb3Date.m */; };
+		3021A4552510C773004E15C5 /* Kdb3Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02CB13A42B63005EBD36 /* Kdb3Node.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4562510C773004E15C5 /* Kdb3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CC13A42B63005EBD36 /* Kdb3Node.m */; };
+		3021A4572510C773004E15C5 /* Kdb3Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D113A42B63005EBD36 /* Kdb3Reader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4582510C773004E15C5 /* Kdb3Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D213A42B63005EBD36 /* Kdb3Reader.m */; };
+		3021A4592510C773004E15C5 /* Kdb3Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 685D9D931603F8EE00D739D3 /* Kdb3Utils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A45A2510C773004E15C5 /* Kdb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D941603F8EE00D739D3 /* Kdb3Utils.m */; };
+		3021A45B2510C773004E15C5 /* Kdb3Writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D313A42B63005EBD36 /* Kdb3Writer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A45C2510C773004E15C5 /* Kdb3Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D413A42B63005EBD36 /* Kdb3Writer.m */; };
+		3021A45D2510C773004E15C5 /* Kdb4Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D513A42B63005EBD36 /* Kdb4Node.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A45E2510C773004E15C5 /* Kdb4Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D613A42B63005EBD36 /* Kdb4Node.m */; };
+		3021A45F2510C773004E15C5 /* Kdb4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D713A42B63005EBD36 /* Kdb4Parser.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4602510C773004E15C5 /* Kdb4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D813A42B63005EBD36 /* Kdb4Parser.m */; };
+		3021A4612510C773004E15C5 /* Kdb4Persist.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D913A42B63005EBD36 /* Kdb4Persist.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4622510C773004E15C5 /* Kdb4Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DA13A42B63005EBD36 /* Kdb4Persist.m */; };
+		3021A4632510C773004E15C5 /* Kdb4Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DB13A42B63005EBD36 /* Kdb4Reader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4642510C773004E15C5 /* Kdb4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DC13A42B63005EBD36 /* Kdb4Reader.m */; };
+		3021A4652510C773004E15C5 /* Kdb4Writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DD13A42B63005EBD36 /* Kdb4Writer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4662510C773004E15C5 /* Kdb4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DE13A42B63005EBD36 /* Kdb4Writer.m */; };
+		3021A4672510C773004E15C5 /* KdbLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DF13A42B63005EBD36 /* KdbLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4682510C773004E15C5 /* KdbPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E013A42B63005EBD36 /* KdbPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4692510C773004E15C5 /* KdbPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E113A42B63005EBD36 /* KdbPassword.m */; };
+		3021A46A2510C773004E15C5 /* KdbReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E213A42B63005EBD36 /* KdbReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46B2510C773004E15C5 /* KdbReaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E313A42B63005EBD36 /* KdbReaderFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46C2510C773004E15C5 /* KdbReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E413A42B63005EBD36 /* KdbReaderFactory.m */; };
+		3021A46D2510C773004E15C5 /* KdbWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E513A42B63005EBD36 /* KdbWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46E2510C773004E15C5 /* KdbWriterFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E613A42B63005EBD36 /* KdbWriterFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46F2510C773004E15C5 /* KdbWriterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E713A42B63005EBD36 /* KdbWriterFactory.m */; };
+		3021A4702510C773004E15C5 /* RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EA13A42B63005EBD36 /* RandomStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4712510C773004E15C5 /* RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689A4D1214046B8200AA897D /* RandomStream.m */; };
+		3021A4722510C773004E15C5 /* Salsa20RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EB13A42B63005EBD36 /* Salsa20RandomStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4732510C773004E15C5 /* Salsa20RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EC13A42B63005EBD36 /* Salsa20RandomStream.m */; };
+		3021A4742510C773004E15C5 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EF13A42B63005EBD36 /* Utils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4752510C773004E15C5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F013A42B63005EBD36 /* Utils.m */; };
+		3021A4762510C773004E15C5 /* UUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F113A42B63005EBD36 /* UUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4772510C773004E15C5 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F213A42B63005EBD36 /* UUID.m */; };
+		3021A4782510C773004E15C5 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F513A42B63005EBD36 /* DDXMLElementAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4792510C773004E15C5 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F613A42B63005EBD36 /* DDXMLElementAdditions.m */; };
+		3021A47A2510C773004E15C5 /* NSString+DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F813A42B63005EBD36 /* NSString+DDXML.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47B2510C773004E15C5 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F913A42B63005EBD36 /* NSString+DDXML.m */; };
+		3021A47C2510C773004E15C5 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FA13A42B63005EBD36 /* DDXML.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47D2510C773004E15C5 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FB13A42B63005EBD36 /* DDXMLDocument.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47E2510C773004E15C5 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FC13A42B63005EBD36 /* DDXMLDocument.m */; };
+		3021A47F2510C773004E15C5 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FD13A42B63005EBD36 /* DDXMLElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4802510C773004E15C5 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FE13A42B63005EBD36 /* DDXMLElement.m */; };
+		3021A4812510C773004E15C5 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FF13A42B63005EBD36 /* DDXMLNode.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4822510C773004E15C5 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D030013A42B63005EBD36 /* DDXMLNode.m */; };
+		3021A4832510C773004E15C5 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D030213A42B63005EBD36 /* DDXMLPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C85024A6254000AF06AB /* SceneDelegate.swift */; };
 		3083142F24A89A0000E8A983 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3083142E24A89A0000E8A983 /* Settings.bundle */; };
 		30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC7F4224B1AC93005D0EEB /* IAPManager.swift */; };
@@ -31,23 +117,7 @@
 		52E43F4F15B59C890029F979 /* ru-keyfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4A15B59C890029F979 /* ru-keyfiles.html */; };
 		52E43F5015B59C890029F979 /* ru-safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4B15B59C890029F979 /* ru-safariemail.html */; };
 		6802C36F1A425D7300595AC9 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6802C36E1A425D7300595AC9 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
-		682D450D1603883900156830 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
-		682D450E1603883900156830 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
-		682D450F1603883900156830 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
-		682D45101603883900156830 /* DataInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F81603883900156830 /* DataInputStream.m */; };
-		682D45111603883900156830 /* DataOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FA1603883900156830 /* DataOutputStream.m */; };
-		682D45121603883900156830 /* FileInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FC1603883900156830 /* FileInputStream.m */; };
-		682D45131603883900156830 /* FileOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FE1603883900156830 /* FileOutputStream.m */; };
-		682D45141603883900156830 /* GZipInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45001603883900156830 /* GZipInputStream.m */; };
-		682D45151603883900156830 /* GZipOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45021603883900156830 /* GZipOutputStream.m */; };
-		682D45161603883900156830 /* HashedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45041603883900156830 /* HashedInputStream.m */; };
-		682D45171603883900156830 /* HashedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45061603883900156830 /* HashedOutputStream.m */; };
-		682D45181603883900156830 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45081603883900156830 /* InputStream.m */; };
-		682D45191603883900156830 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450A1603883900156830 /* OutputStream.m */; };
-		682D451A1603883900156830 /* Sha256OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450C1603883900156830 /* Sha256OutputStream.m */; };
 		68496E751AB34F8800370876 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 68496E721AB34F8800370876 /* AppSettings.m */; };
-		685D9D951603F8EE00D739D3 /* Kdb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D941603F8EE00D739D3 /* Kdb3Utils.m */; };
 		68767B651D6F23350039EFE0 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68767B641D6F23350039EFE0 /* FilesViewController.swift */; };
 		68767B671D6F241F0039EFE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68767B661D6F241F0039EFE0 /* Main.storyboard */; };
 		68767B691D70B0830039EFE0 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68767B681D70B0830039EFE0 /* Array+Extensions.swift */; };
@@ -57,7 +127,6 @@
 		6895D2EA1D68F95D003D8C44 /* RenameItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895D2E81D68F95D003D8C44 /* RenameItemViewController.swift */; };
 		6895D2F31D68FE00003D8C44 /* CustomField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6895D2F11D68FE00003D8C44 /* CustomField.storyboard */; };
 		6895D2F41D68FE00003D8C44 /* CustomFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895D2F21D68FE00003D8C44 /* CustomFieldViewController.swift */; };
-		689A4D1314046B8200AA897D /* RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689A4D1214046B8200AA897D /* RandomStream.m */; };
 		689D000D13A42765005EBD36 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D000C13A42765005EBD36 /* AudioToolbox.framework */; };
 		689D000F13A42777005EBD36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D000E13A42776005EBD36 /* Security.framework */; };
 		689D001113A4277E005EBD36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D001013A4277E005EBD36 /* libxml2.dylib */; };
@@ -65,28 +134,6 @@
 		689D032F13A42B63005EBD36 /* dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 689D021413A42B63005EBD36 /* dropbox.html */; };
 		689D033013A42B63005EBD36 /* itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 689D021513A42B63005EBD36 /* itunes.html */; };
 		689D033113A42B63005EBD36 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 689D021613A42B63005EBD36 /* style.css */; };
-		689D03CD13A42B63005EBD36 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B813A42B63005EBD36 /* Base64.m */; };
-		689D03D513A42B63005EBD36 /* Kdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C813A42B63005EBD36 /* Kdb.m */; };
-		689D03D613A42B63005EBD36 /* Kdb3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CA13A42B63005EBD36 /* Kdb3Date.m */; };
-		689D03D713A42B63005EBD36 /* Kdb3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CC13A42B63005EBD36 /* Kdb3Node.m */; };
-		689D03DA13A42B63005EBD36 /* Kdb3Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D213A42B63005EBD36 /* Kdb3Reader.m */; };
-		689D03DB13A42B63005EBD36 /* Kdb3Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D413A42B63005EBD36 /* Kdb3Writer.m */; };
-		689D03DC13A42B63005EBD36 /* Kdb4Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D613A42B63005EBD36 /* Kdb4Node.m */; };
-		689D03DD13A42B63005EBD36 /* Kdb4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D813A42B63005EBD36 /* Kdb4Parser.m */; };
-		689D03DE13A42B63005EBD36 /* Kdb4Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DA13A42B63005EBD36 /* Kdb4Persist.m */; };
-		689D03DF13A42B63005EBD36 /* Kdb4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DC13A42B63005EBD36 /* Kdb4Reader.m */; };
-		689D03E013A42B63005EBD36 /* Kdb4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DE13A42B63005EBD36 /* Kdb4Writer.m */; };
-		689D03E113A42B63005EBD36 /* KdbPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E113A42B63005EBD36 /* KdbPassword.m */; };
-		689D03E213A42B63005EBD36 /* KdbReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E413A42B63005EBD36 /* KdbReaderFactory.m */; };
-		689D03E313A42B63005EBD36 /* KdbWriterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E713A42B63005EBD36 /* KdbWriterFactory.m */; };
-		689D03E513A42B63005EBD36 /* Salsa20RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EC13A42B63005EBD36 /* Salsa20RandomStream.m */; };
-		689D03E713A42B63005EBD36 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F013A42B63005EBD36 /* Utils.m */; };
-		689D03E813A42B63005EBD36 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F213A42B63005EBD36 /* UUID.m */; };
-		689D03E913A42B63005EBD36 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F613A42B63005EBD36 /* DDXMLElementAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EA13A42B63005EBD36 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F913A42B63005EBD36 /* NSString+DDXML.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EB13A42B63005EBD36 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FC13A42B63005EBD36 /* DDXMLDocument.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EC13A42B63005EBD36 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FE13A42B63005EBD36 /* DDXMLElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03ED13A42B63005EBD36 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D030013A42B63005EBD36 /* DDXMLNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		689D044F13A42C82005EBD36 /* DatabaseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042713A42C81005EBD36 /* DatabaseDocument.m */; };
 		689D045013A42C82005EBD36 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042913A42C81005EBD36 /* DatabaseManager.m */; };
 		689D045113A42C82005EBD36 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042B13A42C81005EBD36 /* EntryViewController.m */; };
@@ -133,6 +180,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3021A4262510C71A004E15C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 689DFFCC13A4273F005EBD36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3021A4202510C71A004E15C5;
+			remoteInfo = KeePassFramework;
+		};
 		308C96FB248365DA0017F48B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
@@ -156,8 +210,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3021A42A2510C71A004E15C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3021A4292510C71A004E15C5 /* KeePassFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		300E6FAB249F4172001365D6 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
+		3021A4212510C71A004E15C5 /* KeePassFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3021A4232510C71A004E15C5 /* KeePassFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassFramework.h; sourceTree = "<group>"; };
+		3021A4242510C71A004E15C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3037C85024A6254000AF06AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3083142E24A89A0000E8A983 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		30FC7F4224B1AC93005D0EEB /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
@@ -376,6 +447,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3021A41E2510C71A004E15C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD213A4273F005EBD36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +463,7 @@
 				689DFFDE13A4273F005EBD36 /* CoreGraphics.framework in Frameworks */,
 				689DFFDC13A4273F005EBD36 /* Foundation.framework in Frameworks */,
 				6802C36F1A425D7300595AC9 /* LocalAuthentication.framework in Frameworks */,
+				3021A4282510C71A004E15C5 /* KeePassFramework.framework in Frameworks */,
 				68EBC2D61613394D00E8E799 /* QuartzCore.framework in Frameworks */,
 				689D000F13A42777005EBD36 /* Security.framework in Frameworks */,
 				689DFFDA13A4273F005EBD36 /* UIKit.framework in Frameworks */,
@@ -396,6 +475,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3021A4222510C71A004E15C5 /* KeePassFramework */ = {
+			isa = PBXGroup;
+			children = (
+				682D44F01603883900156830 /* IOStream */,
+				689D02B013A42B63005EBD36 /* KeePassLib */,
+				689D02F313A42B63005EBD36 /* KissXML */,
+				3021A4232510C71A004E15C5 /* KeePassFramework.h */,
+				3021A4242510C71A004E15C5 /* Info.plist */,
+			);
+			path = KeePassFramework;
+			sourceTree = "<group>";
+		};
 		4E8C168D16B3E871004195A1 /* fr */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,9 +748,7 @@
 				689D030313A42B63005EBD36 /* LICENSE.txt */,
 				689D030413A42B63005EBD36 /* README.md */,
 				689DFFDF13A4273F005EBD36 /* MiniKeePass */,
-				682D44F01603883900156830 /* IOStream */,
-				689D02B013A42B63005EBD36 /* KeePassLib */,
-				689D02F313A42B63005EBD36 /* KissXML */,
+				3021A4222510C71A004E15C5 /* KeePassFramework */,
 				689DFFD813A4273F005EBD36 /* Frameworks */,
 				689D041413A42B85005EBD36 /* Resources */,
 				689DFFD613A4273F005EBD36 /* Products */,
@@ -671,6 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				689DFFD513A4273F005EBD36 /* Kagi.app */,
+				3021A4212510C71A004E15C5 /* KeePassFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -854,7 +944,80 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3021A41C2510C71A004E15C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3021A43B2510C773004E15C5 /* FileInputStream.h in Headers */,
+				3021A4652510C773004E15C5 /* Kdb4Writer.h in Headers */,
+				3021A45B2510C773004E15C5 /* Kdb3Writer.h in Headers */,
+				3021A4672510C773004E15C5 /* KdbLib.h in Headers */,
+				3021A45D2510C773004E15C5 /* Kdb4Node.h in Headers */,
+				3021A47D2510C773004E15C5 /* DDXMLDocument.h in Headers */,
+				3021A4252510C71A004E15C5 /* KeePassFramework.h in Headers */,
+				3021A47F2510C773004E15C5 /* DDXMLElement.h in Headers */,
+				3021A4742510C773004E15C5 /* Utils.h in Headers */,
+				3021A4552510C773004E15C5 /* Kdb3Node.h in Headers */,
+				3021A4472510C773004E15C5 /* InputStream.h in Headers */,
+				3021A46B2510C773004E15C5 /* KdbReaderFactory.h in Headers */,
+				3021A44D2510C773004E15C5 /* Base64.h in Headers */,
+				3021A4332510C773004E15C5 /* AesOutputStream.h in Headers */,
+				3021A4592510C773004E15C5 /* Kdb3Utils.h in Headers */,
+				3021A4702510C773004E15C5 /* RandomStream.h in Headers */,
+				3021A4762510C773004E15C5 /* UUID.h in Headers */,
+				3021A4572510C773004E15C5 /* Kdb3Reader.h in Headers */,
+				3021A4682510C773004E15C5 /* KdbPassword.h in Headers */,
+				3021A4632510C773004E15C5 /* Kdb4Reader.h in Headers */,
+				3021A4412510C773004E15C5 /* GZipOutputStream.h in Headers */,
+				3021A4492510C773004E15C5 /* OutputStream.h in Headers */,
+				3021A4452510C773004E15C5 /* HashedOutputStream.h in Headers */,
+				3021A4812510C773004E15C5 /* DDXMLNode.h in Headers */,
+				3021A4372510C773004E15C5 /* DataInputStream.h in Headers */,
+				3021A46D2510C773004E15C5 /* KdbWriter.h in Headers */,
+				3021A46A2510C773004E15C5 /* KdbReader.h in Headers */,
+				3021A4432510C773004E15C5 /* HashedInputStream.h in Headers */,
+				3021A47C2510C773004E15C5 /* DDXML.h in Headers */,
+				3021A45F2510C773004E15C5 /* Kdb4Parser.h in Headers */,
+				3021A4612510C773004E15C5 /* Kdb4Persist.h in Headers */,
+				3021A4782510C773004E15C5 /* DDXMLElementAdditions.h in Headers */,
+				3021A44B2510C773004E15C5 /* Sha256OutputStream.h in Headers */,
+				3021A4312510C773004E15C5 /* AesInputStream.h in Headers */,
+				3021A4512510C773004E15C5 /* Kdb.h in Headers */,
+				3021A46E2510C773004E15C5 /* KdbWriterFactory.h in Headers */,
+				3021A4832510C773004E15C5 /* DDXMLPrivate.h in Headers */,
+				3021A4532510C773004E15C5 /* Kdb3Date.h in Headers */,
+				3021A43D2510C773004E15C5 /* FileOutputStream.h in Headers */,
+				3021A4722510C773004E15C5 /* Salsa20RandomStream.h in Headers */,
+				3021A47A2510C773004E15C5 /* NSString+DDXML.h in Headers */,
+				3021A43F2510C773004E15C5 /* GZipInputStream.h in Headers */,
+				3021A4352510C773004E15C5 /* Arc4RandomStream.h in Headers */,
+				3021A4392510C773004E15C5 /* DataOutputStream.h in Headers */,
+				3021A44F2510C773004E15C5 /* DDXMLDocument+MKPAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		3021A4202510C71A004E15C5 /* KeePassFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3021A4302510C71A004E15C5 /* Build configuration list for PBXNativeTarget "KeePassFramework" */;
+			buildPhases = (
+				3021A41C2510C71A004E15C5 /* Headers */,
+				3021A41D2510C71A004E15C5 /* Sources */,
+				3021A41E2510C71A004E15C5 /* Frameworks */,
+				3021A41F2510C71A004E15C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeePassFramework;
+			productName = KeePassFramework;
+			productReference = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		689DFFD413A4273F005EBD36 /* Kagi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */;
@@ -863,10 +1026,12 @@
 				689DFFD213A4273F005EBD36 /* Frameworks */,
 				68C17C9C1A3E1774008DD56B /* Increment Build Number */,
 				689DFFD313A4273F005EBD36 /* Resources */,
+				3021A42A2510C71A004E15C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3021A4272510C71A004E15C5 /* PBXTargetDependency */,
 			);
 			name = Kagi;
 			productName = MiniKeePass;
@@ -882,6 +1047,11 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Self;
 				TargetAttributes = {
+					3021A4202510C71A004E15C5 = {
+						CreatedOnToolsVersion = 11.7;
+						DevelopmentTeam = BP6TU6N5BS;
+						ProvisioningStyle = Automatic;
+					};
 					689DFFD413A4273F005EBD36 = {
 						DevelopmentTeam = BP6TU6N5BS;
 						LastSwiftMigration = 1140;
@@ -924,6 +1094,7 @@
 			projectRoot = "";
 			targets = (
 				689DFFD413A4273F005EBD36 /* Kagi */,
+				3021A4202510C71A004E15C5 /* KeePassFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -953,6 +1124,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3021A41F2510C71A004E15C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD313A4273F005EBD36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1018,49 +1196,73 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3021A41D2510C71A004E15C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3021A45E2510C773004E15C5 /* Kdb4Node.m in Sources */,
+				3021A4602510C773004E15C5 /* Kdb4Parser.m in Sources */,
+				3021A4662510C773004E15C5 /* Kdb4Writer.m in Sources */,
+				3021A47B2510C773004E15C5 /* NSString+DDXML.m in Sources */,
+				3021A4802510C773004E15C5 /* DDXMLElement.m in Sources */,
+				3021A4482510C773004E15C5 /* InputStream.m in Sources */,
+				3021A4792510C773004E15C5 /* DDXMLElementAdditions.m in Sources */,
+				3021A4642510C773004E15C5 /* Kdb4Reader.m in Sources */,
+				3021A4502510C773004E15C5 /* DDXMLDocument+MKPAdditions.m in Sources */,
+				3021A44E2510C773004E15C5 /* Base64.m in Sources */,
+				3021A43C2510C773004E15C5 /* FileInputStream.m in Sources */,
+				3021A43A2510C773004E15C5 /* DataOutputStream.m in Sources */,
+				3021A4542510C773004E15C5 /* Kdb3Date.m in Sources */,
+				3021A4402510C773004E15C5 /* GZipInputStream.m in Sources */,
+				3021A47E2510C773004E15C5 /* DDXMLDocument.m in Sources */,
+				3021A46F2510C773004E15C5 /* KdbWriterFactory.m in Sources */,
+				3021A4752510C773004E15C5 /* Utils.m in Sources */,
+				3021A4342510C773004E15C5 /* AesOutputStream.m in Sources */,
+				3021A4322510C773004E15C5 /* AesInputStream.m in Sources */,
+				3021A43E2510C773004E15C5 /* FileOutputStream.m in Sources */,
+				3021A4772510C773004E15C5 /* UUID.m in Sources */,
+				3021A4582510C773004E15C5 /* Kdb3Reader.m in Sources */,
+				3021A4562510C773004E15C5 /* Kdb3Node.m in Sources */,
+				3021A45C2510C773004E15C5 /* Kdb3Writer.m in Sources */,
+				3021A4382510C773004E15C5 /* DataInputStream.m in Sources */,
+				3021A4732510C773004E15C5 /* Salsa20RandomStream.m in Sources */,
+				3021A4442510C773004E15C5 /* HashedInputStream.m in Sources */,
+				3021A4522510C773004E15C5 /* Kdb.m in Sources */,
+				3021A4692510C773004E15C5 /* KdbPassword.m in Sources */,
+				3021A44A2510C773004E15C5 /* OutputStream.m in Sources */,
+				3021A4822510C773004E15C5 /* DDXMLNode.m in Sources */,
+				3021A4362510C773004E15C5 /* Arc4RandomStream.m in Sources */,
+				3021A46C2510C773004E15C5 /* KdbReaderFactory.m in Sources */,
+				3021A45A2510C773004E15C5 /* Kdb3Utils.m in Sources */,
+				3021A4622510C773004E15C5 /* Kdb4Persist.m in Sources */,
+				3021A4712510C773004E15C5 /* RandomStream.m in Sources */,
+				3021A4422510C773004E15C5 /* GZipOutputStream.m in Sources */,
+				3021A4462510C773004E15C5 /* HashedOutputStream.m in Sources */,
+				3021A44C2510C773004E15C5 /* Sha256OutputStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD113A4273F005EBD36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				689DFFE713A4273F005EBD36 /* main.m in Sources */,
-				689D03CD13A42B63005EBD36 /* Base64.m in Sources */,
 				689FBE781AB27228005CB6BD /* KeychainUtils.m in Sources */,
 				689FBE681AB271C6005CB6BD /* PinViewController.m in Sources */,
-				689D03D513A42B63005EBD36 /* Kdb.m in Sources */,
 				689FBE661AB271C6005CB6BD /* LockScreenManager.m in Sources */,
 				6895D2F41D68FE00003D8C44 /* CustomFieldViewController.swift in Sources */,
 				689EA6811D67F8D500CF445E /* NewDatabaseViewController.swift in Sources */,
-				689D03D613A42B63005EBD36 /* Kdb3Date.m in Sources */,
 				689EA6821D67F8D500CF445E /* UIViewController+AlertController.swift in Sources */,
-				689D03D713A42B63005EBD36 /* Kdb3Node.m in Sources */,
-				689D03DA13A42B63005EBD36 /* Kdb3Reader.m in Sources */,
-				689D03DB13A42B63005EBD36 /* Kdb3Writer.m in Sources */,
-				689D03DC13A42B63005EBD36 /* Kdb4Node.m in Sources */,
-				689D03DD13A42B63005EBD36 /* Kdb4Parser.m in Sources */,
-				689D03DE13A42B63005EBD36 /* Kdb4Persist.m in Sources */,
-				689D03DF13A42B63005EBD36 /* Kdb4Reader.m in Sources */,
-				689D03E013A42B63005EBD36 /* Kdb4Writer.m in Sources */,
-				689D03E113A42B63005EBD36 /* KdbPassword.m in Sources */,
 				689EA6781D67F8B500CF445E /* CheckMark.swift in Sources */,
-				689D03E213A42B63005EBD36 /* KdbReaderFactory.m in Sources */,
 				689FBE991AB272BD005CB6BD /* ImageFactory.m in Sources */,
 				689EA6931D67F94600CF445E /* SelectionViewController.swift in Sources */,
 				68496E751AB34F8800370876 /* AppSettings.m in Sources */,
 				6895D2EA1D68F95D003D8C44 /* RenameItemViewController.swift in Sources */,
-				689D03E313A42B63005EBD36 /* KdbWriterFactory.m in Sources */,
-				689D03E513A42B63005EBD36 /* Salsa20RandomStream.m in Sources */,
-				689D03E713A42B63005EBD36 /* Utils.m in Sources */,
 				3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */,
-				689D03E813A42B63005EBD36 /* UUID.m in Sources */,
 				689EA6951D67F94600CF445E /* SettingsViewController.swift in Sources */,
 				689EA67B1D67F8B500CF445E /* ImageSelectorViewController.swift in Sources */,
-				689D03E913A42B63005EBD36 /* DDXMLElementAdditions.m in Sources */,
-				689D03EA13A42B63005EBD36 /* NSString+DDXML.m in Sources */,
 				688038981D6BB33A001424CA /* WebBrowserViewController.swift in Sources */,
 				689EA6721D67F88500CF445E /* PasswordEntryViewController.swift in Sources */,
-				689D03EB13A42B63005EBD36 /* DDXMLDocument.m in Sources */,
-				689D03EC13A42B63005EBD36 /* DDXMLElement.m in Sources */,
-				689D03ED13A42B63005EBD36 /* DDXMLNode.m in Sources */,
 				689D044F13A42C82005EBD36 /* DatabaseDocument.m in Sources */,
 				68BFDBE71D7646B400EFACB3 /* MoveItemsViewController.swift in Sources */,
 				689D045013A42C82005EBD36 /* DatabaseManager.m in Sources */,
@@ -1070,27 +1272,10 @@
 				689D045513A42C82005EBD36 /* AppDelegate.m in Sources */,
 				689FBE791AB27228005CB6BD /* PasswordUtils.m in Sources */,
 				689FBE641AB271C6005CB6BD /* KeypadButton.m in Sources */,
-				689A4D1314046B8200AA897D /* RandomStream.m in Sources */,
-				682D450D1603883900156830 /* AesInputStream.m in Sources */,
-				682D450E1603883900156830 /* AesOutputStream.m in Sources */,
-				682D450F1603883900156830 /* Arc4RandomStream.m in Sources */,
-				682D45101603883900156830 /* DataInputStream.m in Sources */,
-				682D45111603883900156830 /* DataOutputStream.m in Sources */,
-				682D45121603883900156830 /* FileInputStream.m in Sources */,
-				682D45131603883900156830 /* FileOutputStream.m in Sources */,
-				682D45141603883900156830 /* GZipInputStream.m in Sources */,
 				68BFDBE51D7646B400EFACB3 /* GroupCell.swift in Sources */,
-				682D45151603883900156830 /* GZipOutputStream.m in Sources */,
-				682D45161603883900156830 /* HashedInputStream.m in Sources */,
-				682D45171603883900156830 /* HashedOutputStream.m in Sources */,
-				682D45181603883900156830 /* InputStream.m in Sources */,
-				682D45191603883900156830 /* OutputStream.m in Sources */,
 				68767B691D70B0830039EFE0 /* Array+Extensions.swift in Sources */,
-				682D451A1603883900156830 /* Sha256OutputStream.m in Sources */,
-				685D9D951603F8EE00D739D3 /* Kdb3Utils.m in Sources */,
 				689FBE931AB27283005CB6BD /* TextFieldCell.m in Sources */,
 				689EA6871D67F90800CF445E /* CharacterSetsViewController.swift in Sources */,
-				680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */,
 				30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */,
 				689FBE8F1AB27283005CB6BD /* ImageButtonCell.m in Sources */,
 				689FBE651AB271C6005CB6BD /* KeypadView.m in Sources */,
@@ -1101,6 +1286,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3021A4272510C71A004E15C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3021A4202510C71A004E15C5 /* KeePassFramework */;
+			targetProxy = 3021A4262510C71A004E15C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		687AAA991889F8B400AB8AC5 /* AppStore.txt */ = {
@@ -1156,6 +1349,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3021A42B2510C71A004E15C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeePassFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.KeePassFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3021A42C2510C71A004E15C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeePassFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.KeePassFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		689D000413A42740005EBD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1326,6 +1590,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3021A4302510C71A004E15C5 /* Build configuration list for PBXNativeTarget "KeePassFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3021A42B2510C71A004E15C5 /* Debug */,
+				3021A42C2510C71A004E15C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -16,6 +16,7 @@
  */
 
 import UIKit
+import KeePassFramework
 
 struct CharSet {
     static let LowerCase = "abcdefghijklmnopqrstuvwxyz"
