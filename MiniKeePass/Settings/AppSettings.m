@@ -289,21 +289,6 @@ static AppSettings *sharedInstance;
     [userDefaults setBool:closeEnabled forKey:CLOSE_ENABLED];
 }
 
-- (BOOL)backupDisabled {
-    return [userDefaults boolForKey:BACKUP_DISABLED];
-}
-
-- (void)setBackupDisabled:(BOOL)backupDisabled {
-    [userDefaults setBool:backupDisabled forKey:BACKUP_DISABLED];
-
-    NSURL *url = [NSURL fileURLWithPath:[AppDelegate documentsDirectory] isDirectory:YES];
-
-    NSError *error = nil;
-    if (![url setResourceValue:[NSNumber numberWithBool:!backupDisabled] forKey:NSURLIsExcludedFromBackupKey error:&error]) {
-        NSLog(@"Error excluding %@ from backup: %@", url, error);
-    }
-}
-
 - (NSInteger)closeTimeout {
     return closeTimeoutValues[[userDefaults integerForKey:CLOSE_TIMEOUT]];
 }
