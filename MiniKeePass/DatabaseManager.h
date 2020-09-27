@@ -28,8 +28,8 @@
 - (void)newDatabase:(NSURL *)url password:(NSString *)password version:(NSInteger)version;
 
 /// Open the specified KeePass DatabaseDocument
-/// @param path Path to the chosen KeePass DatabaseDocument
-/// @param animated Animate the ViewController transition
+/// @param documentURL URL to the chosen KeePass DatabaseDocument
+/// @param newAnimated Animate the ViewController transition
 - (void)openDatabaseDocument:(NSURL *)documentURL inWindow:(UIWindow *)window animated:(BOOL)newAnimated;
 
 @end
