@@ -19,7 +19,12 @@
 #import "AppDelegate.h"
 #import "KeychainUtils.h"
 #import "AppSettings.h"
+
+#ifdef TARGET_KAGIAPP
 #import "Kagi-Swift.h"
+#elif TARGET_KAGIAUTOFILL
+#import "KagiAutoFill-Swift.h"
+#endif
 
 @implementation DatabaseManager
 
@@ -64,9 +69,6 @@ static DatabaseManager *sharedInstance;
 - (void)openDatabaseDocument:(NSURL *)documentURL inWindow:(UIWindow *)window animated:(BOOL)animated {
     BOOL databaseLoaded = NO;
     self.selectedURL = documentURL;
-
-    // Get the application delegate
-    SceneDelegate *sceneDelegate = (SceneDelegate *)window.windowScene.delegate;
     
     // Load the password and keyfile from the keychain
     NSString *password = [KeychainUtils stringForKey:self.selectedURL.lastPathComponent
@@ -80,8 +82,14 @@ static DatabaseManager *sharedInstance;
 
             databaseLoaded = YES;
 
+#ifdef TARGET_KAGIAPP
             // Set the database document in the application delegate
+            SceneDelegate *sceneDelegate = (SceneDelegate *)window.windowScene.delegate;
             sceneDelegate.databaseDocument = dd;
+#elif TARGET_KAGIAUTOFILL
+            CredentialProviderViewController *credentialVC = (CredentialProviderViewController *)window.rootViewController.childViewControllers.firstObject;
+            credentialVC.databaseDocument = dd;
+#endif
         } @catch (NSException *exception) {
             // Ignore
         }
@@ -134,8 +142,13 @@ static DatabaseManager *sharedInstance;
         // Dismiss the view controller, and after animation set the database document
         [passwordEntryViewController dismissViewControllerAnimated:YES completion:^{
             // Set the database document in the application delegate
+#ifdef TARGET_KAGIAPP
             SceneDelegate *sceneDelegate = (SceneDelegate *)window.windowScene.delegate;
             sceneDelegate.databaseDocument = dd;
+#elif TARGET_KAGIAUTOFILL
+            CredentialProviderViewController *credentialVC = (CredentialProviderViewController *)window.rootViewController.childViewControllers.firstObject;
+            credentialVC.databaseDocument = dd;
+#endif
         }];
     } @catch (NSException *exception) {
         NSLog(@"%@", exception);

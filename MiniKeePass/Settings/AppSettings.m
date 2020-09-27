@@ -18,8 +18,11 @@
 #import "AppSettings.h"
 #import "KeychainUtils.h"
 #import "PasswordUtils.h"
-#import "AppDelegate.h"
+
+#ifdef TARGET_KAGIAPP
 #import "Kagi-Swift.h"
+#import "AppDelegate.h"
+#endif
 
 #define VERSION                    @"version"
 #define EXIT_TIME                  @"exitTime"

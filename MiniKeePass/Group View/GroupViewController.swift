@@ -16,6 +16,7 @@
  */
 
 import UIKit
+import KeePassFramework
 
 class GroupViewController: UITableViewController, UISearchResultsUpdating {
     private enum Section : Int {
@@ -64,8 +65,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+#if TARGET_KAGIAPP
         // Add the edit button
         navigationItem.rightBarButtonItems = [self.editButtonItem]
+#endif
 
         if navigationController?.viewControllers.first == self {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
@@ -75,6 +78,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
+#if TARGET_KAGIAPP
         // Create the standard toolbar
         let settingsButton = UIBarButtonItem(image: UIImage(named: "gear"), style: .plain, target: self, action: #selector(settingsPressed))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
@@ -88,6 +92,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         editingToolbarItems = [deleteButton, spacer, moveButton, spacer, renameButton]
 
         toolbarItems = standardToolbarItems
+#endif
         
         // Search controller
         definesPresentationContext = true // Ensure searchBar stays with tableView
@@ -137,7 +142,6 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return !isEditing
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = self.tableView.indexPathForSelectedRow else {
             return
@@ -148,13 +152,17 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
             selectedItem = KdbItem.group(group)
             destination.parentGroup = group
             destination.title = group.name
+            return
         }
-        else if let destination = segue.destination as? EntryViewController {
+#if TARGET_KAGIAPP
+        if let destination = segue.destination as? EntryViewController {
             let entry = entries[indexPath.row]
             selectedItem = KdbItem.entry(entry)
             destination.entry = entry
             destination.title = entry.title()
+            return
         }
+#endif
     }
     
     func updateViewModel() {
@@ -207,8 +215,13 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     @objc func closeDB(_ sender: UIBarButtonItem) {
+#if TARGET_KAGIAPP
         let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
         sceneDelegate?.closeDatabase()
+#elseif TARGET_KAGIAUTOFILL
+        let credentialVC = view.window?.rootViewController?.children.first as? CredentialProviderViewController
+        credentialVC?.closeDatabase()
+#endif
     }
 
     // MARK: - UITableView data source
@@ -296,6 +309,13 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         if (isEditing) {
             updateEditingToolbar()
         }
+#if TARGET_KAGIAUTOFILL
+    if Section.AllValues[indexPath.section] == .entries {
+        let entry = entries[indexPath.row]
+        let credentialVC = view.window?.rootViewController?.children.first as? CredentialProviderViewController
+        credentialVC?.userChose(username: entry.username(), password: entry.password())
+    }
+#endif
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -304,6 +324,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
 
+#if TARGET_KAGIAPP
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive,
                                               title: NSLocalizedString("Delete", comment: "")) { (_, _, completion) in
@@ -609,8 +630,6 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         present(navigationController, animated: true, completion: nil)
     }
 
-
-
     @objc func renamePressed(sender: UIBarButtonItem) {
         guard let indexPath = tableView.indexPathForSelectedRow else {
             // Nothing selected. This shoudn't have been called
@@ -640,6 +659,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
         present(navigationController, animated: true, completion: nil)
     }
+#endif
     
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {

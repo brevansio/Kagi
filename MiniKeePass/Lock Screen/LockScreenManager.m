@@ -20,12 +20,15 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "LockScreenManager.h"
-#import "AppDelegate.h"
 #import "AppSettings.h"
 #import "KeychainUtils.h"
 #import "PinViewController.h"
 #import "PasswordUtils.h"
+
+#ifdef TARGET_KAGIAPP
+#import "AppDelegate.h"
 #import "Kagi-Swift.h"
+#endif
 
 @interface LockScreenManager () <PinViewControllerDelegate>
 @property (nonatomic, strong) PinViewController *pinViewController;
@@ -205,7 +208,11 @@
                 // Check if they have failed too many times
                 if (pinFailedAttempts >= deleteOnFailureAttempts) {
                     // Delete all data
+#if TARGET_KAGIAPP
                     [AppDelegate deleteAllData];
+#elif TARGET_KAGIAUTOFILL
+                    // TODO
+#endif
 
                     // Dismiss the PIN screen
                     [self hideLockScreen];
@@ -248,8 +255,10 @@
 
 - (void)sceneWillEnterForeground:(NSNotification *)notification {
     if ([self shouldCloseDatabase]) {
+#ifdef TARGET_KAGIAPP
         SceneDelegate *sceneDelegate = (SceneDelegate *)lockWindow.windowScene.delegate;
         [sceneDelegate closeDatabase];
+#endif
     }
     
     if ([self shouldCheckPin]) {
