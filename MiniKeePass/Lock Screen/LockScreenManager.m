@@ -36,6 +36,7 @@
 
 @implementation LockScreenManager {
     UIWindow *lockWindow;
+    UIViewController *lockedViewController;
     BOOL biometricsAuthFailed;
 }
 
@@ -75,12 +76,39 @@
     return self;
 }
 
+- (instancetype)initWithViewController:(UIViewController *)viewController {
+    self = [super init];
+    if (self) {
+        biometricsAuthFailed = NO;
+
+        lockedViewController = viewController;
+
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        blurView.frame = [[UIScreen mainScreen] bounds];
+        self.pinViewController = [[PinViewController alloc] init];
+        self.pinViewController.delegate = self;
+
+        [self.pinViewController willMoveToParentViewController:lockedViewController];
+        [lockedViewController.view addSubview:self.pinViewController.view];
+        [lockedViewController addChildViewController:self.pinViewController];
+
+        [self.pinViewController.view insertSubview:blurView atIndex:0];
+    }
+    return self;
+}
+
 - (void)dealloc {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter removeObserver:self];
 }
 
 #pragma mark - Lock/Unlock
+
+- (void)showLockScreen {
+    [lockWindow makeKeyAndVisible];
+}
 
 - (BOOL)shouldCheckPin {
     // Check if the PIN is enabled
@@ -118,8 +146,12 @@
     [UIView animateWithDuration:0.25
                      animations:^{
                         self->lockWindow.alpha = 0.0;
+                        [self.pinViewController willMoveToParentViewController:nil];
+                        [self.pinViewController.view removeFromSuperview];
+                        [self.pinViewController removeFromParentViewController];
                      }
                      completion:^(BOOL finished){
+                         [self.delegate lockScreenWasHidden];
                          [self.pinViewController clearPin];
                             self->biometricsAuthFailed = NO;
                             self->lockWindow.hidden = YES;

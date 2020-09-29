@@ -17,8 +17,23 @@
 
 @import UIKit;
 
+@protocol LockScreenDelegate <NSObject>
+
+- (void)lockScreenWasHidden;
+
+@end
+
 @interface LockScreenManager : NSObject
 
+@property (nonatomic, weak) NSObject<LockScreenDelegate> *delegate;
+
 - (instancetype)initWithWindow:(UIWindow *)window;
+- (instancetype)initWithViewController:(UIViewController *)viewController;
+
+- (BOOL)shouldCloseDatabase;
+- (void)showLockScreen;
+- (BOOL)shouldCheckPin;
+- (void)checkPin;
+- (void)hideLockScreen;
 
 @end
