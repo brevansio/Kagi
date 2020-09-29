@@ -20,7 +20,6 @@
 #import "AppSettings.h"
 #import "DatabaseManager.h"
 #import "KeychainUtils.h"
-#import "LockScreenManager.h"
 #import "Kagi-Swift.h"
 
 @implementation AppDelegate

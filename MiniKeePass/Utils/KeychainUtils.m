@@ -34,6 +34,7 @@
                             (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
                             (__bridge id)kSecAttrService : serviceName,
                             (__bridge id)kSecAttrAccount : key,
+                            (__bridge id)kSecAttrAccessGroup : KEYCHAIN_SHARED_GROUP
                             };
 
     status = SecItemCopyMatching((__bridge CFDictionaryRef)query, &result_data);
@@ -44,7 +45,7 @@
     NSData *resultData = (__bridge_transfer NSData *)result_data;
     NSString *string = [[NSString alloc] initWithData:(id)resultData encoding:NSUTF8StringEncoding];
 
-	return string;
+    return string;
 }
 
 + (BOOL)setString:(NSString *)string forKey:(NSString *)key andServiceName:(NSString *)serviceName {
@@ -78,6 +79,7 @@
                                      (__bridge id)kSecAttrAccessible : (__bridge id)kSecAttrAccessibleWhenUnlocked,
                                      (__bridge id)kSecAttrService : serviceName,
                                      (__bridge id)kSecAttrAccount : key,
+                                     (__bridge id)kSecAttrAccessGroup : KEYCHAIN_SHARED_GROUP,
                                      (__bridge id)kSecValueData : [string dataUsingEncoding:NSUTF8StringEncoding],
                                      };
 
