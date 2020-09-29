@@ -202,6 +202,13 @@
 			remoteGlobalIDString = 3021A4202510C71A004E15C5;
 			remoteInfo = KeePassFramework;
 		};
+		306CBF2B2522D08C00930248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D104D791ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
 		308C96FB248365DA0017F48B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
@@ -1013,6 +1020,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				306CBF2C2522D08C00930248 /* PBXTargetDependency */,
 				3043AEB82510CC2300AEDECB /* PBXTargetDependency */,
 			);
 			name = KagiAutoFill;
@@ -1322,6 +1330,11 @@
 			isa = PBXTargetDependency;
 			target = 3021A4202510C71A004E15C5 /* KeePassFramework */;
 			targetProxy = 3043AEB72510CC2300AEDECB /* PBXContainerItemProxy */;
+		};
+		306CBF2C2522D08C00930248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Framework";
+			targetProxy = 306CBF2B2522D08C00930248 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
