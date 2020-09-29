@@ -112,7 +112,7 @@ static AppSettings *sharedInstance;
 - (id)init {
     self = [super init];
     if (self) {
-        userDefaults = [NSUserDefaults standardUserDefaults];
+        userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
 
         // Register the default values
         NSMutableDictionary *defaultsDict = [NSMutableDictionary dictionary];

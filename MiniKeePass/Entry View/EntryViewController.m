@@ -110,10 +110,11 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
     
     _editingStringFields = [NSMutableArray array];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:@"hidePasswords"
-                                               options:NSKeyValueObservingOptionNew
-                                               context:nil];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
+    [userDefaults addObserver:self
+                   forKeyPath:@"hidePasswords"
+                      options:NSKeyValueObservingOptionNew
+                      context:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -155,8 +156,9 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 }
 
 - (void)dealloc {
-    [[NSUserDefaults standardUserDefaults] removeObserver:self
-                                               forKeyPath:@"hidePasswords"];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
+    [userDefaults removeObserver:self
+                      forKeyPath:@"hidePasswords"];
 }
 
 - (void)applicationWillResignActive:(id)sender {
@@ -705,7 +707,8 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"hidePasswords"] && object == [NSUserDefaults standardUserDefaults]) {
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
+    if ([keyPath isEqualToString:@"hidePasswords"] && object == userDefaults) {
         passwordCell.textField.secureTextEntry = [[AppSettings sharedInstance] hidePasswords];
     }
 }

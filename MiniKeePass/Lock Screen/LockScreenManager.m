@@ -28,6 +28,8 @@
 #ifdef TARGET_KAGIAPP
 #import "AppDelegate.h"
 #import "Kagi-Swift.h"
+#elif TARGET_KAGIAUTOFILL
+#import "KagiAutoFill-Swift.h"
 #endif
 
 @interface LockScreenManager () <PinViewControllerDelegate>
@@ -244,6 +246,7 @@
                     [AppDelegate deleteAllData];
 #elif TARGET_KAGIAUTOFILL
                     // TODO
+                    [(CredentialProviderViewController *)lockedViewController deleteAllData];
 #endif
 
                     // Dismiss the PIN screen

@@ -80,7 +80,6 @@
         NSURL *url = [(SceneDelegate *)scene.delegate databaseDocument].url;
         [(SceneDelegate *)scene.delegate closeDatabase];
         [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
-
     }
 
     // Delete data stored in system keychain

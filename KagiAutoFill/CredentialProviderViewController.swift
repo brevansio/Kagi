@@ -50,6 +50,17 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
                                                                code: ASExtensionError.userCanceled.rawValue))
     }
 
+    @objc func deleteAllData() {
+        AppSettings.sharedInstance()?.setPinFailedAttempts(0)
+        AppSettings.sharedInstance()?.setPinEnabled(false)
+        AppSettings.sharedInstance()?.setBiometricsEnabled(false)
+
+        KeychainUtils.deleteString(forKey: "PIN", andServiceName: KEYCHAIN_PIN_SERVICE)
+        KeychainUtils.deleteAll(forServiceName: KEYCHAIN_PASSWORDS_SERVICE)
+        KeychainUtils.deleteAll(forServiceName: KEYCHAIN_KEYFILES_SERVICE)
+        closeDatabase()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
