@@ -9,13 +9,6 @@
 import AuthenticationServices
 
 class CredentialProviderViewController: ASCredentialProviderViewController {
-    var window: UIWindow? {
-        didSet {
-            guard let window = window else { return }
-            lockScreenManager = LockScreenManager(window: window)
-        }
-    }
-
     private var lockScreenManager: LockScreenManager?
 
     private var _databaseDocument: DatabaseDocument?
@@ -42,12 +35,16 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
             groupViewController.parentGroup = newDocument.kdbTree.root
             groupViewController.title = URL(fileURLWithPath: newDocument.filename).lastPathComponent
 
-            present(navController, animated: true, completion: nil)
+            navController.willMove(toParent: self)
+            navController.view.frame = view.bounds
+            view.addSubview(navController.view)
+            addChild(navController)
+            navController.didMove(toParent: self)
         }
     }
 
     @objc func closeDatabase() {
-        dismiss(animated: true, completion: nil)
+        children.forEach { $0.removeFromParent() }
         _databaseDocument = nil
         self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain,
                                                                code: ASExtensionError.userCanceled.rawValue))
@@ -56,10 +53,20 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.item", "public.content"], in: .open)
-        documentPicker.delegate = self
-        documentPicker.shouldShowFileExtensions = true
-        present(documentPicker, animated: true, completion: nil)
+        lockScreenManager = LockScreenManager(viewController: self)
+        lockScreenManager?.delegate = self;
+
+        if lockScreenManager?.shouldCloseDatabase() != false {
+            dismiss(animated: true, completion: nil)
+            _databaseDocument = nil
+        }
+
+        if lockScreenManager?.shouldCheckPin() == true {
+            lockScreenManager?.showLockScreen()
+            lockScreenManager?.checkPin()
+        } else {
+            lockScreenManager?.hideLockScreen()
+        }
     }
 
     func userChose(username: String, password: String) {
@@ -115,5 +122,14 @@ extension CredentialProviderViewController: UIDocumentPickerDelegate {
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain,
                                                                code: ASExtensionError.userCanceled.rawValue))
+    }
+}
+
+extension CredentialProviderViewController: LockScreenDelegate {
+    @objc func lockScreenWasHidden() {
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.item", "public.content"], in: .open)
+        documentPicker.delegate = self
+        documentPicker.shouldShowFileExtensions = true
+        present(documentPicker, animated: true, completion: nil)
     }
 }
