@@ -644,6 +644,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
 
         let viewController = navigationController.topViewController as! RenameItemViewController
+        viewController.donePressed = { _ in
+            self.updateViewModel()
+            self.tableView.reloadData()
+        }
 
         // Set the group/entry to rename
         switch Section.AllValues[indexPath.section] {

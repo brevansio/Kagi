@@ -44,6 +44,8 @@ class RenameItemViewController: UITableViewController {
             nameTextField.text = entry!.title()
             selectedImageIndex = entry!.image
         }
+
+        navigationController?.presentationController?.delegate = self
     }
     
     // MARK: - UITextFieldDelegate
@@ -66,6 +68,14 @@ class RenameItemViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func donePressedAction(_ sender: UIBarButtonItem?) {
+        updateEntry()
+
+        donePressed?(self)
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    private func updateEntry() {
         // Validate the name is valid
         let name = nameTextField.text
         if (name == nil || name!.isEmpty) {
@@ -88,10 +98,6 @@ class RenameItemViewController: UITableViewController {
         let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate
         let databaseDocument = sceneDelegate?.databaseDocument
         databaseDocument?.save()
-
-        donePressed?(self)
-
-        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancelPressedAction(_ sender: UIBarButtonItem) {
@@ -100,3 +106,13 @@ class RenameItemViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+
+
+#if TARGET_KAGIAPP
+extension RenameItemViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        updateEntry()
+        donePressed?(self)
+    }
+}
+#endif
