@@ -458,7 +458,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate else {
             return
         }
-        let url = URL(fileURLWithPath: sceneDelegate.databaseDocument!.filename)
+        let url = sceneDelegate.databaseDocument!.url!
 
         // Present the options to handle the database
         documentInteractionController = UIDocumentInteractionController(url: url)
