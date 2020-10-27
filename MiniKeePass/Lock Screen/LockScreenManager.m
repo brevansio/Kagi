@@ -109,6 +109,7 @@
 #pragma mark - Lock/Unlock
 
 - (void)showLockScreen {
+    lockWindow.rootViewController = self.pinViewController;
     [lockWindow makeKeyAndVisible];
 }
 
@@ -148,9 +149,6 @@
     [UIView animateWithDuration:0.25
                      animations:^{
                         self->lockWindow.alpha = 0.0;
-                        [self.pinViewController willMoveToParentViewController:nil];
-                        [self.pinViewController.view removeFromSuperview];
-                        [self.pinViewController removeFromParentViewController];
                      }
                      completion:^(BOOL finished){
                          [self.delegate lockScreenWasHidden];
@@ -297,6 +295,7 @@
     }
     
     if ([self shouldCheckPin]) {
+        [self showLockScreen];
         [self checkPin];
     } else {
         [self hideLockScreen];
