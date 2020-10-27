@@ -62,6 +62,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
 
+    let userDefaults = UserDefaults(suiteName: "group.io.brevans.Kagi")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -102,6 +104,11 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         searchController?.hidesNavigationBarDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+
+        userDefaults?.addObserver(self,
+                                  forKeyPath: "sortAlphabetically",
+                                  options: [.new],
+                                  context: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +144,10 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         super.viewDidDisappear(animated)
 
         documentInteractionController?.dismissMenu(animated: false)
+    }
+
+    deinit {
+        userDefaults?.removeObserver(self, forKeyPath: "sortAlphabetically")
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -685,6 +696,13 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
         }
         
         // Update table
+        updateViewModel()
+        tableView.reloadData()
+    }
+}
+
+extension GroupViewController {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         updateViewModel()
         tableView.reloadData()
     }
