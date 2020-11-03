@@ -85,9 +85,12 @@
 
 // Settings Page
 "Settings" = "Einstellungen";
+
+"PIN Protection" = "PIN Schutz";
+"Set PIN" = "PIN setzen";
+"Confirm PIN" = "PIN bestätigen";
+"PINs did not match. Try again" = "PINs stimmen nicht überein. Bitte erneut versuchen.";
 "PIN Enabled" = "PIN aktiviert";
-"Touch ID / Face ID" = "Touch ID / Face ID"; // FIXME
-"Use your fingerprint or face as an alternative to entering a PIN if supported." = "Use your fingerprint or face as an alternative to entering a PIN if supported."; // FIXME
 "Lock Timeout" = "Sperrzeit";
 "Immediately" = "Sofort";
 "30 Seconds" = "30 Sekunden";
@@ -95,14 +98,21 @@
 "2 Minutes" = "2 Minuten";
 "3 Minutes" = "3 Minuten";
 "5 Minutes" = "5 Minuten";
-"Enabled" = "Aktiviert";
-"Attempts" = "Versuche";
-"Close Enabled" = "Schließen aktiviert";
+"Use Touch ID / Face ID" = "Use Touch ID / Face ID";
+"Delete Data on Failure" = "Alle Daten bei falscher PIN löschen";
+"Attempts Until Deletion" = "Attempts Until Deletion";
+"Prevent unauthorized access to Kagi with a PIN." = "Vor unerlaubtem Zugang zu Kagi mit einer PIN schützen.";
+
+"Database Password Settings" = "Database Password Settings";
+"Remember Database Passwords" = "Datenbank Passwörter merken";
+"Clear Clipboard on Timeout" = "Zwischenablage bei Zeitüberschreitung löschen";
+"Clipboard Timeout" = "Clipboard Timeout";
+"Close Database on Timeout" = "Datenbank bei Zeitüberschreitung schließen";
 "Close Timeout" = "Close Timeout";
+
+"Database Display Settings" = "Database Display Settings";
 "Hide Passwords" = "Passwörter verstecken";
-"Sorting" = "Sortierung";
-"Sort Groups and Entries Alphabetically" = "Gruppen und Einträge alphabetisch sortiern";
-"Encoding" = "Encoding";
+"Password Encoding" = "Passwort Encoding";
 "UTF-8" = "UTF-8";
 "UTF-16 Big Endian" = "UTF-16 Big Endian";
 "UTF-16 Little Endian" = "UTF-16 Little Endian";
@@ -111,40 +121,14 @@
 "7-Bit ASCII" = "7-Bit ASCII";
 "Japanese EUC" = "Japanese EUC";
 "ISO-2022-JP" = "ISO-2022-JP";
-"PIN Protection" = "PIN Schutz";
-"Delete All Data on PIN Failure" = "Alle Daten bei falscher PIN löschen";
-"Close Database on Timeout" = "Datenbank bei Zeitüberschreitung schließen";
-"Remember Database Passwords" = "Datenbank Passwörter merken";
-"Hide Passwords" = "Passwörter verstecken";
-"Password Encoding" = "Passwort Encoding";
-"Clear Clipboard on Timeout" = "Zwischenablage bei Zeitüberschreitung löschen";
-"Clear Timeout" = "Clear Timeout";
-"Prevent unauthorized access to Kagi with a PIN." = "Vor unerlaubtem Zugang zu Kagi mit einer PIN schützen.";
-"Delete all files and passwords after too many failed attempts." = "Alle Dateien und Passwörter nach zu vielen ungültigen Versuchen löschen.";
-"Automatically close an open database after the selected timeout." = "Eine geöffnete Datenbank automatisch nach Ablauf der Zeit schließen.";
-"Stores remembered database passwords in the devices's secure keychain." = "Gespeicherte Datenbankpasswörter in der sicheren Keychain des Gerätes speichern.";
-"Hides passwords when viewing a password entry." = "Passwörter beim Ansehen eines Eintrages verstecken.";
-"The string encoding used for passwords when converting them to database keys." = "Das Encoding welches für Passwörter während der Konvertierung verwendet wird.";
-"Clear the contents of the clipboard after a given timeout upon performing a copy." = "Inhalt der Zwischenablage nach Zeitübeschreitung löschen nachdem kopiert wurde.";
-"Close Timeout" = "Close Timeout";
-"Clear Clipboard Timeout" = "Timeout zum Löschen der Zwischenablage";
-"Exclude from backup" = "Backups deaktivieren";
-"iCloud/iTunes Backup" = "iCloud/iTunes Backup";
-"Exclude databases and key files from iTunes/iCloud backups." = "Datenbank- und Schlüsseldateien vom iTunes/iCloud Backup ausschließen";
-"Web Browser" = "Web Browser";
-"Integrated" = "Integriert";
-"Switch between an integrated web browser and Safari." = "Wechseln Sie zwischen einem integrierten Web Browser und Safari.";
-"Set PIN" = "PIN setzen";
-"Confirm PIN" = "PIN bestätigen";
-"PINs did not match. Try again" = "PINs stimmen nicht überein. Bitte erneut versuchen.";
-"Kagi version %@" = "Kagi Version %@";
+"Sort Alphabetically" = "Sort Alphabetically";
+"Search Title Only" = "Search Title Only";
+"Use Integrated Web Browser" = "Use Integrated Web Browser";
 
-// Help Titles
-"iTunes Import/Export" = "iTunes Im- und Export";
-"Dropbox Import/Export" = "Dropbox Im- und Export";
-"Safari/Email Import" = "Safari und E-Mail Import";
-"Create New Database" = "Neue Datenbank erstellen";
-"Key Files" = "Schlüsseldateien";
+"About Kagi" = "About Kagi";
+"Kagi version %@" = "Kagi version %@";
+"(Tip Jar) Pay for a Cup of Coffee" = "(Tip Jar) Pay for a Cup of Coffee";
+"(Tip Jar) Pay for Lunch" = "(Tip Jar) Pay for Lunch";
 
 // Password Generator
 "Generator" = "Generator";
