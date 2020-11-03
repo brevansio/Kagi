@@ -350,13 +350,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Passwords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3z-vF-Z88">
-                                                    <rect key="frame" x="8" y="12" width="302" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="286" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ofT-Wg-xcq">
-                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="hidePasswordsEnabledChanged:" destination="mlm-01-Slc" eventType="valueChanged" id="N8x-up-n6I"/>
                                                     </connections>
@@ -498,13 +498,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Kagi Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sdb-s9-D0G">
-                                                    <rect key="frame" x="15" y="13" width="90" height="19.5"/>
+                                                    <rect key="frame" x="16" y="13" width="90" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fc3-tI-Hn4">
-                                                    <rect key="frame" x="325" y="13" width="42" height="19.5"/>
+                                                    <rect key="frame" x="317" y="13" width="42" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
@@ -521,7 +521,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(Tip Jar) Pay for a Cup of Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ck7-pA-nrZ">
-                                                    <rect key="frame" x="15" y="0.0" width="352" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -538,7 +538,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(Tip Jar) Pay for Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UBE-uq-gz4">
-                                                    <rect key="frame" x="15" y="0.0" width="352" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -564,25 +564,36 @@
                     </navigationItem>
                     <connections>
                         <outlet property="biometricsEnabledCell" destination="v5C-no-1Zp" id="Oe8-6J-urU"/>
+                        <outlet property="biometricsEnabledLabel" destination="drK-Tr-LS6" id="udT-JF-dyn"/>
                         <outlet property="biometricsEnabledSwitch" destination="Ye5-jl-2bY" id="cBy-Mo-Gym"/>
                         <outlet property="clearClipboardEnabledSwitch" destination="Amv-ka-cmc" id="7LU-aG-nxz"/>
+                        <outlet property="clearClipboardLabel" destination="kQ7-wA-XNa" id="joT-ys-HlX"/>
                         <outlet property="clearClipboardTimeoutCell" destination="2F7-jl-P33" id="2Ue-Ht-Q2L"/>
                         <outlet property="closeDatabaseEnabledSwitch" destination="H69-KF-yqe" id="fS2-aO-7cl"/>
+                        <outlet property="closeDatabaseLabel" destination="Q8a-zf-aFf" id="Kie-07-8An"/>
                         <outlet property="closeDatabaseTimeoutCell" destination="0y2-e2-8ow" id="bdB-IZ-RGX"/>
                         <outlet property="coffeeIAPCell" destination="qZy-l6-VaH" id="MSP-Vi-Vdp"/>
                         <outlet property="deleteAllDataAttemptsCell" destination="0Rc-eI-Pdn" id="lw9-Xt-MpI"/>
                         <outlet property="deleteAllDataEnabledCell" destination="68h-n2-JDk" id="WTn-i6-KWM"/>
                         <outlet property="deleteAllDataEnabledSwitch" destination="Vkp-4b-3XR" id="sDh-tf-ACx"/>
+                        <outlet property="deleteDataLabel" destination="8ZA-aO-G1w" id="BQ5-ds-XqC"/>
                         <outlet property="hidePasswordsEnabledSwitch" destination="ofT-Wg-xcq" id="fV3-ZJ-xPx"/>
+                        <outlet property="hidePasswordsLabel" destination="T3z-vF-Z88" id="sDh-El-DqO"/>
                         <outlet property="integratedWebBrowserEnabledSwitch" destination="KiU-1e-0G5" id="pbF-ds-nZJ"/>
+                        <outlet property="integratedWebBrowserLabel" destination="I3Y-Du-rEB" id="Gib-kV-fKO"/>
                         <outlet property="lunchIAPCell" destination="YXC-gG-hrb" id="J18-c5-7hv"/>
                         <outlet property="passwordEncodingCell" destination="p70-RW-3e7" id="kfr-qv-qmZ"/>
+                        <outlet property="pinEnabledLabel" destination="p28-N6-qWa" id="kRE-JM-1Cs"/>
                         <outlet property="pinEnabledSwitch" destination="i82-ao-eaE" id="EnM-DA-stl"/>
                         <outlet property="pinLockTimeoutCell" destination="2QL-yf-Q2s" id="7Dh-Fl-MMH"/>
                         <outlet property="rememberDatabasePasswordsEnabledSwitch" destination="Ea4-fm-fzf" id="7cF-hL-41B"/>
+                        <outlet property="rememberPasswordLabel" destination="xMv-gl-Kfq" id="G0y-Fl-ziq"/>
+                        <outlet property="searchTitleOnlyLabel" destination="bYX-rB-JtD" id="U7i-VC-at0"/>
                         <outlet property="searchTitleOnlySwitch" destination="PQv-PG-Wrn" id="5XL-4A-aem"/>
+                        <outlet property="sortingEnabledLabel" destination="Am8-Mj-Ugf" id="BuC-3g-hjo"/>
                         <outlet property="sortingEnabledSwitch" destination="3lc-8w-xI4" id="grb-Ay-BBQ"/>
                         <outlet property="versionLabel" destination="fc3-tI-Hn4" id="2Zn-w5-26K"/>
+                        <outlet property="versionTitleLabel" destination="Sdb-s9-D0G" id="zEU-9t-4II"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfW-uZ-hKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,7 +619,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eED-5Q-Yzd"/>
+        <segue reference="PxN-Oo-5xq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="tintColor">

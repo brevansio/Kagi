@@ -19,6 +19,7 @@ import UIKit
 
 class RenameItemViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     var donePressed: ((_ renameItemViewController: RenameItemViewController) -> Void)?
@@ -36,6 +37,8 @@ class RenameItemViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        imageLabel.text = NSLocalizedString("Image", comment: "")
 
         if (group != nil) {
             nameTextField.text = group!.name

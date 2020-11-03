@@ -20,6 +20,7 @@ import UIKit
 class CustomFieldViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet weak var inMemoryProtectionTitle: UILabel!
     @IBOutlet weak var inMemoryProtectionSwitch: UISwitch!
     
     @objc var stringField: StringField?
@@ -33,10 +34,14 @@ class CustomFieldViewController: UITableViewController {
         guard let stringField = stringField else {
             return
         }
-        
+
+        navigationItem.title = NSLocalizedString("Custom Field", comment: "")
         nameTextField.text = stringField.key
+        nameTextField.placeholder = NSLocalizedString("Name", comment: "")
         valueTextField.text = stringField.value
+        valueTextField.placeholder = NSLocalizedString("Value", comment: "")
         inMemoryProtectionSwitch.isOn = stringField.protected
+        inMemoryProtectionTitle.text = NSLocalizedString("In Memory Protection", comment: "")
     }
     
     // MARK: - UITextFieldDelegate
