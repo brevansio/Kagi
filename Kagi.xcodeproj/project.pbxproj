@@ -3,51 +3,126 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3021A4252510C71A004E15C5 /* KeePassFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 3021A4232510C71A004E15C5 /* KeePassFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4282510C71A004E15C5 /* KeePassFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */; };
+		3021A4292510C71A004E15C5 /* KeePassFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3021A4312510C773004E15C5 /* AesInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F11603883900156830 /* AesInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4322510C773004E15C5 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
+		3021A4332510C773004E15C5 /* AesOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F31603883900156830 /* AesOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4342510C773004E15C5 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
+		3021A4352510C773004E15C5 /* Arc4RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F51603883900156830 /* Arc4RandomStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4362510C773004E15C5 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
+		3021A4372510C773004E15C5 /* DataInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F71603883900156830 /* DataInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4382510C773004E15C5 /* DataInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F81603883900156830 /* DataInputStream.m */; };
+		3021A4392510C773004E15C5 /* DataOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44F91603883900156830 /* DataOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43A2510C773004E15C5 /* DataOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FA1603883900156830 /* DataOutputStream.m */; };
+		3021A43B2510C773004E15C5 /* FileInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FB1603883900156830 /* FileInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43C2510C773004E15C5 /* FileInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FC1603883900156830 /* FileInputStream.m */; };
+		3021A43D2510C773004E15C5 /* FileOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FD1603883900156830 /* FileOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A43E2510C773004E15C5 /* FileOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FE1603883900156830 /* FileOutputStream.m */; };
+		3021A43F2510C773004E15C5 /* GZipInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D44FF1603883900156830 /* GZipInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4402510C773004E15C5 /* GZipInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45001603883900156830 /* GZipInputStream.m */; };
+		3021A4412510C773004E15C5 /* GZipOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45011603883900156830 /* GZipOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4422510C773004E15C5 /* GZipOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45021603883900156830 /* GZipOutputStream.m */; };
+		3021A4432510C773004E15C5 /* HashedInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45031603883900156830 /* HashedInputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4442510C773004E15C5 /* HashedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45041603883900156830 /* HashedInputStream.m */; };
+		3021A4452510C773004E15C5 /* HashedOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45051603883900156830 /* HashedOutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4462510C773004E15C5 /* HashedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45061603883900156830 /* HashedOutputStream.m */; };
+		3021A4472510C773004E15C5 /* InputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45071603883900156830 /* InputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4482510C773004E15C5 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45081603883900156830 /* InputStream.m */; };
+		3021A4492510C773004E15C5 /* OutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D45091603883900156830 /* OutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44A2510C773004E15C5 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450A1603883900156830 /* OutputStream.m */; };
+		3021A44B2510C773004E15C5 /* Sha256OutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 682D450B1603883900156830 /* Sha256OutputStream.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44C2510C773004E15C5 /* Sha256OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450C1603883900156830 /* Sha256OutputStream.m */; };
+		3021A44D2510C773004E15C5 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02B713A42B63005EBD36 /* Base64.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A44E2510C773004E15C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B813A42B63005EBD36 /* Base64.m */; };
+		3021A44F2510C773004E15C5 /* DDXMLDocument+MKPAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 680C277416050C7A009403DE /* DDXMLDocument+MKPAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4502510C773004E15C5 /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
+		3021A4512510C773004E15C5 /* Kdb.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02C713A42B63005EBD36 /* Kdb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4522510C773004E15C5 /* Kdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C813A42B63005EBD36 /* Kdb.m */; };
+		3021A4532510C773004E15C5 /* Kdb3Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02C913A42B63005EBD36 /* Kdb3Date.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4542510C773004E15C5 /* Kdb3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CA13A42B63005EBD36 /* Kdb3Date.m */; };
+		3021A4552510C773004E15C5 /* Kdb3Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02CB13A42B63005EBD36 /* Kdb3Node.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4562510C773004E15C5 /* Kdb3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CC13A42B63005EBD36 /* Kdb3Node.m */; };
+		3021A4572510C773004E15C5 /* Kdb3Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D113A42B63005EBD36 /* Kdb3Reader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4582510C773004E15C5 /* Kdb3Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D213A42B63005EBD36 /* Kdb3Reader.m */; };
+		3021A4592510C773004E15C5 /* Kdb3Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 685D9D931603F8EE00D739D3 /* Kdb3Utils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A45A2510C773004E15C5 /* Kdb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D941603F8EE00D739D3 /* Kdb3Utils.m */; };
+		3021A45B2510C773004E15C5 /* Kdb3Writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D313A42B63005EBD36 /* Kdb3Writer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A45C2510C773004E15C5 /* Kdb3Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D413A42B63005EBD36 /* Kdb3Writer.m */; };
+		3021A45D2510C773004E15C5 /* Kdb4Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D513A42B63005EBD36 /* Kdb4Node.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A45E2510C773004E15C5 /* Kdb4Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D613A42B63005EBD36 /* Kdb4Node.m */; };
+		3021A45F2510C773004E15C5 /* Kdb4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D713A42B63005EBD36 /* Kdb4Parser.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4602510C773004E15C5 /* Kdb4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D813A42B63005EBD36 /* Kdb4Parser.m */; };
+		3021A4612510C773004E15C5 /* Kdb4Persist.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02D913A42B63005EBD36 /* Kdb4Persist.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4622510C773004E15C5 /* Kdb4Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DA13A42B63005EBD36 /* Kdb4Persist.m */; };
+		3021A4632510C773004E15C5 /* Kdb4Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DB13A42B63005EBD36 /* Kdb4Reader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4642510C773004E15C5 /* Kdb4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DC13A42B63005EBD36 /* Kdb4Reader.m */; };
+		3021A4652510C773004E15C5 /* Kdb4Writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DD13A42B63005EBD36 /* Kdb4Writer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4662510C773004E15C5 /* Kdb4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DE13A42B63005EBD36 /* Kdb4Writer.m */; };
+		3021A4672510C773004E15C5 /* KdbLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02DF13A42B63005EBD36 /* KdbLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4682510C773004E15C5 /* KdbPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E013A42B63005EBD36 /* KdbPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4692510C773004E15C5 /* KdbPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E113A42B63005EBD36 /* KdbPassword.m */; };
+		3021A46A2510C773004E15C5 /* KdbReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E213A42B63005EBD36 /* KdbReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46B2510C773004E15C5 /* KdbReaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E313A42B63005EBD36 /* KdbReaderFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46C2510C773004E15C5 /* KdbReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E413A42B63005EBD36 /* KdbReaderFactory.m */; };
+		3021A46D2510C773004E15C5 /* KdbWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E513A42B63005EBD36 /* KdbWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46E2510C773004E15C5 /* KdbWriterFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02E613A42B63005EBD36 /* KdbWriterFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A46F2510C773004E15C5 /* KdbWriterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E713A42B63005EBD36 /* KdbWriterFactory.m */; };
+		3021A4702510C773004E15C5 /* RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EA13A42B63005EBD36 /* RandomStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4712510C773004E15C5 /* RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689A4D1214046B8200AA897D /* RandomStream.m */; };
+		3021A4722510C773004E15C5 /* Salsa20RandomStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EB13A42B63005EBD36 /* Salsa20RandomStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4732510C773004E15C5 /* Salsa20RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EC13A42B63005EBD36 /* Salsa20RandomStream.m */; };
+		3021A4742510C773004E15C5 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02EF13A42B63005EBD36 /* Utils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4752510C773004E15C5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F013A42B63005EBD36 /* Utils.m */; };
+		3021A4762510C773004E15C5 /* UUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F113A42B63005EBD36 /* UUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3021A4772510C773004E15C5 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F213A42B63005EBD36 /* UUID.m */; };
+		3021A4782510C773004E15C5 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F513A42B63005EBD36 /* DDXMLElementAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4792510C773004E15C5 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F613A42B63005EBD36 /* DDXMLElementAdditions.m */; };
+		3021A47A2510C773004E15C5 /* NSString+DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02F813A42B63005EBD36 /* NSString+DDXML.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47B2510C773004E15C5 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F913A42B63005EBD36 /* NSString+DDXML.m */; };
+		3021A47C2510C773004E15C5 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FA13A42B63005EBD36 /* DDXML.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47D2510C773004E15C5 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FB13A42B63005EBD36 /* DDXMLDocument.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A47E2510C773004E15C5 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FC13A42B63005EBD36 /* DDXMLDocument.m */; };
+		3021A47F2510C773004E15C5 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FD13A42B63005EBD36 /* DDXMLElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4802510C773004E15C5 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FE13A42B63005EBD36 /* DDXMLElement.m */; };
+		3021A4812510C773004E15C5 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D02FF13A42B63005EBD36 /* DDXMLNode.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3021A4822510C773004E15C5 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D030013A42B63005EBD36 /* DDXMLNode.m */; };
+		3021A4832510C773004E15C5 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 689D030213A42B63005EBD36 /* DDXMLPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C85024A6254000AF06AB /* SceneDelegate.swift */; };
-		3083142F24A89A0000E8A983 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3083142E24A89A0000E8A983 /* Settings.bundle */; };
+		3043AEA72510CC1700AEDECB /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3043AEA62510CC1700AEDECB /* AuthenticationServices.framework */; };
+		3043AEAA2510CC1700AEDECB /* CredentialProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043AEA92510CC1700AEDECB /* CredentialProviderViewController.swift */; };
+		3043AEAD2510CC1700AEDECB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3043AEAB2510CC1700AEDECB /* MainInterface.storyboard */; };
+		3043AEB22510CC1700AEDECB /* KagiAutoFill.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3043AEA52510CC1700AEDECB /* KagiAutoFill.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3043AEB92510CC2900AEDECB /* KeePassFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */; };
+		3043AEBA2510CC3A00AEDECB /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3043AEA62510CC1700AEDECB /* AuthenticationServices.framework */; };
+		3043AEBB2510CD9200AEDECB /* DatabaseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042713A42C81005EBD36 /* DatabaseDocument.m */; };
+		3043AEBC2510CDB600AEDECB /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7F3941D76708000467354 /* GroupViewController.swift */; };
+		3043AEBD2510CDC500AEDECB /* KeypadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE5B1AB271C6005CB6BD /* KeypadButton.m */; };
+		3043AEBE2510CDC800AEDECB /* KeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE5D1AB271C6005CB6BD /* KeypadView.m */; };
+		3043AEBF2510CDCA00AEDECB /* LockScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE5F1AB271C6005CB6BD /* LockScreenManager.m */; };
+		3043AEC02510CDCE00AEDECB /* PinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE631AB271C6005CB6BD /* PinViewController.m */; };
+		304BC76B2510F61000FCE88A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68767B681D70B0830039EFE0 /* Array+Extensions.swift */; };
+		304BC76D2510F87100FCE88A /* PasswordEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689EA66E1D67F88500CF445E /* PasswordEntry.storyboard */; };
+		304BC76E2510F87500FCE88A /* PasswordEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EA66F1D67F88500CF445E /* PasswordEntryViewController.swift */; };
+		304BC76F2510F9B100FCE88A /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042913A42C81005EBD36 /* DatabaseManager.m */; };
+		304BC7702510FB6400FCE88A /* ImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE981AB272BD005CB6BD /* ImageFactory.m */; };
+		304BC7712510FB6600FCE88A /* KeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE751AB27228005CB6BD /* KeychainUtils.m */; };
+		304BC7722510FB6900FCE88A /* PasswordUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FBE771AB27228005CB6BD /* PasswordUtils.m */; };
+		304BC7732510FB7D00FCE88A /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 68496E721AB34F8800370876 /* AppSettings.m */; };
+		304BC7742510FE2600FCE88A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E0830E146F24E3001C4EDF /* Localizable.strings */; };
+		304BC7752510FE3400FCE88A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522D8F9D17E35B0E00BCA329 /* Images.xcassets */; };
 		30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC7F4224B1AC93005D0EEB /* IAPManager.swift */; };
-		4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168E16B3E871004195A1 /* fr-createdb.html */; };
-		4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168F16B3E871004195A1 /* fr-dropbox.html */; };
-		4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169016B3E871004195A1 /* fr-itunes.html */; };
-		4E8C169616B3E871004195A1 /* fr-keyfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169116B3E871004195A1 /* fr-keyfiles.html */; };
-		4E8C169716B3E871004195A1 /* fr-safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169216B3E871004195A1 /* fr-safariemail.html */; };
 		522D8F9E17E35B0E00BCA329 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522D8F9D17E35B0E00BCA329 /* Images.xcassets */; };
-		52491D0C14D8F3FB00F8CBC8 /* de-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 52491D0714D8F3FB00F8CBC8 /* de-createdb.html */; };
-		52491D0D14D8F3FB00F8CBC8 /* de-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 52491D0814D8F3FB00F8CBC8 /* de-dropbox.html */; };
-		52491D0E14D8F3FB00F8CBC8 /* de-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 52491D0914D8F3FB00F8CBC8 /* de-itunes.html */; };
-		52491D0F14D8F3FB00F8CBC8 /* de-keyfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 52491D0A14D8F3FB00F8CBC8 /* de-keyfiles.html */; };
-		52491D1014D8F3FB00F8CBC8 /* de-safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 52491D0B14D8F3FB00F8CBC8 /* de-safariemail.html */; };
 		526D9FAD167CDC2E0097213E /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526D9FAB167CDC010097213E /* libMBProgressHUD.a */; };
 		5271A98D1ED7CA3E00B9AF2C /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5271A98C1ED7CA3E00B9AF2C /* TextFieldCell.xib */; };
 		529708B014FEF149003547FB /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 529708AD14FEEFD3003547FB /* Andale Mono.ttf */; };
-		52A177BC13EB698E00CEEFCE /* createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 52A177BB13EB698E00CEEFCE /* createdb.html */; };
-		52E43F4C15B59C890029F979 /* ru-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4715B59C880029F979 /* ru-createdb.html */; };
-		52E43F4D15B59C890029F979 /* ru-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4815B59C880029F979 /* ru-dropbox.html */; };
-		52E43F4E15B59C890029F979 /* ru-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4915B59C890029F979 /* ru-itunes.html */; };
-		52E43F4F15B59C890029F979 /* ru-keyfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4A15B59C890029F979 /* ru-keyfiles.html */; };
-		52E43F5015B59C890029F979 /* ru-safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 52E43F4B15B59C890029F979 /* ru-safariemail.html */; };
 		6802C36F1A425D7300595AC9 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6802C36E1A425D7300595AC9 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
-		682D450D1603883900156830 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
-		682D450E1603883900156830 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
-		682D450F1603883900156830 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
-		682D45101603883900156830 /* DataInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F81603883900156830 /* DataInputStream.m */; };
-		682D45111603883900156830 /* DataOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FA1603883900156830 /* DataOutputStream.m */; };
-		682D45121603883900156830 /* FileInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FC1603883900156830 /* FileInputStream.m */; };
-		682D45131603883900156830 /* FileOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FE1603883900156830 /* FileOutputStream.m */; };
-		682D45141603883900156830 /* GZipInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45001603883900156830 /* GZipInputStream.m */; };
-		682D45151603883900156830 /* GZipOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45021603883900156830 /* GZipOutputStream.m */; };
-		682D45161603883900156830 /* HashedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45041603883900156830 /* HashedInputStream.m */; };
-		682D45171603883900156830 /* HashedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45061603883900156830 /* HashedOutputStream.m */; };
-		682D45181603883900156830 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45081603883900156830 /* InputStream.m */; };
-		682D45191603883900156830 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450A1603883900156830 /* OutputStream.m */; };
-		682D451A1603883900156830 /* Sha256OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450C1603883900156830 /* Sha256OutputStream.m */; };
 		68496E751AB34F8800370876 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 68496E721AB34F8800370876 /* AppSettings.m */; };
-		685D9D951603F8EE00D739D3 /* Kdb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D941603F8EE00D739D3 /* Kdb3Utils.m */; };
 		68767B651D6F23350039EFE0 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68767B641D6F23350039EFE0 /* FilesViewController.swift */; };
 		68767B671D6F241F0039EFE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68767B661D6F241F0039EFE0 /* Main.storyboard */; };
 		68767B691D70B0830039EFE0 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68767B681D70B0830039EFE0 /* Array+Extensions.swift */; };
@@ -57,36 +132,10 @@
 		6895D2EA1D68F95D003D8C44 /* RenameItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895D2E81D68F95D003D8C44 /* RenameItemViewController.swift */; };
 		6895D2F31D68FE00003D8C44 /* CustomField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6895D2F11D68FE00003D8C44 /* CustomField.storyboard */; };
 		6895D2F41D68FE00003D8C44 /* CustomFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6895D2F21D68FE00003D8C44 /* CustomFieldViewController.swift */; };
-		689A4D1314046B8200AA897D /* RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689A4D1214046B8200AA897D /* RandomStream.m */; };
 		689D000D13A42765005EBD36 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D000C13A42765005EBD36 /* AudioToolbox.framework */; };
 		689D000F13A42777005EBD36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D000E13A42776005EBD36 /* Security.framework */; };
 		689D001113A4277E005EBD36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D001013A4277E005EBD36 /* libxml2.dylib */; };
 		689D001313A42784005EBD36 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D001213A42784005EBD36 /* libz.dylib */; };
-		689D032F13A42B63005EBD36 /* dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 689D021413A42B63005EBD36 /* dropbox.html */; };
-		689D033013A42B63005EBD36 /* itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 689D021513A42B63005EBD36 /* itunes.html */; };
-		689D033113A42B63005EBD36 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 689D021613A42B63005EBD36 /* style.css */; };
-		689D03CD13A42B63005EBD36 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B813A42B63005EBD36 /* Base64.m */; };
-		689D03D513A42B63005EBD36 /* Kdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C813A42B63005EBD36 /* Kdb.m */; };
-		689D03D613A42B63005EBD36 /* Kdb3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CA13A42B63005EBD36 /* Kdb3Date.m */; };
-		689D03D713A42B63005EBD36 /* Kdb3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CC13A42B63005EBD36 /* Kdb3Node.m */; };
-		689D03DA13A42B63005EBD36 /* Kdb3Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D213A42B63005EBD36 /* Kdb3Reader.m */; };
-		689D03DB13A42B63005EBD36 /* Kdb3Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D413A42B63005EBD36 /* Kdb3Writer.m */; };
-		689D03DC13A42B63005EBD36 /* Kdb4Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D613A42B63005EBD36 /* Kdb4Node.m */; };
-		689D03DD13A42B63005EBD36 /* Kdb4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D813A42B63005EBD36 /* Kdb4Parser.m */; };
-		689D03DE13A42B63005EBD36 /* Kdb4Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DA13A42B63005EBD36 /* Kdb4Persist.m */; };
-		689D03DF13A42B63005EBD36 /* Kdb4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DC13A42B63005EBD36 /* Kdb4Reader.m */; };
-		689D03E013A42B63005EBD36 /* Kdb4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DE13A42B63005EBD36 /* Kdb4Writer.m */; };
-		689D03E113A42B63005EBD36 /* KdbPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E113A42B63005EBD36 /* KdbPassword.m */; };
-		689D03E213A42B63005EBD36 /* KdbReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E413A42B63005EBD36 /* KdbReaderFactory.m */; };
-		689D03E313A42B63005EBD36 /* KdbWriterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E713A42B63005EBD36 /* KdbWriterFactory.m */; };
-		689D03E513A42B63005EBD36 /* Salsa20RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EC13A42B63005EBD36 /* Salsa20RandomStream.m */; };
-		689D03E713A42B63005EBD36 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F013A42B63005EBD36 /* Utils.m */; };
-		689D03E813A42B63005EBD36 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F213A42B63005EBD36 /* UUID.m */; };
-		689D03E913A42B63005EBD36 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F613A42B63005EBD36 /* DDXMLElementAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EA13A42B63005EBD36 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F913A42B63005EBD36 /* NSString+DDXML.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EB13A42B63005EBD36 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FC13A42B63005EBD36 /* DDXMLDocument.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03EC13A42B63005EBD36 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FE13A42B63005EBD36 /* DDXMLElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		689D03ED13A42B63005EBD36 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D030013A42B63005EBD36 /* DDXMLNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		689D044F13A42C82005EBD36 /* DatabaseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042713A42C81005EBD36 /* DatabaseDocument.m */; };
 		689D045013A42C82005EBD36 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042913A42C81005EBD36 /* DatabaseManager.m */; };
 		689D045113A42C82005EBD36 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042B13A42C81005EBD36 /* EntryViewController.m */; };
@@ -124,8 +173,6 @@
 		68BFDBE51D7646B400EFACB3 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BFDBE21D7646B400EFACB3 /* GroupCell.swift */; };
 		68BFDBE61D7646B400EFACB3 /* MoveItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68BFDBE31D7646B400EFACB3 /* MoveItems.storyboard */; };
 		68BFDBE71D7646B400EFACB3 /* MoveItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BFDBE41D7646B400EFACB3 /* MoveItemsViewController.swift */; };
-		68CE37F51404A86600E4A5E1 /* safariemail.html in Resources */ = {isa = PBXBuildFile; fileRef = 68CE37F41404A86600E4A5E1 /* safariemail.html */; };
-		68DDC3731405160300FC8BD8 /* keyfiles.html in Resources */ = {isa = PBXBuildFile; fileRef = 68DDC3721405160300FC8BD8 /* keyfiles.html */; };
 		68E08310146F24E3001C4EDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E0830E146F24E3001C4EDF /* Localizable.strings */; };
 		68E08316146F2749001C4EDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E08314146F2749001C4EDF /* InfoPlist.strings */; };
 		68EA62DB1CC972F300B33E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EA62DA1CC972F300B33E42 /* LaunchScreen.storyboard */; };
@@ -133,6 +180,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3021A4262510C71A004E15C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 689DFFCC13A4273F005EBD36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3021A4202510C71A004E15C5;
+			remoteInfo = KeePassFramework;
+		};
+		3043AEB02510CC1700AEDECB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 689DFFCC13A4273F005EBD36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3043AEA42510CC1700AEDECB;
+			remoteInfo = KagiAutoFill;
+		};
+		3043AEB72510CC2300AEDECB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 689DFFCC13A4273F005EBD36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3021A4202510C71A004E15C5;
+			remoteInfo = KeePassFramework;
+		};
+		306CBF2B2522D08C00930248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D104D791ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
 		308C96FB248365DA0017F48B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
@@ -156,16 +231,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3021A42A2510C71A004E15C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3021A4292510C71A004E15C5 /* KeePassFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3043AEB62510CC1800AEDECB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3043AEB22510CC1700AEDECB /* KagiAutoFill.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		300E6FAB249F4172001365D6 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
+		3021A4212510C71A004E15C5 /* KeePassFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3021A4232510C71A004E15C5 /* KeePassFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassFramework.h; sourceTree = "<group>"; };
+		3021A4242510C71A004E15C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3037C85024A6254000AF06AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3083142E24A89A0000E8A983 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		3043AEA52510CC1700AEDECB /* KagiAutoFill.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KagiAutoFill.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3043AEA62510CC1700AEDECB /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		3043AEA92510CC1700AEDECB /* CredentialProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProviderViewController.swift; sourceTree = "<group>"; };
+		3043AEAC2510CC1700AEDECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3043AEAE2510CC1700AEDECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3043AEAF2510CC1700AEDECB /* KagiAutoFill.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KagiAutoFill.entitlements; sourceTree = "<group>"; };
+		3043AEC12510CE1300AEDECB /* KagiAutoFill-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KagiAutoFill-Bridging-Header.h"; sourceTree = "<group>"; };
 		30FC7F4224B1AC93005D0EEB /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
-		4E8C168E16B3E871004195A1 /* fr-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-createdb.html"; sourceTree = "<group>"; };
-		4E8C168F16B3E871004195A1 /* fr-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-dropbox.html"; sourceTree = "<group>"; };
-		4E8C169016B3E871004195A1 /* fr-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-itunes.html"; sourceTree = "<group>"; };
-		4E8C169116B3E871004195A1 /* fr-keyfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-keyfiles.html"; sourceTree = "<group>"; };
-		4E8C169216B3E871004195A1 /* fr-safariemail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-safariemail.html"; sourceTree = "<group>"; };
 		4E8C169816B3E888004195A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E8C169916B3E888004195A1 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52051E971524EAAE00D217B8 /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -173,22 +277,11 @@
 		52051E991524EB2600D217B8 /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52051E9A1524EB2D00D217B8 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		522D8F9D17E35B0E00BCA329 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MiniKeePass/Images.xcassets; sourceTree = "<group>"; };
-		52491D0714D8F3FB00F8CBC8 /* de-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de-createdb.html"; sourceTree = "<group>"; };
-		52491D0814D8F3FB00F8CBC8 /* de-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de-dropbox.html"; sourceTree = "<group>"; };
-		52491D0914D8F3FB00F8CBC8 /* de-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de-itunes.html"; sourceTree = "<group>"; };
-		52491D0A14D8F3FB00F8CBC8 /* de-keyfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de-keyfiles.html"; sourceTree = "<group>"; };
-		52491D0B14D8F3FB00F8CBC8 /* de-safariemail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de-safariemail.html"; sourceTree = "<group>"; };
 		526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		5271A98C1ED7CA3E00B9AF2C /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		529708AD14FEEFD3003547FB /* Andale Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andale Mono.ttf"; sourceTree = "<group>"; };
 		529BED9E14D7CD8600618250 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		529BED9F14D7CD9700618250 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		52A177BB13EB698E00CEEFCE /* createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = createdb.html; sourceTree = "<group>"; };
-		52E43F4715B59C880029F979 /* ru-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ru-createdb.html"; sourceTree = "<group>"; };
-		52E43F4815B59C880029F979 /* ru-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ru-dropbox.html"; sourceTree = "<group>"; };
-		52E43F4915B59C890029F979 /* ru-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ru-itunes.html"; sourceTree = "<group>"; };
-		52E43F4A15B59C890029F979 /* ru-keyfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ru-keyfiles.html"; sourceTree = "<group>"; };
-		52E43F4B15B59C890029F979 /* ru-safariemail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ru-safariemail.html"; sourceTree = "<group>"; };
 		6802C36E1A425D7300595AC9 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		680C277416050C7A009403DE /* DDXMLDocument+MKPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLDocument+MKPAdditions.h"; sourceTree = "<group>"; };
 		680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLDocument+MKPAdditions.m"; sourceTree = "<group>"; };
@@ -228,12 +321,9 @@
 		68767B661D6F241F0039EFE0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		68767B681D70B0830039EFE0 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		687AAA981889F8B400AB8AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/AppStore.txt; sourceTree = "<group>"; };
-		687AAAA11889FB4000AB8AC5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text; name = ru; path = ru.lproj/AppStore.txt; sourceTree = "<group>"; };
 		687AAAA21889FB4B00AB8AC5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text; name = ja; path = ja.lproj/AppStore.txt; sourceTree = "<group>"; };
-		687AAAA51889FB4D00AB8AC5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text; name = "zh-Hans"; path = "zh-Hans.lproj/AppStore.txt"; sourceTree = "<group>"; };
 		688038951D6BB33A001424CA /* WebBrowser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebBrowser.storyboard; sourceTree = "<group>"; };
 		688038961D6BB33A001424CA /* WebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
-		6891C07419263611000EFC70 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text; name = pt; path = pt.lproj/AppStore.txt; sourceTree = "<group>"; };
 		6891C07519263611000EFC70 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6891C07619263611000EFC70 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6895D2E71D68F95D003D8C44 /* RenameItem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RenameItem.storyboard; sourceTree = "<group>"; };
@@ -245,9 +335,6 @@
 		689D000E13A42776005EBD36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		689D001013A4277E005EBD36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		689D001213A42784005EBD36 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		689D021413A42B63005EBD36 /* dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dropbox.html; sourceTree = "<group>"; };
-		689D021513A42B63005EBD36 /* itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = itunes.html; sourceTree = "<group>"; };
-		689D021613A42B63005EBD36 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		689D02B713A42B63005EBD36 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		689D02B813A42B63005EBD36 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		689D02C713A42B63005EBD36 /* Kdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kdb.h; sourceTree = "<group>"; };
@@ -357,18 +444,14 @@
 		68BFDBE31D7646B400EFACB3 /* MoveItems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoveItems.storyboard; sourceTree = "<group>"; };
 		68BFDBE41D7646B400EFACB3 /* MoveItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveItemsViewController.swift; sourceTree = "<group>"; };
 		68CBC1461A4A0F0E004A3553 /* Kagi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagi.entitlements; sourceTree = "<group>"; };
-		68CE37F41404A86600E4A5E1 /* safariemail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = safariemail.html; sourceTree = "<group>"; };
-		68DDC3721405160300FC8BD8 /* keyfiles.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = keyfiles.html; sourceTree = "<group>"; };
 		68E0830F146F24E3001C4EDF /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68E08315146F2749001C4EDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68E08318146F2C8B001C4EDF /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68E0831C146F2D37001C4EDF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68EA62DA1CC972F300B33E42 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68EBC2D51613394D00E8E799 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BDB0FF5D194C7C6F00C44DEF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text; name = nl; path = nl.lproj/AppStore.txt; sourceTree = "<group>"; };
 		BDB0FF5E194C7C6F00C44DEF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BDB0FF5F194C7C6F00C44DEF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C9CE4DEF1F2C47970028266A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text; name = tr; path = tr.lproj/AppStore.txt; sourceTree = "<group>"; };
 		C9CE4DF01F2C47980028266A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9CE4DF11F2C47980028266A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EFD785BA15B3D02600B9A276 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -376,15 +459,33 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3021A41E2510C71A004E15C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3043AEA22510CC1700AEDECB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3043AEB92510CC2900AEDECB /* KeePassFramework.framework in Frameworks */,
+				3043AEA72510CC1700AEDECB /* AuthenticationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD213A4273F005EBD36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3043AEBA2510CC3A00AEDECB /* AuthenticationServices.framework in Frameworks */,
 				526D9FAD167CDC2E0097213E /* libMBProgressHUD.a in Frameworks */,
 				689D000D13A42765005EBD36 /* AudioToolbox.framework in Frameworks */,
 				689DFFDE13A4273F005EBD36 /* CoreGraphics.framework in Frameworks */,
 				689DFFDC13A4273F005EBD36 /* Foundation.framework in Frameworks */,
 				6802C36F1A425D7300595AC9 /* LocalAuthentication.framework in Frameworks */,
+				3021A4282510C71A004E15C5 /* KeePassFramework.framework in Frameworks */,
 				68EBC2D61613394D00E8E799 /* QuartzCore.framework in Frameworks */,
 				689D000F13A42777005EBD36 /* Security.framework in Frameworks */,
 				689DFFDA13A4273F005EBD36 /* UIKit.framework in Frameworks */,
@@ -396,28 +497,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E8C168D16B3E871004195A1 /* fr */ = {
+		3021A4222510C71A004E15C5 /* KeePassFramework */ = {
 			isa = PBXGroup;
 			children = (
-				4E8C168E16B3E871004195A1 /* fr-createdb.html */,
-				4E8C168F16B3E871004195A1 /* fr-dropbox.html */,
-				4E8C169016B3E871004195A1 /* fr-itunes.html */,
-				4E8C169116B3E871004195A1 /* fr-keyfiles.html */,
-				4E8C169216B3E871004195A1 /* fr-safariemail.html */,
+				682D44F01603883900156830 /* IOStream */,
+				689D02B013A42B63005EBD36 /* KeePassLib */,
+				689D02F313A42B63005EBD36 /* KissXML */,
+				3021A4232510C71A004E15C5 /* KeePassFramework.h */,
+				3021A4242510C71A004E15C5 /* Info.plist */,
 			);
-			path = fr;
+			path = KeePassFramework;
 			sourceTree = "<group>";
 		};
-		52491D0614D8F3FB00F8CBC8 /* de */ = {
+		3043AEA82510CC1700AEDECB /* KagiAutoFill */ = {
 			isa = PBXGroup;
 			children = (
-				52491D0714D8F3FB00F8CBC8 /* de-createdb.html */,
-				52491D0814D8F3FB00F8CBC8 /* de-dropbox.html */,
-				52491D0914D8F3FB00F8CBC8 /* de-itunes.html */,
-				52491D0A14D8F3FB00F8CBC8 /* de-keyfiles.html */,
-				52491D0B14D8F3FB00F8CBC8 /* de-safariemail.html */,
+				3043AEA92510CC1700AEDECB /* CredentialProviderViewController.swift */,
+				3043AEAB2510CC1700AEDECB /* MainInterface.storyboard */,
+				3043AEAE2510CC1700AEDECB /* Info.plist */,
+				3043AEAF2510CC1700AEDECB /* KagiAutoFill.entitlements */,
+				3043AEC12510CE1300AEDECB /* KagiAutoFill-Bridging-Header.h */,
 			);
-			path = de;
+			path = KagiAutoFill;
 			sourceTree = "<group>";
 		};
 		526D9FA4167CDC010097213E /* Products */ = {
@@ -437,18 +538,6 @@
 				689D042B13A42C81005EBD36 /* EntryViewController.m */,
 			);
 			path = "Entry View";
-			sourceTree = "<group>";
-		};
-		52E43F4615B59C880029F979 /* ru */ = {
-			isa = PBXGroup;
-			children = (
-				52E43F4715B59C880029F979 /* ru-createdb.html */,
-				52E43F4815B59C880029F979 /* ru-dropbox.html */,
-				52E43F4915B59C890029F979 /* ru-itunes.html */,
-				52E43F4A15B59C890029F979 /* ru-keyfiles.html */,
-				52E43F4B15B59C890029F979 /* ru-safariemail.html */,
-			);
-			path = ru;
 			sourceTree = "<group>";
 		};
 		682D44F01603883900156830 /* IOStream */ = {
@@ -529,22 +618,6 @@
 				6895D2F21D68FE00003D8C44 /* CustomFieldViewController.swift */,
 			);
 			path = "Custom Field View";
-			sourceTree = "<group>";
-		};
-		689D021313A42B63005EBD36 /* help */ = {
-			isa = PBXGroup;
-			children = (
-				4E8C168D16B3E871004195A1 /* fr */,
-				52E43F4615B59C880029F979 /* ru */,
-				52491D0614D8F3FB00F8CBC8 /* de */,
-				52A177BB13EB698E00CEEFCE /* createdb.html */,
-				689D021413A42B63005EBD36 /* dropbox.html */,
-				689D021513A42B63005EBD36 /* itunes.html */,
-				68DDC3721405160300FC8BD8 /* keyfiles.html */,
-				68CE37F41404A86600E4A5E1 /* safariemail.html */,
-				689D021613A42B63005EBD36 /* style.css */,
-			);
-			path = help;
 			sourceTree = "<group>";
 		};
 		689D02B013A42B63005EBD36 /* KeePassLib */ = {
@@ -643,7 +716,6 @@
 		689D041413A42B85005EBD36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				689D021313A42B63005EBD36 /* help */,
 				522D8F9D17E35B0E00BCA329 /* Images.xcassets */,
 				529708AD14FEEFD3003547FB /* Andale Mono.ttf */,
 			);
@@ -653,13 +725,11 @@
 		689DFFCA13A4273F005EBD36 = {
 			isa = PBXGroup;
 			children = (
-				3083142E24A89A0000E8A983 /* Settings.bundle */,
 				689D030313A42B63005EBD36 /* LICENSE.txt */,
 				689D030413A42B63005EBD36 /* README.md */,
 				689DFFDF13A4273F005EBD36 /* MiniKeePass */,
-				682D44F01603883900156830 /* IOStream */,
-				689D02B013A42B63005EBD36 /* KeePassLib */,
-				689D02F313A42B63005EBD36 /* KissXML */,
+				3021A4222510C71A004E15C5 /* KeePassFramework */,
+				3043AEA82510CC1700AEDECB /* KagiAutoFill */,
 				689DFFD813A4273F005EBD36 /* Frameworks */,
 				689D041413A42B85005EBD36 /* Resources */,
 				689DFFD613A4273F005EBD36 /* Products */,
@@ -671,6 +741,8 @@
 			isa = PBXGroup;
 			children = (
 				689DFFD513A4273F005EBD36 /* Kagi.app */,
+				3021A4212510C71A004E15C5 /* KeePassFramework.framework */,
+				3043AEA52510CC1700AEDECB /* KagiAutoFill.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -687,6 +759,7 @@
 				689DFFD913A4273F005EBD36 /* UIKit.framework */,
 				689D001013A4277E005EBD36 /* libxml2.dylib */,
 				689D001213A42784005EBD36 /* libz.dylib */,
+				3043AEA62510CC1700AEDECB /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -854,7 +927,100 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3021A41C2510C71A004E15C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3021A43B2510C773004E15C5 /* FileInputStream.h in Headers */,
+				3021A4652510C773004E15C5 /* Kdb4Writer.h in Headers */,
+				3021A45B2510C773004E15C5 /* Kdb3Writer.h in Headers */,
+				3021A4672510C773004E15C5 /* KdbLib.h in Headers */,
+				3021A45D2510C773004E15C5 /* Kdb4Node.h in Headers */,
+				3021A47D2510C773004E15C5 /* DDXMLDocument.h in Headers */,
+				3021A4252510C71A004E15C5 /* KeePassFramework.h in Headers */,
+				3021A47F2510C773004E15C5 /* DDXMLElement.h in Headers */,
+				3021A4742510C773004E15C5 /* Utils.h in Headers */,
+				3021A4552510C773004E15C5 /* Kdb3Node.h in Headers */,
+				3021A4472510C773004E15C5 /* InputStream.h in Headers */,
+				3021A46B2510C773004E15C5 /* KdbReaderFactory.h in Headers */,
+				3021A44D2510C773004E15C5 /* Base64.h in Headers */,
+				3021A4332510C773004E15C5 /* AesOutputStream.h in Headers */,
+				3021A4592510C773004E15C5 /* Kdb3Utils.h in Headers */,
+				3021A4702510C773004E15C5 /* RandomStream.h in Headers */,
+				3021A4762510C773004E15C5 /* UUID.h in Headers */,
+				3021A4572510C773004E15C5 /* Kdb3Reader.h in Headers */,
+				3021A4682510C773004E15C5 /* KdbPassword.h in Headers */,
+				3021A4632510C773004E15C5 /* Kdb4Reader.h in Headers */,
+				3021A4412510C773004E15C5 /* GZipOutputStream.h in Headers */,
+				3021A4492510C773004E15C5 /* OutputStream.h in Headers */,
+				3021A4452510C773004E15C5 /* HashedOutputStream.h in Headers */,
+				3021A4812510C773004E15C5 /* DDXMLNode.h in Headers */,
+				3021A4372510C773004E15C5 /* DataInputStream.h in Headers */,
+				3021A46D2510C773004E15C5 /* KdbWriter.h in Headers */,
+				3021A46A2510C773004E15C5 /* KdbReader.h in Headers */,
+				3021A4432510C773004E15C5 /* HashedInputStream.h in Headers */,
+				3021A47C2510C773004E15C5 /* DDXML.h in Headers */,
+				3021A45F2510C773004E15C5 /* Kdb4Parser.h in Headers */,
+				3021A4612510C773004E15C5 /* Kdb4Persist.h in Headers */,
+				3021A4782510C773004E15C5 /* DDXMLElementAdditions.h in Headers */,
+				3021A44B2510C773004E15C5 /* Sha256OutputStream.h in Headers */,
+				3021A4312510C773004E15C5 /* AesInputStream.h in Headers */,
+				3021A4512510C773004E15C5 /* Kdb.h in Headers */,
+				3021A46E2510C773004E15C5 /* KdbWriterFactory.h in Headers */,
+				3021A4832510C773004E15C5 /* DDXMLPrivate.h in Headers */,
+				3021A4532510C773004E15C5 /* Kdb3Date.h in Headers */,
+				3021A43D2510C773004E15C5 /* FileOutputStream.h in Headers */,
+				3021A4722510C773004E15C5 /* Salsa20RandomStream.h in Headers */,
+				3021A47A2510C773004E15C5 /* NSString+DDXML.h in Headers */,
+				3021A43F2510C773004E15C5 /* GZipInputStream.h in Headers */,
+				3021A4352510C773004E15C5 /* Arc4RandomStream.h in Headers */,
+				3021A4392510C773004E15C5 /* DataOutputStream.h in Headers */,
+				3021A44F2510C773004E15C5 /* DDXMLDocument+MKPAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		3021A4202510C71A004E15C5 /* KeePassFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3021A4302510C71A004E15C5 /* Build configuration list for PBXNativeTarget "KeePassFramework" */;
+			buildPhases = (
+				3021A41C2510C71A004E15C5 /* Headers */,
+				3021A41D2510C71A004E15C5 /* Sources */,
+				3021A41E2510C71A004E15C5 /* Frameworks */,
+				3021A41F2510C71A004E15C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeePassFramework;
+			productName = KeePassFramework;
+			productReference = 3021A4212510C71A004E15C5 /* KeePassFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3043AEA42510CC1700AEDECB /* KagiAutoFill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3043AEB32510CC1800AEDECB /* Build configuration list for PBXNativeTarget "KagiAutoFill" */;
+			buildPhases = (
+				3043AEA12510CC1700AEDECB /* Sources */,
+				3043AEA22510CC1700AEDECB /* Frameworks */,
+				30B1A7CF2523366F005C0469 /* Increment Build Number */,
+				3043AEA32510CC1700AEDECB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				306CBF2C2522D08C00930248 /* PBXTargetDependency */,
+				3043AEB82510CC2300AEDECB /* PBXTargetDependency */,
+			);
+			name = KagiAutoFill;
+			productName = KagiAutoFill;
+			productReference = 3043AEA52510CC1700AEDECB /* KagiAutoFill.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		689DFFD413A4273F005EBD36 /* Kagi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */;
@@ -863,10 +1029,14 @@
 				689DFFD213A4273F005EBD36 /* Frameworks */,
 				68C17C9C1A3E1774008DD56B /* Increment Build Number */,
 				689DFFD313A4273F005EBD36 /* Resources */,
+				3021A42A2510C71A004E15C5 /* Embed Frameworks */,
+				3043AEB62510CC1800AEDECB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3021A4272510C71A004E15C5 /* PBXTargetDependency */,
+				3043AEB12510CC1700AEDECB /* PBXTargetDependency */,
 			);
 			name = Kagi;
 			productName = MiniKeePass;
@@ -879,9 +1049,18 @@
 		689DFFCC13A4273F005EBD36 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = Self;
 				TargetAttributes = {
+					3021A4202510C71A004E15C5 = {
+						CreatedOnToolsVersion = 11.7;
+						DevelopmentTeam = BP6TU6N5BS;
+						ProvisioningStyle = Automatic;
+					};
+					3043AEA42510CC1700AEDECB = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					689DFFD413A4273F005EBD36 = {
 						DevelopmentTeam = BP6TU6N5BS;
 						LastSwiftMigration = 1140;
@@ -924,6 +1103,8 @@
 			projectRoot = "";
 			targets = (
 				689DFFD413A4273F005EBD36 /* Kagi */,
+				3021A4202510C71A004E15C5 /* KeePassFramework */,
+				3043AEA42510CC1700AEDECB /* KagiAutoFill */,
 			);
 		};
 /* End PBXProject section */
@@ -953,6 +1134,24 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3021A41F2510C71A004E15C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3043AEA32510CC1700AEDECB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304BC76D2510F87100FCE88A /* PasswordEntry.storyboard in Resources */,
+				304BC7752510FE3400FCE88A /* Images.xcassets in Resources */,
+				304BC7742510FE2600FCE88A /* Localizable.strings in Resources */,
+				3043AEAD2510CC1700AEDECB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD313A4273F005EBD36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -961,46 +1160,42 @@
 				529708B014FEF149003547FB /* Andale Mono.ttf in Resources */,
 				522D8F9E17E35B0E00BCA329 /* Images.xcassets in Resources */,
 				6895D2E91D68F95D003D8C44 /* RenameItem.storyboard in Resources */,
-				689D032F13A42B63005EBD36 /* dropbox.html in Resources */,
-				689D033013A42B63005EBD36 /* itunes.html in Resources */,
-				52A177BC13EB698E00CEEFCE /* createdb.html in Resources */,
-				68CE37F51404A86600E4A5E1 /* safariemail.html in Resources */,
-				68DDC3731405160300FC8BD8 /* keyfiles.html in Resources */,
 				68767B671D6F241F0039EFE0 /* Main.storyboard in Resources */,
 				68EA62DB1CC972F300B33E42 /* LaunchScreen.storyboard in Resources */,
-				689D033113A42B63005EBD36 /* style.css in Resources */,
 				68E08310146F24E3001C4EDF /* Localizable.strings in Resources */,
 				68E08316146F2749001C4EDF /* InfoPlist.strings in Resources */,
 				689EA6881D67F90800CF445E /* PasswordGenerator.storyboard in Resources */,
-				52491D0C14D8F3FB00F8CBC8 /* de-createdb.html in Resources */,
 				689EA6801D67F8D500CF445E /* NewDatabase.storyboard in Resources */,
-				52491D0D14D8F3FB00F8CBC8 /* de-dropbox.html in Resources */,
 				688038971D6BB33A001424CA /* WebBrowser.storyboard in Resources */,
-				52491D0E14D8F3FB00F8CBC8 /* de-itunes.html in Resources */,
 				68BFDBE61D7646B400EFACB3 /* MoveItems.storyboard in Resources */,
-				52491D0F14D8F3FB00F8CBC8 /* de-keyfiles.html in Resources */,
-				52491D1014D8F3FB00F8CBC8 /* de-safariemail.html in Resources */,
-				52E43F4C15B59C890029F979 /* ru-createdb.html in Resources */,
 				689EA6711D67F88500CF445E /* PasswordEntry.storyboard in Resources */,
-				52E43F4D15B59C890029F979 /* ru-dropbox.html in Resources */,
 				689EA67A1D67F8B500CF445E /* ImageSelector.storyboard in Resources */,
-				52E43F4E15B59C890029F979 /* ru-itunes.html in Resources */,
-				52E43F4F15B59C890029F979 /* ru-keyfiles.html in Resources */,
-				52E43F5015B59C890029F979 /* ru-safariemail.html in Resources */,
-				4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */,
-				3083142F24A89A0000E8A983 /* Settings.bundle in Resources */,
 				689EA6941D67F94600CF445E /* Settings.storyboard in Resources */,
-				4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */,
-				4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */,
 				5271A98D1ED7CA3E00B9AF2C /* TextFieldCell.xib in Resources */,
-				4E8C169616B3E871004195A1 /* fr-keyfiles.html in Resources */,
-				4E8C169716B3E871004195A1 /* fr-safariemail.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30B1A7CF2523366F005C0469 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
 		68C17C9C1A3E1774008DD56B /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -1018,49 +1213,94 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3021A41D2510C71A004E15C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3021A45E2510C773004E15C5 /* Kdb4Node.m in Sources */,
+				3021A4602510C773004E15C5 /* Kdb4Parser.m in Sources */,
+				3021A4662510C773004E15C5 /* Kdb4Writer.m in Sources */,
+				3021A47B2510C773004E15C5 /* NSString+DDXML.m in Sources */,
+				3021A4802510C773004E15C5 /* DDXMLElement.m in Sources */,
+				3021A4482510C773004E15C5 /* InputStream.m in Sources */,
+				3021A4792510C773004E15C5 /* DDXMLElementAdditions.m in Sources */,
+				3021A4642510C773004E15C5 /* Kdb4Reader.m in Sources */,
+				3021A4502510C773004E15C5 /* DDXMLDocument+MKPAdditions.m in Sources */,
+				3021A44E2510C773004E15C5 /* Base64.m in Sources */,
+				3021A43C2510C773004E15C5 /* FileInputStream.m in Sources */,
+				3021A43A2510C773004E15C5 /* DataOutputStream.m in Sources */,
+				3021A4542510C773004E15C5 /* Kdb3Date.m in Sources */,
+				3021A4402510C773004E15C5 /* GZipInputStream.m in Sources */,
+				3021A47E2510C773004E15C5 /* DDXMLDocument.m in Sources */,
+				3021A46F2510C773004E15C5 /* KdbWriterFactory.m in Sources */,
+				3021A4752510C773004E15C5 /* Utils.m in Sources */,
+				3021A4342510C773004E15C5 /* AesOutputStream.m in Sources */,
+				3021A4322510C773004E15C5 /* AesInputStream.m in Sources */,
+				3021A43E2510C773004E15C5 /* FileOutputStream.m in Sources */,
+				3021A4772510C773004E15C5 /* UUID.m in Sources */,
+				3021A4582510C773004E15C5 /* Kdb3Reader.m in Sources */,
+				3021A4562510C773004E15C5 /* Kdb3Node.m in Sources */,
+				3021A45C2510C773004E15C5 /* Kdb3Writer.m in Sources */,
+				3021A4382510C773004E15C5 /* DataInputStream.m in Sources */,
+				3021A4732510C773004E15C5 /* Salsa20RandomStream.m in Sources */,
+				3021A4442510C773004E15C5 /* HashedInputStream.m in Sources */,
+				3021A4522510C773004E15C5 /* Kdb.m in Sources */,
+				3021A4692510C773004E15C5 /* KdbPassword.m in Sources */,
+				3021A44A2510C773004E15C5 /* OutputStream.m in Sources */,
+				3021A4822510C773004E15C5 /* DDXMLNode.m in Sources */,
+				3021A4362510C773004E15C5 /* Arc4RandomStream.m in Sources */,
+				3021A46C2510C773004E15C5 /* KdbReaderFactory.m in Sources */,
+				3021A45A2510C773004E15C5 /* Kdb3Utils.m in Sources */,
+				3021A4622510C773004E15C5 /* Kdb4Persist.m in Sources */,
+				3021A4712510C773004E15C5 /* RandomStream.m in Sources */,
+				3021A4422510C773004E15C5 /* GZipOutputStream.m in Sources */,
+				3021A4462510C773004E15C5 /* HashedOutputStream.m in Sources */,
+				3021A44C2510C773004E15C5 /* Sha256OutputStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3043AEA12510CC1700AEDECB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3043AEBF2510CDCA00AEDECB /* LockScreenManager.m in Sources */,
+				304BC7702510FB6400FCE88A /* ImageFactory.m in Sources */,
+				3043AEBC2510CDB600AEDECB /* GroupViewController.swift in Sources */,
+				304BC7712510FB6600FCE88A /* KeychainUtils.m in Sources */,
+				3043AEAA2510CC1700AEDECB /* CredentialProviderViewController.swift in Sources */,
+				304BC76B2510F61000FCE88A /* Array+Extensions.swift in Sources */,
+				304BC76E2510F87500FCE88A /* PasswordEntryViewController.swift in Sources */,
+				3043AEC02510CDCE00AEDECB /* PinViewController.m in Sources */,
+				304BC7722510FB6900FCE88A /* PasswordUtils.m in Sources */,
+				3043AEBB2510CD9200AEDECB /* DatabaseDocument.m in Sources */,
+				3043AEBD2510CDC500AEDECB /* KeypadButton.m in Sources */,
+				304BC76F2510F9B100FCE88A /* DatabaseManager.m in Sources */,
+				304BC7732510FB7D00FCE88A /* AppSettings.m in Sources */,
+				3043AEBE2510CDC800AEDECB /* KeypadView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD113A4273F005EBD36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				689DFFE713A4273F005EBD36 /* main.m in Sources */,
-				689D03CD13A42B63005EBD36 /* Base64.m in Sources */,
 				689FBE781AB27228005CB6BD /* KeychainUtils.m in Sources */,
 				689FBE681AB271C6005CB6BD /* PinViewController.m in Sources */,
-				689D03D513A42B63005EBD36 /* Kdb.m in Sources */,
 				689FBE661AB271C6005CB6BD /* LockScreenManager.m in Sources */,
 				6895D2F41D68FE00003D8C44 /* CustomFieldViewController.swift in Sources */,
 				689EA6811D67F8D500CF445E /* NewDatabaseViewController.swift in Sources */,
-				689D03D613A42B63005EBD36 /* Kdb3Date.m in Sources */,
 				689EA6821D67F8D500CF445E /* UIViewController+AlertController.swift in Sources */,
-				689D03D713A42B63005EBD36 /* Kdb3Node.m in Sources */,
-				689D03DA13A42B63005EBD36 /* Kdb3Reader.m in Sources */,
-				689D03DB13A42B63005EBD36 /* Kdb3Writer.m in Sources */,
-				689D03DC13A42B63005EBD36 /* Kdb4Node.m in Sources */,
-				689D03DD13A42B63005EBD36 /* Kdb4Parser.m in Sources */,
-				689D03DE13A42B63005EBD36 /* Kdb4Persist.m in Sources */,
-				689D03DF13A42B63005EBD36 /* Kdb4Reader.m in Sources */,
-				689D03E013A42B63005EBD36 /* Kdb4Writer.m in Sources */,
-				689D03E113A42B63005EBD36 /* KdbPassword.m in Sources */,
 				689EA6781D67F8B500CF445E /* CheckMark.swift in Sources */,
-				689D03E213A42B63005EBD36 /* KdbReaderFactory.m in Sources */,
 				689FBE991AB272BD005CB6BD /* ImageFactory.m in Sources */,
 				689EA6931D67F94600CF445E /* SelectionViewController.swift in Sources */,
 				68496E751AB34F8800370876 /* AppSettings.m in Sources */,
 				6895D2EA1D68F95D003D8C44 /* RenameItemViewController.swift in Sources */,
-				689D03E313A42B63005EBD36 /* KdbWriterFactory.m in Sources */,
-				689D03E513A42B63005EBD36 /* Salsa20RandomStream.m in Sources */,
-				689D03E713A42B63005EBD36 /* Utils.m in Sources */,
 				3037C85124A6254000AF06AB /* SceneDelegate.swift in Sources */,
-				689D03E813A42B63005EBD36 /* UUID.m in Sources */,
 				689EA6951D67F94600CF445E /* SettingsViewController.swift in Sources */,
 				689EA67B1D67F8B500CF445E /* ImageSelectorViewController.swift in Sources */,
-				689D03E913A42B63005EBD36 /* DDXMLElementAdditions.m in Sources */,
-				689D03EA13A42B63005EBD36 /* NSString+DDXML.m in Sources */,
 				688038981D6BB33A001424CA /* WebBrowserViewController.swift in Sources */,
 				689EA6721D67F88500CF445E /* PasswordEntryViewController.swift in Sources */,
-				689D03EB13A42B63005EBD36 /* DDXMLDocument.m in Sources */,
-				689D03EC13A42B63005EBD36 /* DDXMLElement.m in Sources */,
-				689D03ED13A42B63005EBD36 /* DDXMLNode.m in Sources */,
 				689D044F13A42C82005EBD36 /* DatabaseDocument.m in Sources */,
 				68BFDBE71D7646B400EFACB3 /* MoveItemsViewController.swift in Sources */,
 				689D045013A42C82005EBD36 /* DatabaseManager.m in Sources */,
@@ -1070,27 +1310,10 @@
 				689D045513A42C82005EBD36 /* AppDelegate.m in Sources */,
 				689FBE791AB27228005CB6BD /* PasswordUtils.m in Sources */,
 				689FBE641AB271C6005CB6BD /* KeypadButton.m in Sources */,
-				689A4D1314046B8200AA897D /* RandomStream.m in Sources */,
-				682D450D1603883900156830 /* AesInputStream.m in Sources */,
-				682D450E1603883900156830 /* AesOutputStream.m in Sources */,
-				682D450F1603883900156830 /* Arc4RandomStream.m in Sources */,
-				682D45101603883900156830 /* DataInputStream.m in Sources */,
-				682D45111603883900156830 /* DataOutputStream.m in Sources */,
-				682D45121603883900156830 /* FileInputStream.m in Sources */,
-				682D45131603883900156830 /* FileOutputStream.m in Sources */,
-				682D45141603883900156830 /* GZipInputStream.m in Sources */,
 				68BFDBE51D7646B400EFACB3 /* GroupCell.swift in Sources */,
-				682D45151603883900156830 /* GZipOutputStream.m in Sources */,
-				682D45161603883900156830 /* HashedInputStream.m in Sources */,
-				682D45171603883900156830 /* HashedOutputStream.m in Sources */,
-				682D45181603883900156830 /* InputStream.m in Sources */,
-				682D45191603883900156830 /* OutputStream.m in Sources */,
 				68767B691D70B0830039EFE0 /* Array+Extensions.swift in Sources */,
-				682D451A1603883900156830 /* Sha256OutputStream.m in Sources */,
-				685D9D951603F8EE00D739D3 /* Kdb3Utils.m in Sources */,
 				689FBE931AB27283005CB6BD /* TextFieldCell.m in Sources */,
 				689EA6871D67F90800CF445E /* CharacterSetsViewController.swift in Sources */,
-				680C277616050C7A009403DE /* DDXMLDocument+MKPAdditions.m in Sources */,
 				30FC7F4324B1AC93005D0EEB /* IAPManager.swift in Sources */,
 				689FBE8F1AB27283005CB6BD /* ImageButtonCell.m in Sources */,
 				689FBE651AB271C6005CB6BD /* KeypadView.m in Sources */,
@@ -1102,17 +1325,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3021A4272510C71A004E15C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3021A4202510C71A004E15C5 /* KeePassFramework */;
+			targetProxy = 3021A4262510C71A004E15C5 /* PBXContainerItemProxy */;
+		};
+		3043AEB12510CC1700AEDECB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3043AEA42510CC1700AEDECB /* KagiAutoFill */;
+			targetProxy = 3043AEB02510CC1700AEDECB /* PBXContainerItemProxy */;
+		};
+		3043AEB82510CC2300AEDECB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3021A4202510C71A004E15C5 /* KeePassFramework */;
+			targetProxy = 3043AEB72510CC2300AEDECB /* PBXContainerItemProxy */;
+		};
+		306CBF2C2522D08C00930248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Framework";
+			targetProxy = 306CBF2B2522D08C00930248 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		3043AEAB2510CC1700AEDECB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3043AEAC2510CC1700AEDECB /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		687AAA991889F8B400AB8AC5 /* AppStore.txt */ = {
 			isa = PBXVariantGroup;
 			children = (
 				687AAA981889F8B400AB8AC5 /* en */,
-				687AAAA11889FB4000AB8AC5 /* ru */,
 				687AAAA21889FB4B00AB8AC5 /* ja */,
-				687AAAA51889FB4D00AB8AC5 /* zh-Hans */,
-				6891C07419263611000EFC70 /* pt */,
-				BDB0FF5D194C7C6F00C44DEF /* nl */,
-				C9CE4DEF1F2C47970028266A /* tr */,
 			);
 			name = AppStore.txt;
 			sourceTree = SOURCE_ROOT;
@@ -1156,6 +1405,167 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3021A42B2510C71A004E15C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeePassFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.KeePassFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3021A42C2510C71A004E15C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KeePassFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.KeePassFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3043AEB42510CC1800AEDECB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = KagiAutoFill/KagiAutoFill.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"TARGET_KAGIAUTOFILL=1",
+				);
+				INFOPLIST_FILE = KagiAutoFill/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi.KagiAutoFill;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TARGET_KAGIAUTOFILL";
+				SWIFT_OBJC_BRIDGING_HEADER = "KagiAutoFill/KagiAutoFill-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3043AEB52510CC1800AEDECB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = KagiAutoFill/KagiAutoFill.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_KAGIAUTOFILL=1";
+				INFOPLIST_FILE = KagiAutoFill/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi.KagiAutoFill;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TARGET_KAGIAUTOFILL;
+				SWIFT_OBJC_BRIDGING_HEADER = "KagiAutoFill/KagiAutoFill-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		689D000413A42740005EBD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1258,7 +1668,8 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "4758DC3A-B5A3-47FC-BA60-308A27C51D17";
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1266,6 +1677,7 @@
 		689D000713A42740005EBD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1276,14 +1688,23 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"TARGET_KAGIAPP=1",
+				);
 				INFOPLIST_FILE = "MiniKeePass/Kagi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "TARGET_KAGIAPP DEBUG";
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1296,6 +1717,7 @@
 		689D000813A42740005EBD36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MiniKeePass/Kagi.entitlements;
@@ -1305,15 +1727,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BP6TU6N5BS;
+				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_KAGIAPP=1";
 				INFOPLIST_FILE = "MiniKeePass/Kagi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.brevans.kagi;
 				PRODUCT_NAME = Kagi;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TARGET_KAGIAPP;
 				SWIFT_OBJC_BRIDGING_HEADER = "MiniKeePass/Kagi-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Kagi-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
@@ -1326,6 +1753,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3021A4302510C71A004E15C5 /* Build configuration list for PBXNativeTarget "KeePassFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3021A42B2510C71A004E15C5 /* Debug */,
+				3021A42C2510C71A004E15C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3043AEB32510CC1800AEDECB /* Build configuration list for PBXNativeTarget "KagiAutoFill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3043AEB42510CC1800AEDECB /* Debug */,
+				3043AEB52510CC1800AEDECB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "Kagi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

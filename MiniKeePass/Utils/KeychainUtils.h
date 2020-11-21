@@ -29,6 +29,7 @@
 
 #import <UIKit/UIKit.h>
 
+#define KEYCHAIN_SHARED_GROUP      @"BP6TU6N5BS.io.brevans.Kagi"
 #define KEYCHAIN_PIN_SERVICE       @"io.brevans.Kagi.pin"
 #define KEYCHAIN_PASSWORDS_SERVICE @"io.brevans.Kagi.passwords"
 #define KEYCHAIN_KEYFILES_SERVICE  @"io.brevans.Kagi.keyfiles"

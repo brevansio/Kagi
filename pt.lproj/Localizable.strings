@@ -85,9 +85,12 @@
 
 // Settings Page
 "Settings" = "Ajustes";
+
+"PIN Protection" = "Proteção por PIN";
+"Set PIN" = "Defina o PIN";
+"Confirm PIN" = "Confirme o PIN";
+"PINs did not match. Try again" = "PINs não coincidem. Tente de novo.";
 "PIN Enabled" = "Ativar PIN";
-"Touch ID / Face ID" = "Touch ID / Face ID";
-"Use your fingerprint or face as an alternative to entering a PIN if supported." = "Use a sua impressão digital como alternativa ao PIN (se compatível).";
 "Lock Timeout" = "Bloqueio Automático";
 "Immediately" = "Imediatamente";
 "30 Seconds" = "30 segundos";
@@ -95,14 +98,21 @@
 "2 Minutes" = "2 minutos";
 "3 Minutes" = "3 minutos";
 "5 Minutes" = "5 minutos";
-"Enabled" = "Ativar";
-"Attempts" = "Tentativas";
-"Close Enabled" = "Ativar Fechamento";
+"Use Touch ID / Face ID" = "Use Touch ID / Face ID";
+"Delete Data on Failure" = "Apagar Dados ao Inserir PIN Incorreto";
+"Attempts Until Deletion" = "Attempts Until Deletion";
+"Prevent unauthorized access to Kagi with a PIN." = "Impeça o acesso não autorizado ao Kagi com um PIN.";
+
+"Database Password Settings" = "Database Password Settings";
+"Remember Database Passwords" = "Memorizar Senhas de Bancos de Dados";
+"Clear Clipboard on Timeout" = "Limpar Área de Transferência Automaticamente";
+"Clipboard Timeout" = "Clipboard Timeout";
+"Close Database on Timeout" = "Fechar Banco de Dados Automaticamente";
 "Close Timeout" = "Fechamento Automático";
+
+"Database Display Settings" = "Database Display Settings";
 "Hide Passwords" = "Ocultar Senhas";
-"Sorting" = "Ordenação";
-"Sort Groups and Entries Alphabetically" = "Ordene grupos e entradas alfabeticamente";
-"Encoding" = "Codificação";
+"Password Encoding" = "Codificação de Senha";
 "UTF-8" = "UTF-8";
 "UTF-16 Big Endian" = "UTF-16 Big Endian";
 "UTF-16 Little Endian" = "UTF-16 Little Endian";
@@ -111,40 +121,14 @@
 "7-Bit ASCII" = "ASCII de 7 Bits";
 "Japanese EUC" = "EUC Japonês";
 "ISO-2022-JP" = "ISO-2022-JP";
-"PIN Protection" = "Proteção por PIN";
-"Delete All Data on PIN Failure" = "Apagar Dados ao Inserir PIN Incorreto";
-"Close Database on Timeout" = "Fechar Banco de Dados Automaticamente";
-"Remember Database Passwords" = "Memorizar Senhas de Bancos de Dados";
-"Hide Passwords" = "Ocultar Senhas";
-"Password Encoding" = "Codificação de Senha";
-"Clear Clipboard on Timeout" = "Limpar Área de Transferência Automaticamente";
-"Clear Timeout" = "Limpeza Automática";
-"Prevent unauthorized access to Kagi with a PIN." = "Impeça o acesso não autorizado ao Kagi com um PIN.";
-"Delete all files and passwords after too many failed attempts." = "Apague todos os arquivos e senhas após tentativas incorretas.";
-"Automatically close an open database after the selected timeout." = "Feche automaticamente um banco de dados aberto após o tempo selecionado.";
-"Stores remembered database passwords in the devices's secure keychain." = "Armazene as senhas de bancos de dados memorizadas nas chaves seguras do dispositivo.";
-"Hides passwords when viewing a password entry." = "Oculte as senhas ao visualizar uma entrada de senha.";
-"The string encoding used for passwords when converting them to database keys." = "A codificação usada ao converter senhas em chaves do banco de dados.";
-"Clear the contents of the clipboard after a given timeout upon performing a copy." = "Limpe o conteúdo da área de transferência depois de fazer uma cópia.";
-"Close Timeout" = "Fechamento Automático";
-"Clear Clipboard Timeout" = "Limpeza Automática da Área de Transferência";
-"Exclude from backup" = "Excluir do Backup";
-"iCloud/iTunes Backup" = "Backup do iCloud/iTunes";
-"Exclude databases and key files from iTunes/iCloud backups." = "Exclua bancos de dados e arquivos de chaves de backups do iCloud e do iTunes.";
-"Web Browser" = "Navegador";
-"Integrated" = "Integrado";
-"Switch between an integrated web browser and Safari." = "Alterne entre o navegador integrado e o Safari.";
-"Set PIN" = "Defina o PIN";
-"Confirm PIN" = "Confirme o PIN";
-"PINs did not match. Try again" = "PINs não coincidem. Tente de novo.";
-"Kagi version %@" = "Kagi versão %@";
+"Sort Alphabetically" = "Sort Alphabetically";
+"Search Title Only" = "Search Title Only";
+"Use Integrated Web Browser" = "Use Integrated Web Browser";
 
-// Help Titles
-"iTunes Import/Export" = "Importe/Exporte do Computador";
-"Dropbox Import/Export" = "Importe/Exporte do Dropbox";
-"Safari/Email Import" = "Importe do Safari/E-mail";
-"Create New Database" = "Crie um Novo Banco de Dados";
-"Key Files" = "Use Arquivos de Chave";
+"About Kagi" = "About Kagi";
+"Kagi version %@" = "Kagi versão %@";
+"(Tip Jar) Pay for a Cup of Coffee" = "(Tip Jar) Pay for a Cup of Coffee";
+"(Tip Jar) Pay for Lunch" = "(Tip Jar) Pay for Lunch";
 
 // Password Generator
 "Generator" = "Gerador";

@@ -18,8 +18,6 @@
 #import "AppSettings.h"
 #import "KeychainUtils.h"
 #import "PasswordUtils.h"
-#import "AppDelegate.h"
-#import "Kagi-Swift.h"
 
 #define VERSION                    @"version"
 #define EXIT_TIME                  @"exitTime"
@@ -109,7 +107,7 @@ static AppSettings *sharedInstance;
 - (id)init {
     self = [super init];
     if (self) {
-        userDefaults = [NSUserDefaults standardUserDefaults];
+        userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
 
         // Register the default values
         NSMutableDictionary *defaultsDict = [NSMutableDictionary dictionary];
@@ -284,21 +282,6 @@ static AppSettings *sharedInstance;
 
 - (void)setCloseEnabled:(BOOL)closeEnabled {
     [userDefaults setBool:closeEnabled forKey:CLOSE_ENABLED];
-}
-
-- (BOOL)backupDisabled {
-    return [userDefaults boolForKey:BACKUP_DISABLED];
-}
-
-- (void)setBackupDisabled:(BOOL)backupDisabled {
-    [userDefaults setBool:backupDisabled forKey:BACKUP_DISABLED];
-
-    NSURL *url = [NSURL fileURLWithPath:[AppDelegate documentsDirectory] isDirectory:YES];
-
-    NSError *error = nil;
-    if (![url setResourceValue:[NSNumber numberWithBool:!backupDisabled] forKey:NSURLIsExcludedFromBackupKey error:&error]) {
-        NSLog(@"Error excluding %@ from backup: %@", url, error);
-    }
 }
 
 - (NSInteger)closeTimeout {

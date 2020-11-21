@@ -85,9 +85,12 @@
 
 // Settings Page
 "Settings" = "Impostazioni";
+
+"PIN Protection" = "Protezione PIN";
+"Set PIN" = "Imposta PIN";
+"Confirm PIN" = "Conferma PIN";
+"PINs did not match. Try again" = "I PIN non corrispondono. Prova di nuovo";
 "PIN Enabled" = "PIN abilitato";
-"Touch ID / Face ID" = "Touch ID / Face ID"; // FIXME
-"Use your fingerprint or face as an alternative to entering a PIN if supported." = "Use your fingerprint or face as an alternative to entering a PIN if supported."; // FIXME
 "Lock Timeout" = "Intervallo blocco";
 "Immediately" = "Immediatamente";
 "30 Seconds" = "30 secondi";
@@ -95,14 +98,21 @@
 "2 Minutes" = "2 minuti";
 "3 Minutes" = "3 minuti";
 "5 Minutes" = "5 minuti";
-"Enabled" = "Abilitato";
-"Attempts" = "Tentativi";
-"Close Enabled" = "Chiusura abilitata";
+"Use Touch ID / Face ID" = "Use Touch ID / Face ID";
+"Delete Data on Failure" = "Elimina tutti i dati se il PIN è errato";
+"Attempts Until Deletion" = "Attempts Until Deletion";
+"Prevent unauthorized access to Kagi with a PIN." = "Previeni accessi non autorizzati a Kagi con un PIN.";
+
+"Database Password Settings" = "Database Password Settings";
+"Remember Database Passwords" = "Ricorda le password dei database";
+"Clear Clipboard on Timeout" = "Svuota la clipboard allo scadere di un intervallo";
+"Clipboard Timeout" = "Clipboard Timeout";
+"Close Database on Timeout" = "Chiudi il database allo scadere di un intervallo";
 "Close Timeout" = "Intervallo chiusura";
-"Hide Passwords" = "Nascondi password";
-"Sorting" = "Ordinamento";
-"Sort Groups and Entries Alphabetically" = "Ordina gruppi e voci alfabeticamente";
-"Encoding" = "Codifica";
+
+"Database Display Settings" = "Database Display Settings";
+"Hide Passwords" = "Nascondi le password";
+"Password Encoding" = "Codifica password";
 "UTF-8" = "UTF-8";
 "UTF-16 Big Endian" = "UTF-16 Big Endian";
 "UTF-16 Little Endian" = "UTF-16 Little Endian";
@@ -111,40 +121,14 @@
 "7-Bit ASCII" = "7-Bit ASCII";
 "Japanese EUC" = "Japanese EUC";
 "ISO-2022-JP" = "ISO-2022-JP";
-"PIN Protection" = "Protezione PIN";
-"Delete All Data on PIN Failure" = "Elimina tutti i dati se il PIN è errato";
-"Close Database on Timeout" = "Chiudi il database allo scadere di un intervallo";
-"Remember Database Passwords" = "Ricorda le password dei database";
-"Hide Passwords" = "Nascondi le password";
-"Password Encoding" = "Codifica password";
-"Clear Clipboard on Timeout" = "Svuota la clipboard allo scadere di un intervallo";
-"Clear Timeout" = "Intervallo svuotamento";
-"Prevent unauthorized access to Kagi with a PIN." = "Previeni accessi non autorizzati a Kagi con un PIN.";
-"Delete all files and passwords after too many failed attempts." = "Elimina tutti i file e password dopo troppi tentativi errati.";
-"Automatically close an open database after the selected timeout." = "Chiudi automaticamente un database aperto allo scadere dell'intervallo selezionato.";
-"Stores remembered database passwords in the devices's secure keychain." = "Memorizza le password del database nel portachiavi sicuro del dispositivo.";
-"Hides passwords when viewing a password entry." = "Nasconde le password quando si visualizza una voce.";
-"The string encoding used for passwords when converting them to database keys." = "La codifica usata per le password quando vengono convertite in chiavi del database.";
-"Clear the contents of the clipboard after a given timeout upon performing a copy." = "Pulisci i contenuti della clipboard in un tempo dato dopo aver effettuato una copia.";
-"Close Timeout" = "Intervallo chiusura";
-"Clear Clipboard Timeout" = "Intervallo pulitura clipboard";
-"Exclude from backup" = "Exclude from backup"; // FIXME
-"iCloud/iTunes Backup" = "iCloud/iTunes Backup"; // FIXME
-"Exclude databases and key files from iTunes/iCloud backups." = "Exclude databases and key files from iTunes/iCloud backups."; // FIXME
-"Web Browser" = "Web Browser"; // FIXME
-"Integrated" = "Integrated"; // FIXME
-"Switch between an integrated web browser and Safari." = "Switch between an integrated web browser and Safari."; // FIXME
-"Set PIN" = "Imposta PIN";
-"Confirm PIN" = "Conferma PIN";
-"PINs did not match. Try again" = "I PIN non corrispondono. Prova di nuovo";
-"Kagi version %@" = "Kagi versione %@";
+"Sort Alphabetically" = "Sort Alphabetically";
+"Search Title Only" = "Search Title Only";
+"Use Integrated Web Browser" = "Use Integrated Web Browser";
 
-// Help Titles
-"iTunes Import/Export" = "Importa/Esporta da iTunes";
-"Dropbox Import/Export" = "Importa/Esporta da Dropbox";
-"Safari/Email Import" = "Importa da Safari o Email";
-"Create New Database" = "Crea un Nuovo Database";
-"Key Files" = "File chiave";
+"About Kagi" = "About Kagi";
+"Kagi version %@" = "Kagi versione %@";
+"(Tip Jar) Pay for a Cup of Coffee" = "(Tip Jar) Pay for a Cup of Coffee";
+"(Tip Jar) Pay for Lunch" = "(Tip Jar) Pay for Lunch";
 
 // Password Generator
 "Generator" = "Generatore";

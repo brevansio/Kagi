@@ -20,7 +20,6 @@
 #import "AppSettings.h"
 #import "DatabaseManager.h"
 #import "KeychainUtils.h"
-#import "LockScreenManager.h"
 #import "Kagi-Swift.h"
 
 @implementation AppDelegate
@@ -81,7 +80,6 @@
         NSURL *url = [(SceneDelegate *)scene.delegate databaseDocument].url;
         [(SceneDelegate *)scene.delegate closeDatabase];
         [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
-
     }
 
     // Delete data stored in system keychain

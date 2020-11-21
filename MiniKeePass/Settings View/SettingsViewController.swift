@@ -20,37 +20,49 @@ import AudioToolbox
 import LocalAuthentication
 
 class SettingsViewController: UITableViewController, PinViewControllerDelegate {
+    @IBOutlet weak var pinEnabledLabel: UILabel!
     @IBOutlet weak var pinEnabledSwitch: UISwitch!
     @IBOutlet weak var pinLockTimeoutCell: UITableViewCell!
-    
+
+
     @IBOutlet weak var biometricsEnabledCell: UITableViewCell!
+    @IBOutlet weak var biometricsEnabledLabel: UILabel!
     @IBOutlet weak var biometricsEnabledSwitch: UISwitch!
     
+    @IBOutlet weak var deleteDataLabel: UILabel!
     @IBOutlet weak var deleteAllDataEnabledCell: UITableViewCell!
     @IBOutlet weak var deleteAllDataEnabledSwitch: UISwitch!
     @IBOutlet weak var deleteAllDataAttemptsCell: UITableViewCell!
     
     @IBOutlet weak var closeDatabaseEnabledSwitch: UISwitch!
+    @IBOutlet weak var closeDatabaseLabel: UILabel!
     @IBOutlet weak var closeDatabaseTimeoutCell: UITableViewCell!
     
+    @IBOutlet weak var rememberPasswordLabel: UILabel!
     @IBOutlet weak var rememberDatabasePasswordsEnabledSwitch: UISwitch!
     
+    @IBOutlet weak var hidePasswordsLabel: UILabel!
     @IBOutlet weak var hidePasswordsEnabledSwitch: UISwitch!
 
+    @IBOutlet weak var sortingEnabledLabel: UILabel!
     @IBOutlet weak var sortingEnabledSwitch: UISwitch!
 
+    @IBOutlet weak var searchTitleOnlyLabel: UILabel!
     @IBOutlet weak var searchTitleOnlySwitch: UISwitch!
     
     @IBOutlet weak var passwordEncodingCell: UITableViewCell!
     
     @IBOutlet weak var clearClipboardEnabledSwitch: UISwitch!
+    @IBOutlet weak var clearClipboardLabel: UILabel!
     @IBOutlet weak var clearClipboardTimeoutCell: UITableViewCell!
 
+    @IBOutlet weak var integratedWebBrowserLabel: UILabel!
     @IBOutlet weak var integratedWebBrowserEnabledSwitch: UISwitch!
 
     @IBOutlet weak var coffeeIAPCell: UITableViewCell!
     @IBOutlet weak var lunchIAPCell: UITableViewCell!
     
+    @IBOutlet weak var versionTitleLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     
     fileprivate let pinLockTimeouts = [NSLocalizedString("Immediately", comment: ""),
@@ -87,6 +99,8 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = NSLocalizedString("Settings", comment: "")
         
         // Get the version number
         versionLabel.text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -95,6 +109,34 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         let laContext = LAContext()
         biometricsSupported = laContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)
         tableView.delegate = self
+
+        // Localization
+        tableView.headerView(forSection: 0)?.textLabel?.text = NSLocalizedString("PIN Protection", comment: "")
+        pinEnabledLabel.text = NSLocalizedString("PIN Enabled", comment: "")
+        pinLockTimeoutCell.textLabel?.text = NSLocalizedString("Lock Timeout", comment: "")
+        biometricsEnabledLabel.text = NSLocalizedString("Use Touch ID / Face ID", comment: "")
+        deleteDataLabel.text = NSLocalizedString("Delete Data on Failure", comment: "")
+        deleteAllDataAttemptsCell.textLabel?.text = NSLocalizedString("Attempts Until Deletion", comment: "")
+        tableView.footerView(forSection: 0)?.textLabel?.text = NSLocalizedString("Prevent unauthorized access to Kagi with a PIN.", comment: "")
+
+        tableView.headerView(forSection: 1)?.textLabel?.text = NSLocalizedString("Database Password Settings", comment: "")
+        rememberPasswordLabel.text = NSLocalizedString("Remember Database Passwords", comment: "")
+        clearClipboardLabel.text = NSLocalizedString("Clear Clipboard on Timeout", comment: "")
+        clearClipboardTimeoutCell.textLabel?.text = NSLocalizedString("Clipboard Timeout", comment: "")
+        closeDatabaseLabel.text = NSLocalizedString("Close Database on Timeout", comment: "")
+        closeDatabaseTimeoutCell.textLabel?.text = NSLocalizedString("Close Timeout", comment: "")
+
+        tableView.headerView(forSection: 2)?.textLabel?.text = NSLocalizedString("Database Display Settings", comment: "")
+        hidePasswordsLabel.text = NSLocalizedString("Hide Passwords", comment: "")
+        passwordEncodingCell.textLabel?.text = NSLocalizedString("Password Encoding", comment: "")
+        sortingEnabledLabel.text = NSLocalizedString("Sort Alphabetically", comment: "")
+        searchTitleOnlyLabel.text = NSLocalizedString("Search Title Only", comment: "")
+        integratedWebBrowserLabel.text = NSLocalizedString("Use Integrated Web Browser", comment: "")
+
+        tableView.headerView(forSection: 3)?.textLabel?.text = NSLocalizedString("About Kagi", comment: "")
+        versionTitleLabel.text = NSLocalizedString("Kagi Version", comment: "")
+        coffeeIAPCell.textLabel?.text = NSLocalizedString("(Tip Jar) Pay for a Cup of Coffee", comment: "")
+        lunchIAPCell.textLabel?.text = NSLocalizedString("(Tip Jar) Pay for Lunch", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {

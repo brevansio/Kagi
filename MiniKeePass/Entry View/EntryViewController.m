@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import KeePassFramework;
 #import "EntryViewController.h"
-#import "Kdb4Node.h"
 #import "AppSettings.h"
 #import "ImageFactory.h"
 #import "Kagi-Swift.h"
@@ -49,6 +49,8 @@ enum {
 @property (nonatomic, readonly) NSArray *defaultCells;
 
 @property (nonatomic, readonly) NSArray *cells;
+
+@property (strong, nonatomic) NSUserDefaults *userDefaults;
 
 @end
 
@@ -110,10 +112,11 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
     
     _editingStringFields = [NSMutableArray array];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:@"hidePasswords"
-                                               options:NSKeyValueObservingOptionNew
-                                               context:nil];
+    self.userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.io.brevans.Kagi"];
+    [self.userDefaults addObserver:self
+                        forKeyPath:@"hidePasswords"
+                           options:NSKeyValueObservingOptionNew
+                           context:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -124,7 +127,10 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 
     // Add listeners to the keyboard
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [notificationCenter addObserver:self
+                           selector:@selector(applicationWillResignActive:)
+                               name:UIApplicationWillResignActiveNotification
+                             object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -155,8 +161,8 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 }
 
 - (void)dealloc {
-    [[NSUserDefaults standardUserDefaults] removeObserver:self
-                                               forKeyPath:@"hidePasswords"];
+    [self.userDefaults removeObserver:self
+                           forKeyPath:@"hidePasswords"];
 }
 
 - (void)applicationWillResignActive:(id)sender {
@@ -705,7 +711,7 @@ static NSString *TextFieldCellIdentifier = @"TextFieldCell";
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"hidePasswords"] && object == [NSUserDefaults standardUserDefaults]) {
+    if ([keyPath isEqualToString:@"hidePasswords"] && object == self.userDefaults) {
         passwordCell.textField.secureTextEntry = [[AppSettings sharedInstance] hidePasswords];
     }
 }

@@ -16,7 +16,7 @@
  */
 
 @import UIKit;
-#import "KdbLib.h"
+@import KeePassFramework;
 
 @interface DatabaseDocument : UIDocument
 
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSURL *url;
 
 /// Create a KeePass Database
-/// @param filename Database filename
+/// @param url Database URL
 /// @param password Database password
 /// @param keyFile Path to KeyFile
 /// @return A KeePass DatabaseDocument

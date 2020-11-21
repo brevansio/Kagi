@@ -20,12 +20,17 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "LockScreenManager.h"
-#import "AppDelegate.h"
 #import "AppSettings.h"
 #import "KeychainUtils.h"
 #import "PinViewController.h"
 #import "PasswordUtils.h"
+
+#ifdef TARGET_KAGIAPP
+#import "AppDelegate.h"
 #import "Kagi-Swift.h"
+#elif TARGET_KAGIAUTOFILL
+#import "KagiAutoFill-Swift.h"
+#endif
 
 @interface LockScreenManager () <PinViewControllerDelegate>
 @property (nonatomic, strong) PinViewController *pinViewController;
@@ -33,6 +38,7 @@
 
 @implementation LockScreenManager {
     UIWindow *lockWindow;
+    UIViewController *lockedViewController;
     BOOL biometricsAuthFailed;
 }
 
@@ -72,12 +78,40 @@
     return self;
 }
 
+- (instancetype)initWithViewController:(UIViewController *)viewController {
+    self = [super init];
+    if (self) {
+        biometricsAuthFailed = NO;
+
+        lockedViewController = viewController;
+
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        blurView.frame = [[UIScreen mainScreen] bounds];
+        self.pinViewController = [[PinViewController alloc] init];
+        self.pinViewController.delegate = self;
+
+        [self.pinViewController willMoveToParentViewController:lockedViewController];
+        [lockedViewController.view addSubview:self.pinViewController.view];
+        [lockedViewController addChildViewController:self.pinViewController];
+
+        [self.pinViewController.view insertSubview:blurView atIndex:0];
+    }
+    return self;
+}
+
 - (void)dealloc {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter removeObserver:self];
 }
 
 #pragma mark - Lock/Unlock
+
+- (void)showLockScreen {
+    lockWindow.rootViewController = self.pinViewController;
+    [lockWindow makeKeyAndVisible];
+}
 
 - (BOOL)shouldCheckPin {
     // Check if the PIN is enabled
@@ -117,6 +151,7 @@
                         self->lockWindow.alpha = 0.0;
                      }
                      completion:^(BOOL finished){
+                         [self.delegate lockScreenWasHidden];
                          [self.pinViewController clearPin];
                             self->biometricsAuthFailed = NO;
                             self->lockWindow.hidden = YES;
@@ -205,7 +240,12 @@
                 // Check if they have failed too many times
                 if (pinFailedAttempts >= deleteOnFailureAttempts) {
                     // Delete all data
+#if TARGET_KAGIAPP
                     [AppDelegate deleteAllData];
+#elif TARGET_KAGIAUTOFILL
+                    // TODO
+                    [(CredentialProviderViewController *)lockedViewController deleteAllData];
+#endif
 
                     // Dismiss the PIN screen
                     [self hideLockScreen];
@@ -248,11 +288,14 @@
 
 - (void)sceneWillEnterForeground:(NSNotification *)notification {
     if ([self shouldCloseDatabase]) {
+#ifdef TARGET_KAGIAPP
         SceneDelegate *sceneDelegate = (SceneDelegate *)lockWindow.windowScene.delegate;
         [sceneDelegate closeDatabase];
+#endif
     }
     
     if ([self shouldCheckPin]) {
+        [self showLockScreen];
         [self checkPin];
     } else {
         [self hideLockScreen];
