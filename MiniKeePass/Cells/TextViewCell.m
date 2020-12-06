@@ -30,7 +30,7 @@
         textView = [[UITextView alloc] initWithFrame:CGRectZero];
         textView.font = [UIFont systemFontOfSize:16];
         textView.delegate = self;
-        [self addSubview:textView];
+        [self.contentView addSubview:textView];
     }
     return self;
 }
