@@ -20,14 +20,14 @@
 "Key File" = "キーファイル";
 "Key Files" = "キーファイル";
 "Groups" = "グループ";
-"Entries" = "エントリー";
+"Entries" = "項目";
 "Group" = "グループ";
-"Entry" = "エントリー";
+"Entry" = "項目";
 "New Database" = "新しいデータベース";
 "New Group" = "新しいグループ";
-"New Entry" = "新しいエントリー";
+"New Entry" = "新しい項目";
 "Edit Group" = "グループを編集";
-"Edit Entry" = "エントリーを編集";
+"Edit Entry" = "項目を編集";
 "Title" = "タイトル";
 "Image" = "アイコン";
 "Images" = "アイコン";
@@ -61,7 +61,7 @@
 "Close" = "閉じる";
 
 // General Messages
-"Enter your PIN to unlock" = "PIN入力で解除";
+"Enter your PIN to unlock" = "PIN入力";
 "Unlock Kagi" = "Kagi解除";
 "Enter the password and/or select the keyfile for the %@ database." = "データベース「%@」のパスワード又はキーファイルを入力";
 "Enter a new name for the password database. The correct file extension will automatically be appended." = "新しいデータベースの名前を入力";
@@ -91,28 +91,28 @@
 "Confirm PIN" = "PINを確認";
 "PINs did not match. Try again" = "PINが違います。再入力お願いします";
 "PIN Enabled" = "PIN使用";
-"Lock Timeout" = "タイムアウト";
-"Immediately" = "すぐ";
+"Lock Timeout" = "タイムアウト設定";
+"Immediately" = "即時";
 "30 Seconds" = "30 秒";
 "1 Minute" = "1 分";
 "2 Minutes" = "2 分";
 "3 Minutes" = "3 分";
 "5 Minutes" = "5 分";
 "Use Touch ID / Face ID" = "Touch ID / Face ID使用";
-"Delete Data on Failure" = "PIN入力失敗でデータを削除";
-"Attempts Until Deletion" = "データ削除までの試み";
+"Delete Data on Failure" = "PIN入力失敗後でデータを削除";
+"Attempts Until Deletion" = "データ削除までの回数";
 "Prevent unauthorized access to Kagi with a PIN." = "PINでKagiの不正アクセスを防ぐ";
 
 "Database Password Settings" = "データベースパスワード設定";
-"Remember Database Passwords" = "データベースパスワードを記憶";
-"Clear Clipboard on Timeout" = "タイムアウトでクリップボードを削除";
+"Remember Database Passwords" = "パスワードを記憶";
+"Clear Clipboard on Timeout" = "クリップボード削除タイムアウト有効";
 "Clipboard Timeout" = "クリップボードのタイムアウト";
 "Close Database on Timeout" = "タイムアウトでデータベースを閉じる";
-"Close Timeout" = "閉じるタイムアウト";
+"Close Timeout" = "データベースタイムアウト設定";
 
 "Database Display Settings" = "データベース表示設定";
-"Hide Passwords" = "パスワードを隠す";
-"Password Encoding" = "パスワードエンコーディング";
+"Hide Passwords" = "パスワードを表示しない";
+"Password Encoding" = "パスワード文字符号書類";
 "UTF-8" = "UTF-8";
 "UTF-16 Big Endian" = "UTF-16 Big Endian";
 "UTF-16 Little Endian" = "UTF-16 Little Endian";
@@ -121,14 +121,14 @@
 "7-Bit ASCII" = "7-Bit ASCII";
 "Japanese EUC" = "Japanese EUC";
 "ISO-2022-JP" = "ISO-2022-JP";
-"Sort Alphabetically" = "あいうえお順で区分する";
+"Sort Alphabetically" = "五十音順表示";
 "Search Title Only" = "タイトルのみを検索";
-"Use Integrated Web Browser" = "アプリ内インタネット接続";
+"Use Integrated Web Browser" = "インタネット接続を許可";
 
 "About Kagi" = "Kagiについて";
-"Kagi version %@" = "Kagi バージョン %@";
-"(Tip Jar) Pay for a Cup of Coffee" = "(チップ) コーヒーをおごる";
-"(Tip Jar) Pay for Lunch" = "(チップ) ご飯をおごる";
+"Kagi version %@" = "Kagiアプリバージョン %@";
+"(Tip Jar) Pay for a Cup of Coffee" = "(チップ) コーヒー代";
+"(Tip Jar) Pay for Lunch" = "(チップ) 食事代";
 
 // Password Generator
 "Generator" = "ジェネレータ";
