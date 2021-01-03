@@ -207,7 +207,23 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
         let iapEnabled = IAPManager.shared.enableIAP()
         let productIds = IAPManager.shared.products.map { $0.productIdentifier }
         setCellEnabled(coffeeIAPCell, enabled: iapEnabled && productIds.contains(PurchaseID.coffee.rawValue))
+        if let coffeeProduct = IAPManager.shared.products.filter({ $0.productIdentifier == PurchaseID.coffee.rawValue }).first {
+            coffeeIAPCell.textLabel?.text = coffeeProduct.localizedTitle
+            let numberFormatter = NumberFormatter()
+            numberFormatter.formatterBehavior = .behavior10_4
+            numberFormatter.numberStyle = .currency
+            numberFormatter.locale = coffeeProduct.priceLocale
+            coffeeIAPCell.detailTextLabel?.text = numberFormatter.string(from: coffeeProduct.price)
+        }
         setCellEnabled(lunchIAPCell, enabled: iapEnabled && productIds.contains(PurchaseID.lunch.rawValue))
+        if let lunchProduct = IAPManager.shared.products.filter({ $0.productIdentifier == PurchaseID.lunch.rawValue }).first {
+            lunchIAPCell.textLabel?.text = lunchProduct.localizedTitle
+            let numberFormatter = NumberFormatter()
+            numberFormatter.formatterBehavior = .behavior10_4
+            numberFormatter.numberStyle = .currency
+            numberFormatter.locale = lunchProduct.priceLocale
+            lunchIAPCell.detailTextLabel?.text = numberFormatter.string(from: lunchProduct.price)
+        }
     }
     
     fileprivate func setCellEnabled(_ cell: UITableViewCell, enabled: Bool) {
