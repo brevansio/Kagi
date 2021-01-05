@@ -40,7 +40,7 @@ MiniKeePass
 Copyright 2011 Jason Rush and John Flanagan. All rights reserved.
 
 German Translation - Florian Holzapfel<br />
-Japanese Translation - Katherine Lake<br />
+Japanese Translation - Katherine Lake and Arisa Nakazato<br />
 Russian Translation - Foster "Forst" Snowhill<br />
 Italian Translation - Emanuele Di Vita and Gabriele Cirulli<br />
 Simplified Chinese Translation - Caspar Zhang and David Wong<br />
