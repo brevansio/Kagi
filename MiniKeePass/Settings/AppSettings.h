@@ -57,6 +57,9 @@
 - (BOOL)rememberPasswordsEnabled;
 - (void)setRememberPasswordsEnabled:(BOOL)rememberPasswordsEnabled;
 
+- (BOOL)didConfirmRememberingPasswords;
+- (void)setDidConfirmRememberingPasswords:(BOOL)didConfirm;
+
 - (BOOL)hidePasswords;
 - (void)setHidePasswords:(BOOL)hidePasswords;
 

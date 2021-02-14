@@ -31,6 +31,7 @@
 #define CLOSE_ENABLED              @"closeEnabled"
 #define CLOSE_TIMEOUT              @"closeTimeout"
 #define REMEMBER_PASSWORDS_ENABLED @"rememberPasswordsEnabled"
+#define CONFIRM_REMEMBER_PASSWORDS @"confirmRememberPasswords"
 #define HIDE_PASSWORDS             @"hidePasswords"
 #define SORT_ALPHABETICALLY        @"sortAlphabetically"
 #define SEARCH_TITLE_ONLY          @"searchTitleOnly"
@@ -117,6 +118,7 @@ static AppSettings *sharedInstance;
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:CLOSE_ENABLED];
         [defaultsDict setValue:[NSNumber numberWithInt:4] forKey:CLOSE_TIMEOUT];
         [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:REMEMBER_PASSWORDS_ENABLED];
+        [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:CONFIRM_REMEMBER_PASSWORDS];
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:HIDE_PASSWORDS];
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:SORT_ALPHABETICALLY];
         [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:SEARCH_TITLE_ONLY];
@@ -128,51 +130,8 @@ static AppSettings *sharedInstance;
         [defaultsDict setValue:[NSNumber numberWithInt:10] forKey:PW_GEN_LENGTH];
         [defaultsDict setValue:[NSNumber numberWithInt:0x07] forKey:PW_GEN_CHAR_SETS];
         [userDefaults registerDefaults:defaultsDict];
-
-        [self upgrade];
     }
     return self;
-}
-
-- (void)upgrade {
-    NSString *version = [self version];
-    if (version == nil) {
-        version = @"1.5.2";
-    }
-    
-    if ([version isEqualToString:@"1.5.2"]) {
-        [self upgrade152];
-    }
-    
-    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    [self setVersion:currentVersion];
-}
-
-- (void)upgrade152 {
-    // Migrate the pin enabled setting
-    BOOL pinEnabled = [userDefaults boolForKey:PIN_ENABLED];
-    [self setPinEnabled:pinEnabled];
-    
-    // Migrate the pin lock timeout setting
-    NSInteger pinLockTimeoutIndex = [userDefaults boolForKey:PIN_LOCK_TIMEOUT];
-    [self setPinLockTimeoutIndex:pinLockTimeoutIndex];
-    
-    // Migrate the pin failed attempts setting
-    NSInteger pinFailedAttempts = [userDefaults boolForKey:PIN_FAILED_ATTEMPTS];
-    [self setPinFailedAttempts:pinFailedAttempts];
-
-    // Check if we need to migrate the plaintext pin to the hashed pin
-    NSString *pin = [self pin];
-    if (![pin hasPrefix:@"sha512"]) {
-        NSString *pinHash = [PasswordUtils hashPassword:pin];
-        [self setPin:pinHash];
-    }
-
-    // Remove the old keys
-    [userDefaults removeObjectForKey:EXIT_TIME];
-    [userDefaults removeObjectForKey:PIN_ENABLED];
-    [userDefaults removeObjectForKey:PIN_LOCK_TIMEOUT];
-    [userDefaults removeObjectForKey:PIN_FAILED_ATTEMPTS];
 }
 
 - (NSString *)version {
@@ -302,6 +261,14 @@ static AppSettings *sharedInstance;
 
 - (void)setRememberPasswordsEnabled:(BOOL)rememberPasswordsEnabled {
     [userDefaults setBool:rememberPasswordsEnabled forKey:REMEMBER_PASSWORDS_ENABLED];
+}
+
+- (BOOL)didConfirmRememberingPasswords {
+    return [userDefaults boolForKey:CONFIRM_REMEMBER_PASSWORDS];
+}
+
+- (void)setDidConfirmRememberingPasswords:(BOOL)didConfirm {
+    [userDefaults setBool:didConfirm forKey:CONFIRM_REMEMBER_PASSWORDS];
 }
 
 - (BOOL)hidePasswords {
