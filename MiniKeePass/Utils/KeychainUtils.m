@@ -21,8 +21,22 @@
 @implementation KeychainUtils
 
 + (NSString *)stringForKey:(NSString *)key andServiceName:(NSString *)serviceName {
+
+    NSData *stringData = [KeychainUtils dataForKey:key andServiceName:serviceName];
+    NSString *string = [[NSString alloc] initWithData:stringData encoding:NSUTF8StringEncoding];
+
+    return string;
+}
+
++ (BOOL)setString:(NSString *)string forKey:(NSString *)key andServiceName:(NSString *)serviceName {
+    return [KeychainUtils setData:[string dataUsingEncoding:NSUTF8StringEncoding]
+                           forKey:key
+                   andServiceName:serviceName];
+}
+
++ (NSData *)dataForKey:(NSString *)key andServiceName:(NSString *)serviceName {
     CFTypeRef result_data = NULL;
-	OSStatus status;
+    OSStatus status;
 
     // Check the arguments
     if (key == nil || serviceName == nil) {
@@ -38,27 +52,26 @@
                             };
 
     status = SecItemCopyMatching((__bridge CFDictionaryRef)query, &result_data);
-	if (status != errSecSuccess) {
+    if (status != errSecSuccess) {
         return nil;
     }
 
     NSData *resultData = (__bridge_transfer NSData *)result_data;
-    NSString *string = [[NSString alloc] initWithData:(id)resultData encoding:NSUTF8StringEncoding];
 
-    return string;
+    return resultData;
 }
 
-+ (BOOL)setString:(NSString *)string forKey:(NSString *)key andServiceName:(NSString *)serviceName {
++ (BOOL)setData:(NSData *)data forKey:(NSString *)key andServiceName:(NSString *)serviceName {
     OSStatus status;
 
     // Check the arguments
-    if (string == nil || key == nil || serviceName == nil) {
+    if (data == nil || key == nil || serviceName == nil) {
         return NO;
     }
 
     // Check if the item already exists
-    NSString *existingPassword = [KeychainUtils stringForKey:key andServiceName:serviceName];
-    if (existingPassword != nil) {
+    NSData *existingData = [KeychainUtils dataForKey:key andServiceName:serviceName];
+    if (existingData != nil) {
         // Update
         NSDictionary *query = @{
                                 (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
@@ -68,7 +81,7 @@
 
         NSDictionary *attributesToUpdate = @{
                                              (__bridge id)kSecAttrAccessible : (__bridge id)kSecAttrAccessibleWhenUnlocked,
-                                             (__bridge id)kSecValueData : [string dataUsingEncoding:NSUTF8StringEncoding],
+                                             (__bridge id)kSecValueData : data,
                                              };
 
         status = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
@@ -80,7 +93,7 @@
                                      (__bridge id)kSecAttrService : serviceName,
                                      (__bridge id)kSecAttrAccount : key,
                                      (__bridge id)kSecAttrAccessGroup : KEYCHAIN_SHARED_GROUP,
-                                     (__bridge id)kSecValueData : [string dataUsingEncoding:NSUTF8StringEncoding],
+                                     (__bridge id)kSecValueData : data,
                                      };
 
         status = SecItemAdd((__bridge CFDictionaryRef)attributes, NULL);
@@ -89,7 +102,7 @@
     return status == errSecSuccess;
 }
 
-+ (BOOL)deleteStringForKey:(NSString *)key andServiceName:(NSString *)serviceName {
++ (BOOL)deleteDataForKey:(NSString *)key andServiceName:(NSString *)serviceName {
     OSStatus status;
 
     // Check the arguments
