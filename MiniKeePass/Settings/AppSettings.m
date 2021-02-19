@@ -30,6 +30,7 @@
 #define DELETE_ON_FAILURE_ATTEMPTS @"deleteOnFailureAttempts"
 #define CLOSE_ENABLED              @"closeEnabled"
 #define CLOSE_TIMEOUT              @"closeTimeout"
+#define REMEMBER_LAST_DATABASE     @"rememberLastDatabase"
 #define REMEMBER_PASSWORDS_ENABLED @"rememberPasswordsEnabled"
 #define CONFIRM_REMEMBER_PASSWORDS @"confirmRememberPasswords"
 #define HIDE_PASSWORDS             @"hidePasswords"
@@ -117,6 +118,7 @@ static AppSettings *sharedInstance;
         [defaultsDict setValue:[NSNumber numberWithInt:1] forKey:DELETE_ON_FAILURE_ATTEMPTS];
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:CLOSE_ENABLED];
         [defaultsDict setValue:[NSNumber numberWithInt:4] forKey:CLOSE_TIMEOUT];
+        [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:REMEMBER_LAST_DATABASE];
         [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:REMEMBER_PASSWORDS_ENABLED];
         [defaultsDict setValue:[NSNumber numberWithBool:NO] forKey:CONFIRM_REMEMBER_PASSWORDS];
         [defaultsDict setValue:[NSNumber numberWithBool:YES] forKey:HIDE_PASSWORDS];
@@ -253,6 +255,14 @@ static AppSettings *sharedInstance;
 
 - (void)setCloseTimeoutIndex:(NSInteger)closeTimeoutIndex {
     [userDefaults setInteger:closeTimeoutIndex forKey:CLOSE_TIMEOUT];
+}
+
+- (BOOL)rememberLastOpenedDatabase {
+    return [userDefaults boolForKey:REMEMBER_LAST_DATABASE];
+}
+
+- (void)setRememberLastOpenedDatabase:(BOOL)rememberLastOpenedDatabase {
+    return [userDefaults setBool:rememberLastOpenedDatabase forKey:REMEMBER_LAST_DATABASE];
 }
 
 - (BOOL)rememberPasswordsEnabled {
