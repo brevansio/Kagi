@@ -33,12 +33,15 @@
 #define KEYCHAIN_PIN_SERVICE       @"io.brevans.Kagi.pin"
 #define KEYCHAIN_PASSWORDS_SERVICE @"io.brevans.Kagi.passwords"
 #define KEYCHAIN_KEYFILES_SERVICE  @"io.brevans.Kagi.keyfiles"
+#define KEYCHAIN_LAST_DATABASE_SERVICE  @"io.brevans.Kagi.database"
 
 @interface KeychainUtils : NSObject
 
 + (NSString *)stringForKey:(NSString *)key andServiceName:(NSString *)serviceName;
 + (BOOL)setString:(NSString *)string forKey:(NSString *)key andServiceName:(NSString *)serviceName;
-+ (BOOL)deleteStringForKey:(NSString *)key andServiceName:(NSString *)serviceName;
++ (NSData *)dataForKey:(NSString *)key andServiceName:(NSString *)serviceName;
++ (BOOL)setData:(NSData *)string forKey:(NSString *)key andServiceName:(NSString *)serviceName;
++ (BOOL)deleteDataForKey:(NSString *)key andServiceName:(NSString *)serviceName;
 + (BOOL)deleteAllForServiceName:(NSString *)serviceName;
 
 @end

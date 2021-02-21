@@ -37,7 +37,10 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
     @IBOutlet weak var closeDatabaseEnabledSwitch: UISwitch!
     @IBOutlet weak var closeDatabaseLabel: UILabel!
     @IBOutlet weak var closeDatabaseTimeoutCell: UITableViewCell!
-    
+
+    @IBOutlet weak var rememberLastOpenedDatabaseLabel: UILabel!
+    @IBOutlet weak var rememberLastOpenedDatabaseEnabledSwitch: UISwitch!
+
     @IBOutlet weak var rememberPasswordLabel: UILabel!
     @IBOutlet weak var rememberDatabasePasswordsEnabledSwitch: UISwitch!
     
@@ -157,7 +160,8 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             
             closeDatabaseEnabledSwitch.isOn = appSettings.closeEnabled()
             closeDatabaseTimeoutCell.detailTextLabel!.text = closeDatabaseTimeouts[appSettings.closeTimeoutIndex()]
-            
+
+            rememberLastOpenedDatabaseEnabledSwitch.isOn = appSettings.rememberLastOpenedDatabase()
             rememberDatabasePasswordsEnabledSwitch.isOn = appSettings.rememberPasswordsEnabled()
             
             hidePasswordsEnabledSwitch.isOn = appSettings.hidePasswords()
@@ -310,7 +314,7 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
             self.appSettings?.setPinEnabled(false)
             
             // Delete the PIN from the keychain
-            KeychainUtils.deleteString(forKey: "PIN", andServiceName: KEYCHAIN_PIN_SERVICE)
+            KeychainUtils.deleteData(forKey: "PIN", andServiceName: KEYCHAIN_PIN_SERVICE)
             
             // Update which controls are enabled
             updateEnabledControls()
@@ -333,6 +337,12 @@ class SettingsViewController: UITableViewController, PinViewControllerDelegate {
 
         // Update which controls are enabled
         updateEnabledControls()
+    }
+
+    @IBAction func rememberLastOpenedDatabaseEnabledChanged(_ sender: UISwitch) {
+        self.appSettings?.setRememberLastOpenedDatabase(rememberLastOpenedDatabaseEnabledSwitch.isOn)
+
+        KeychainUtils.deleteAll(forServiceName: KEYCHAIN_LAST_DATABASE_SERVICE)
     }
     
     @IBAction func rememberDatabasePasswordsEnabledChanged(_ sender: UISwitch) {

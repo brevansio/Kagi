@@ -72,6 +72,10 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func donePressedAction(_ sender: UIBarButtonItem?) {
+        guard AppSettings.sharedInstance()?.didConfirmRememberingPasswords() == true else {
+            confirmPasswordRemembrance()
+            return
+        }
         donePressed?(self)
     }
     
@@ -93,6 +97,28 @@ class PasswordEntryViewController: UITableViewController, UITextFieldDelegate {
             // Change the image
             showImageView.image = UIImage(named: "eye-slash")
         }
+    }
+
+    private func confirmPasswordRemembrance() {
+        let alertController = UIAlertController(title: NSLocalizedString("Save Password", comment: ""),
+                                                message: NSLocalizedString("Would you like to securely save your password in the Keychain?", comment: ""),
+                                                preferredStyle: .alert)
+        alertController.addAction(.init(title: NSLocalizedString("Save", comment: ""),
+                                        style: .default,
+                                        handler: { [unowned self] _ in
+                                            AppSettings.sharedInstance()?.setRememberPasswordsEnabled(true)
+                                            AppSettings.sharedInstance()?.setDidConfirmRememberingPasswords(true)
+                                            self.donePressed?(self)
+                                        }))
+        alertController.addAction(.init(title: NSLocalizedString("Cancel", comment: ""),
+                                        style: .cancel,
+                                        handler: { [unowned self] _ in
+                                            AppSettings.sharedInstance()?.setRememberPasswordsEnabled(false)
+                                            AppSettings.sharedInstance()?.setDidConfirmRememberingPasswords(true)
+                                            self.donePressed?(self)
+                                        }))
+
+        present(alertController, animated: true, completion: nil)
     }
 }
 

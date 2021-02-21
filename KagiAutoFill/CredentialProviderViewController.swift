@@ -55,7 +55,7 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
         AppSettings.sharedInstance()?.setPinEnabled(false)
         AppSettings.sharedInstance()?.setBiometricsEnabled(false)
 
-        KeychainUtils.deleteString(forKey: "PIN", andServiceName: KEYCHAIN_PIN_SERVICE)
+        KeychainUtils.deleteData(forKey: "PIN", andServiceName: KEYCHAIN_PIN_SERVICE)
         KeychainUtils.deleteAll(forServiceName: KEYCHAIN_PASSWORDS_SERVICE)
         KeychainUtils.deleteAll(forServiceName: KEYCHAIN_KEYFILES_SERVICE)
         closeDatabase()

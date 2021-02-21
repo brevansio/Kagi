@@ -64,6 +64,14 @@ static DatabaseManager *sharedInstance;
         NSString *filename = url.lastPathComponent;
         [KeychainUtils setString:password forKey:filename andServiceName:KEYCHAIN_PASSWORDS_SERVICE];
     }
+
+    if ([[AppSettings sharedInstance] rememberLastOpenedDatabase]) {
+        NSData *bookmarkData = [url bookmarkDataWithOptions:0
+                             includingResourceValuesForKeys:nil
+                                              relativeToURL:nil
+                                                      error:nil];
+        [KeychainUtils setData:bookmarkData forKey:@"db" andServiceName:KEYCHAIN_LAST_DATABASE_SERVICE];
+    }
 }
 
 - (void)openDatabaseDocument:(NSURL *)documentURL inWindow:(UIWindow *)window animated:(BOOL)animated {
@@ -81,6 +89,14 @@ static DatabaseManager *sharedInstance;
             DatabaseDocument *dd = [[DatabaseDocument alloc] initWithURL:documentURL password:password keyFile:nil];
 
             databaseLoaded = YES;
+
+            if ([[AppSettings sharedInstance] rememberLastOpenedDatabase]) {
+                NSData *bookmarkData = [self.selectedURL bookmarkDataWithOptions:0
+                                                  includingResourceValuesForKeys:nil
+                                                                   relativeToURL:nil
+                                                                           error:nil];
+                [KeychainUtils setData:bookmarkData forKey:@"db" andServiceName:KEYCHAIN_LAST_DATABASE_SERVICE];
+            }
 
 #ifdef TARGET_KAGIAPP
             // Set the database document in the application delegate
@@ -141,6 +157,14 @@ static DatabaseManager *sharedInstance;
                       andServiceName:KEYCHAIN_PASSWORDS_SERVICE];
             [KeychainUtils setString:keyFilePath forKey:self.selectedURL.lastPathComponent
                       andServiceName:KEYCHAIN_KEYFILES_SERVICE];
+        }
+
+        if ([[AppSettings sharedInstance] rememberLastOpenedDatabase]) {
+            NSData *bookmarkData = [self.selectedURL bookmarkDataWithOptions:0
+                                              includingResourceValuesForKeys:nil
+                                                               relativeToURL:nil
+                                                                       error:nil];
+            [KeychainUtils setData:bookmarkData forKey:@"db" andServiceName:KEYCHAIN_LAST_DATABASE_SERVICE];
         }
 
         // Dismiss the view controller, and after animation set the database document

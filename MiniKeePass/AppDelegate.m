@@ -66,7 +66,7 @@
     [appSettings setBiometricsEnabled:NO];
 
     // Delete the PIN from the keychain
-    [KeychainUtils deleteStringForKey:@"PIN" andServiceName:KEYCHAIN_PIN_SERVICE];
+    [KeychainUtils deleteDataForKey:@"PIN" andServiceName:KEYCHAIN_PIN_SERVICE];
 
     // Delete all database passwords from the keychain
     [KeychainUtils deleteAllForServiceName:KEYCHAIN_PASSWORDS_SERVICE];

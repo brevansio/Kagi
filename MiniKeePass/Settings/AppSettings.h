@@ -54,8 +54,14 @@
 - (NSInteger)closeTimeoutIndex;
 - (void)setCloseTimeoutIndex:(NSInteger)closeTimeoutIndex;
 
+- (BOOL)rememberLastOpenedDatabase;
+- (void)setRememberLastOpenedDatabase:(BOOL)rememberLastOpenedDatabase;
+
 - (BOOL)rememberPasswordsEnabled;
 - (void)setRememberPasswordsEnabled:(BOOL)rememberPasswordsEnabled;
+
+- (BOOL)didConfirmRememberingPasswords;
+- (void)setDidConfirmRememberingPasswords:(BOOL)didConfirm;
 
 - (BOOL)hidePasswords;
 - (void)setHidePasswords:(BOOL)hidePasswords;
