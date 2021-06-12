@@ -43,9 +43,11 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
         }
     }
 
-    @objc func closeDatabase() {
+    @objc(closeDatabaseAndCancel:)
+    func closeDatabase(shouldCancel: Bool = true) {
         children.forEach { $0.removeFromParent() }
         _databaseDocument = nil
+        guard shouldCancel else { return }
         self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain,
                                                                code: ASExtensionError.userCanceled.rawValue))
     }
@@ -86,8 +88,7 @@ class CredentialProviderViewController: ASCredentialProviderViewController {
         self.extensionContext.completeRequest(withSelectedCredential: credential, completionHandler: nil)
     }
 
-    override func prepareCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier]) {
-    }
+    override func prepareCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier]) {}
 
     override func provideCredentialWithoutUserInteraction(for credentialIdentity: ASPasswordCredentialIdentity) {
         self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain,

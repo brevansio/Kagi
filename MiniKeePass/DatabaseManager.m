@@ -125,7 +125,7 @@ static DatabaseManager *sharedInstance;
             [passwordEntryViewController dismissViewControllerAnimated:YES completion:nil];
 #ifdef TARGET_KAGIAUTOFILL
             CredentialProviderViewController *credentialVC = (CredentialProviderViewController *)window.rootViewController.childViewControllers.firstObject;
-            [credentialVC closeDatabase];
+            [credentialVC closeDatabaseAndCancel:true];
 #endif
         };
 
