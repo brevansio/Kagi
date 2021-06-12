@@ -24,7 +24,7 @@
 @interface KeypadButton : UIButton
 
 @property (nonatomic, strong) UILabel *mainLabel;
-@property (nonatomic, strong) UILabel *subtitleLabel;
+@property (nonatomic, strong) UILabel *secondaryLabel;
 
 - (instancetype)initWithTitle:(NSString *)title andSubtitle:(NSString *)subtitle;
 

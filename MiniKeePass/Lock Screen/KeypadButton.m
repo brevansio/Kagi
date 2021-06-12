@@ -37,10 +37,10 @@
         [self addSubview:_mainLabel];
 
         if (subtitle != nil) {
-            _subtitleLabel = [[UILabel alloc] init];
-            _subtitleLabel.text = subtitle;
-            _subtitleLabel.textAlignment = NSTextAlignmentCenter;
-            [self addSubview:_subtitleLabel];
+            _secondaryLabel = [[UILabel alloc] init];
+            _secondaryLabel.text = subtitle;
+            _secondaryLabel.textAlignment = NSTextAlignmentCenter;
+            [self addSubview:_secondaryLabel];
         }
     }
     return self;
@@ -54,7 +54,7 @@
 
     keypadButton.mainLabel.font = [keypadButton.mainLabel.font fontWithSize:28];
     if (subtitle != nil) {
-        keypadButton.subtitleLabel.font = [keypadButton.subtitleLabel.font fontWithSize:12];
+        keypadButton.secondaryLabel.font = [keypadButton.secondaryLabel.font fontWithSize:12];
     }
 
     keypadButton.borderHidden = NO;
@@ -86,13 +86,13 @@
 
     [_mainLabel sizeToFit];
 
-    if (_subtitleLabel == nil) {
+    if (_secondaryLabel == nil) {
         _mainLabel.frame = CGRectMake(0, h / 2.0f - _mainLabel.bounds.size.height / 2.0f, w, _mainLabel.bounds.size.height);
     } else {
         _mainLabel.frame = CGRectMake(0, h / 6.0f, w, _mainLabel.bounds.size.height);
 
-        [_subtitleLabel sizeToFit];
-        _subtitleLabel.frame = CGRectMake(0, _mainLabel.frame.origin.y + _mainLabel.frame.size.height + 3, w, _subtitleLabel.bounds.size.height);
+        [_secondaryLabel sizeToFit];
+        _secondaryLabel.frame = CGRectMake(0, _mainLabel.frame.origin.y + _mainLabel.frame.size.height + 3, w, _secondaryLabel.bounds.size.height);
     }
 }
 
@@ -111,8 +111,8 @@
     _textColor = textColor;
 
     _mainLabel.textColor = textColor;
-    if (_subtitleLabel != nil) {
-        _subtitleLabel.textColor = textColor;
+    if (_secondaryLabel != nil) {
+        _secondaryLabel.textColor = textColor;
     }
 }
 
@@ -135,8 +135,8 @@
 
     _mainLabel.textColor = _highlightTextColor;
 
-    if (_subtitleLabel != nil) {
-        _subtitleLabel.textColor = _highlightTextColor;
+    if (_secondaryLabel != nil) {
+        _secondaryLabel.textColor = _highlightTextColor;
     }
 }
 
@@ -161,8 +161,8 @@
     
     _mainLabel.textColor = _textColor;
     
-    if (_subtitleLabel != nil) {
-        _subtitleLabel.textColor = _textColor;
+    if (_secondaryLabel != nil) {
+        _secondaryLabel.textColor = _textColor;
     }
 }
 
